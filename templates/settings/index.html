@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block title %}Settings{% endblock %}{% block page_title %}Settings{% endblock %}
+{% block content %}<div class="card"><div class="card-header">Configuration</div><div class="card-body">
+<p><b>Browser:</b> {{ settings.DEFAULT_BROWSER }}</p>
+<p><b>Headless:</b> {{ settings.HEADLESS }}</p>
+<p><b>Max Retries:</b> {{ settings.MAX_RETRIES }}</p>
+<p><b>Retry Delay:</b> {{ settings.RETRY_DELAY_SECONDS }}s</p>
+<p><b>AI Enabled:</b> {{ settings.AI_ENABLED }}</p>
+<p class="text-muted small">Edit .env file to change settings, then restart the server.</p>
+</div></div>{% endblock %}

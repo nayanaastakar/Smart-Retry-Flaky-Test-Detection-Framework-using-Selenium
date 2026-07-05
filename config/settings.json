@@ -1,7 +1,0 @@
-{
-    "retry_count": 3,
-    "headless_mode": false,
-    "ai_enabled": true,
-    "browser": "chrome",
-    "theme": "dark"
-}

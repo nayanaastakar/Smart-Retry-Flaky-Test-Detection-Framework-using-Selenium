@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Create Project{% endblock %}
+{% block page_title %}Create Project{% endblock %}
+{% block content %}
+<div class="card" style="max-width:600px">
+  <div class="card-header">New Project</div>
+  <div class="card-body">
+    <form method="POST">
+      <div class="mb-3">
+        <label class="form-label">Project Name</label>
+        <input type="text" name="name" class="form-control" required placeholder="My Web App Tests">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Target URL</label>
+        <input type="url" name="url" class="form-control" required placeholder="https://example.com">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Browser</label>
+        <select name="browser" class="form-select">
+          <option value="chrome">Chrome</option>
+          <option value="firefox">Firefox</option>
+          <option value="edge">Edge</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Description</label>
+        <textarea name="description" class="form-control" rows="2"></textarea>
+      </div>
+      <button type="submit" class="btn btn-purple">Create Project</button>
+      <a href="{{ url_for('projects.index') }}" class="btn btn-outline-secondary ms-2">Cancel</a>
+    </form>
+  </div>
+</div>
+{% endblock %}

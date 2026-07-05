@@ -1,10 +1,24 @@
-# Smart Retry & Flaky Test Detector - Module 1 Requirements
-# Python 3.12+
-
-# Web Framework (Backend)
+# --- Web framework ---------------------------------------------------------
 Flask==3.0.3
-Flask-Cors==4.0.1
+Jinja2==3.1.4
+Werkzeug==3.0.3
+python-dotenv==1.0.1
 
-# Selenium WebDriver
-selenium==4.23.1
-webdriver-manager==4.0.1
+# --- Testing ------------------------------------------------------------------
+pytest==8.2.2
+pytest-html==4.1.1
+pytest-json-report==1.5.0
+
+# --- Selenium -----------------------------------------------------------------
+selenium==4.22.0
+webdriver-manager==4.0.2
+
+# --- Reporting ------------------------------------------------------------------
+reportlab==4.2.2      # PDF report generation
+Jinja2==3.1.4          # HTML report templating (duplicate pin kept intentional)
+
+# --- AI integration -----------------------------------------------------------
+requests==2.32.3       # HTTP client used to call the local Ollama API
+
+# --- Utilities -----------------------------------------------------------------
+python-dateutil==2.9.0

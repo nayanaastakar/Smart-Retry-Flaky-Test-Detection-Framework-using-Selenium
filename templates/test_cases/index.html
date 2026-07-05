@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block title %}Test Cases{% endblock %}{% block page_title %}All Test Cases{% endblock %}
+{% block content %}
+<div class="card"><div class="card-body p-0">
+{% if test_cases %}<table class="table table-dark table-hover mb-0">
+<thead><tr><th>Name</th><th>Project</th><th>Module</th><th>Actions</th></tr></thead>
+<tbody>{% for tc in test_cases %}<tr>
+<td>{{ tc.name }}</td><td class="text-muted">{{ tc.project_name or '-' }}</td>
+<td><span class="badge bg-secondary">{{ tc.module }}</span></td>
+<td>{% if tc.project_id %}<a href="{{ url_for('projects.edit_test', project_id=tc.project_id, tc_id=tc.id) }}" class="btn btn-sm btn-outline-info">Edit</a>{% endif %}</td>
+</tr>{% endfor %}</tbody></table>
+{% else %}<div class="text-center py-4 text-muted">No test cases yet. <a href="{{ url_for('projects.create') }}">Create a project</a> first.</div>{% endif %}
+</div></div>{% endblock %}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login - SmartRetry</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<style>body{background:#0f1117;color:#e2e8f0;min-height:100vh;display:flex;align-items:center;justify-content:center}.card{background:#1a1d27;border:1px solid #2d3748;border-radius:14px;}.form-control{background:#0f1117;border-color:#374151;color:#e2e8f0}.form-control:focus{background:#0f1117;color:#e2e8f0;border-color:#7c3aed;box-shadow:0 0 0 .2rem rgba(124,58,237,.25)}</style>
+</head>
+<body>
+<div class="card p-4" style="width:380px">
+  <div class="text-center mb-4">
+    <div style="font-size:2rem;color:#7c3aed">↺</div>
+    <h4 class="fw-bold">SmartRetry</h4>
+    <p class="text-muted small">Flaky Test Detection Framework</p>
+  </div>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for cat, msg in messages %}
+    <div class="alert alert-danger">{{ msg }}</div>
+    {% endfor %}
+  {% endwith %}
+  <form method="POST">
+    <div class="mb-3">
+      <label class="form-label">Username</label>
+      <input type="text" name="username" class="form-control" required autofocus>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" name="password" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary w-100" style="background:#7c3aed;border-color:#7c3aed">Login</button>
+  </form>
+  <p class="text-center text-muted small mt-3">Default: admin / Admin@123</p>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

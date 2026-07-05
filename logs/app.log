@@ -1,0 +1,676 @@
+2026-07-04 22:59:16,259 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_framework\smartretry\database\framework.db
+2026-07-04 22:59:16,486 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_framework\smartretry\database\framework.db
+2026-07-04 22:59:16,735 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.103.141.131:5000
+2026-07-04 22:59:16,736 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-04 22:59:16,786 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-04 22:59:17,206 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_framework\smartretry\database\framework.db
+2026-07-04 22:59:17,252 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_framework\smartretry\database\framework.db
+2026-07-04 22:59:17,262 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-04 22:59:17,276 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-04 23:00:26,584 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\__init__.py', reloading
+2026-07-04 23:00:27,249 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-04 23:00:27,751 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_framework\smartretry\database\framework.db
+2026-07-04 23:00:27,769 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_framework\smartretry\database\framework.db
+2026-07-04 23:00:27,787 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-04 23:00:27,810 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:31:27,289 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:31:27,370 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.99.111.131:5000
+2026-07-06 03:31:27,370 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-06 03:31:27,404 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:31:27,689 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:31:27,716 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:31:27,722 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:31:37,989 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\flask\\app.py', reloading
+2026-07-06 03:31:38,002 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\flask\\templating.py', reloading
+2026-07-06 03:31:38,082 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\jinja2\\environment.py', reloading
+2026-07-06 03:31:38,156 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\jinja2\\loaders.py', reloading
+2026-07-06 03:31:38,920 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:31:39,347 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:31:39,381 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:31:39,388 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:35:34,839 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:35:49,907 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:35:50,124 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\flask\\ctx.py', reloading
+2026-07-06 03:35:50,178 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\werkzeug\\routing\\map.py', reloading
+2026-07-06 03:35:50,215 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\werkzeug\\test.py', reloading
+2026-07-06 03:35:50,287 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\flask\\testing.py', reloading
+2026-07-06 03:35:50,530 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:35:50,798 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:35:50,827 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:35:50,832 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:36:57,462 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:36:57,522 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.99.111.131:5000
+2026-07-06 03:36:57,522 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-06 03:36:57,545 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:36:57,799 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:36:57,828 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:36:57,837 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:37:52,784 | INFO     | werkzeug | 10.99.111.131 - - [06/Jul/2026 03:37:52] "[32mGET / HTTP/1.1[0m" 302 -
+2026-07-06 03:37:52,843 | INFO     | werkzeug | 10.99.111.131 - - [06/Jul/2026 03:37:52] "GET /login HTTP/1.1" 200 -
+2026-07-06 03:37:53,971 | INFO     | werkzeug | 10.99.111.131 - - [06/Jul/2026 03:37:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-06 03:38:04,089 | INFO     | werkzeug | 10.99.111.131 - - [06/Jul/2026 03:38:04] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-07-06 03:38:04,201 | INFO     | werkzeug | 10.99.111.131 - - [06/Jul/2026 03:38:04] "GET / HTTP/1.1" 200 -
+2026-07-06 03:38:26,938 | INFO     | werkzeug | 10.99.111.131 - - [06/Jul/2026 03:38:26] "GET / HTTP/1.1" 200 -
+2026-07-06 03:40:37,143 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\database\\seed.py', reloading
+2026-07-06 03:40:37,236 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\database\\seed.py', reloading
+2026-07-06 03:40:37,206 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\database\\seed.py', reloading
+2026-07-06 03:40:37,269 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\database\\seed.py', reloading
+2026-07-06 03:40:38,222 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:40:38,804 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:40:39,338 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:40:39,396 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:40:39,405 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:40:39,474 | INFO     | werkzeug | 10.99.111.131 - - [06/Jul/2026 03:40:39] "GET / HTTP/1.1" 200 -
+2026-07-06 03:40:39,542 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:40:39,607 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:40:39,626 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:40:43,387 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\database\\seed.py', reloading
+2026-07-06 03:40:43,387 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\database\\seed.py', reloading
+2026-07-06 03:40:43,391 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\database\\seed.py', reloading
+2026-07-06 03:40:43,391 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\database\\seed.py', reloading
+2026-07-06 03:40:43,624 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:40:43,848 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:40:44,464 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:40:44,546 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:40:44,556 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:40:44,680 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:40:44,745 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:40:44,753 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:40:50,558 | INFO     | werkzeug | 10.99.111.131 - - [06/Jul/2026 03:40:50] "GET / HTTP/1.1" 200 -
+2026-07-06 03:40:53,046 | INFO     | werkzeug | 10.99.111.131 - - [06/Jul/2026 03:40:53] "GET / HTTP/1.1" 200 -
+2026-07-06 03:41:09,010 | INFO     | werkzeug | 10.99.111.131 - - [06/Jul/2026 03:41:09] "GET / HTTP/1.1" 200 -
+2026-07-06 03:41:09,195 | INFO     | werkzeug | 10.99.111.131 - - [06/Jul/2026 03:41:09] "GET / HTTP/1.1" 200 -
+2026-07-06 03:41:09,316 | INFO     | werkzeug | 10.99.111.131 - - [06/Jul/2026 03:41:09] "GET / HTTP/1.1" 200 -
+2026-07-06 03:41:13,664 | INFO     | werkzeug | 10.99.111.131 - - [06/Jul/2026 03:41:13] "GET / HTTP/1.1" 200 -
+2026-07-06 03:52:28,720 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\socks.py', reloading
+2026-07-06 03:52:28,720 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\socks.py', reloading
+2026-07-06 03:52:28,731 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\sockshandler.py', reloading
+2026-07-06 03:52:28,733 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\sockshandler.py', reloading
+2026-07-06 03:52:28,733 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\typing_extensions.py', reloading
+2026-07-06 03:52:28,734 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\typing_extensions.py', reloading
+2026-07-06 03:52:28,738 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\converters.py', reloading
+2026-07-06 03:52:28,739 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\converters.py', reloading
+2026-07-06 03:52:28,753 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\exceptions.py', reloading
+2026-07-06 03:52:28,767 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\filters.py', reloading
+2026-07-06 03:52:28,768 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\filters.py', reloading
+2026-07-06 03:52:28,788 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\setters.py', reloading
+2026-07-06 03:52:28,789 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\setters.py', reloading
+2026-07-06 03:52:28,807 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\validators.py', reloading
+2026-07-06 03:52:28,809 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\validators.py', reloading
+2026-07-06 03:52:28,842 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\_cmp.py', reloading
+2026-07-06 03:52:28,842 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\_cmp.py', reloading
+2026-07-06 03:52:28,868 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\_compat.py', reloading
+2026-07-06 03:52:28,870 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\_compat.py', reloading
+2026-07-06 03:52:28,878 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\_config.py', reloading
+2026-07-06 03:52:28,878 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\_config.py', reloading
+2026-07-06 03:52:28,892 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\_funcs.py', reloading
+2026-07-06 03:52:28,892 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\_funcs.py', reloading
+2026-07-06 03:52:28,904 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\_make.py', reloading
+2026-07-06 03:52:28,904 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\_make.py', reloading
+2026-07-06 03:52:28,923 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\_next_gen.py', reloading
+2026-07-06 03:52:28,923 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\_next_gen.py', reloading
+2026-07-06 03:52:28,964 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\_version_info.py', reloading
+2026-07-06 03:52:28,964 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\_version_info.py', reloading
+2026-07-06 03:52:29,039 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\__init__.py', reloading
+2026-07-06 03:52:29,039 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\attr\\__init__.py', reloading
+2026-07-06 03:52:29,825 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:52:29,830 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:52:30,473 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:52:30,485 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:52:30,503 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:52:30,509 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:52:30,509 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:52:30,516 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:52:30,629 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\api.py', reloading
+2026-07-06 03:52:30,629 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\api.py', reloading
+2026-07-06 03:52:30,636 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\backend_ctypes.py', reloading
+2026-07-06 03:52:30,636 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\backend_ctypes.py', reloading
+2026-07-06 03:52:30,642 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\cffi_opcode.py', reloading
+2026-07-06 03:52:30,642 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\cffi_opcode.py', reloading
+2026-07-06 03:52:30,650 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\commontypes.py', reloading
+2026-07-06 03:52:30,650 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\commontypes.py', reloading
+2026-07-06 03:52:30,659 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\cparser.py', reloading
+2026-07-06 03:52:30,659 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\cparser.py', reloading
+2026-07-06 03:52:30,681 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\error.py', reloading
+2026-07-06 03:52:30,681 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\error.py', reloading
+2026-07-06 03:52:30,693 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\ffiplatform.py', reloading
+2026-07-06 03:52:30,693 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\ffiplatform.py', reloading
+2026-07-06 03:52:30,707 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\lock.py', reloading
+2026-07-06 03:52:30,708 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\lock.py', reloading
+2026-07-06 03:52:30,720 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\model.py', reloading
+2026-07-06 03:52:30,720 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\model.py', reloading
+2026-07-06 03:52:30,736 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\pkgconfig.py', reloading
+2026-07-06 03:52:30,736 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\pkgconfig.py', reloading
+2026-07-06 03:52:30,743 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\recompiler.py', reloading
+2026-07-06 03:52:30,752 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\setuptools_ext.py', reloading
+2026-07-06 03:52:30,752 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\setuptools_ext.py', reloading
+2026-07-06 03:52:30,765 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\vengine_cpy.py', reloading
+2026-07-06 03:52:30,765 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\vengine_cpy.py', reloading
+2026-07-06 03:52:30,776 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\vengine_gen.py', reloading
+2026-07-06 03:52:30,786 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\verifier.py', reloading
+2026-07-06 03:52:30,786 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\verifier.py', reloading
+2026-07-06 03:52:30,819 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\_imp_emulation.py', reloading
+2026-07-06 03:52:30,819 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\_imp_emulation.py', reloading
+2026-07-06 03:52:30,829 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\_shimmed_dist_utils.py', reloading
+2026-07-06 03:52:30,829 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\_shimmed_dist_utils.py', reloading
+2026-07-06 03:52:30,839 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\__init__.py', reloading
+2026-07-06 03:52:30,839 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\cffi\\__init__.py', reloading
+2026-07-06 03:52:31,306 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\charset_normalizer\\api.py', reloading
+2026-07-06 03:52:31,306 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\charset_normalizer\\api.py', reloading
+2026-07-06 03:52:31,355 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\charset_normalizer\\cd.py', reloading
+2026-07-06 03:52:31,355 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\charset_normalizer\\cd.py', reloading
+2026-07-06 03:52:31,371 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\charset_normalizer\\constant.py', reloading
+2026-07-06 03:52:31,371 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\charset_normalizer\\constant.py', reloading
+2026-07-06 03:52:31,391 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\charset_normalizer\\legacy.py', reloading
+2026-07-06 03:52:31,391 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\charset_normalizer\\legacy.py', reloading
+2026-07-06 03:52:31,467 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\charset_normalizer\\md.py', reloading
+2026-07-06 03:52:31,467 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\charset_normalizer\\md.py', reloading
+2026-07-06 03:52:31,493 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\charset_normalizer\\models.py', reloading
+2026-07-06 03:52:31,493 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\charset_normalizer\\models.py', reloading
+2026-07-06 03:52:31,533 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\charset_normalizer\\utils.py', reloading
+2026-07-06 03:52:31,533 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\charset_normalizer\\utils.py', reloading
+2026-07-06 03:52:31,665 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:52:31,667 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:52:32,078 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:52:32,101 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:52:32,104 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:52:32,114 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:52:32,125 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:52:32,136 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:52:32,151 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\formatting.py', reloading
+2026-07-06 03:52:32,158 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\globals.py', reloading
+2026-07-06 03:52:32,179 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\parser.py', reloading
+2026-07-06 03:52:32,180 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\parser.py', reloading
+2026-07-06 03:52:32,228 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\shell_completion.py', reloading
+2026-07-06 03:52:32,228 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\shell_completion.py', reloading
+2026-07-06 03:52:32,247 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\termui.py', reloading
+2026-07-06 03:52:32,257 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\testing.py', reloading
+2026-07-06 03:52:32,257 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\testing.py', reloading
+2026-07-06 03:52:32,270 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\types.py', reloading
+2026-07-06 03:52:32,270 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\types.py', reloading
+2026-07-06 03:52:32,284 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\utils.py', reloading
+2026-07-06 03:52:32,284 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\utils.py', reloading
+2026-07-06 03:52:32,306 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\_compat.py', reloading
+2026-07-06 03:52:32,306 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\_compat.py', reloading
+2026-07-06 03:52:32,334 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\_termui_impl.py', reloading
+2026-07-06 03:52:32,334 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\_termui_impl.py', reloading
+2026-07-06 03:52:32,359 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\_textwrap.py', reloading
+2026-07-06 03:52:32,359 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\_textwrap.py', reloading
+2026-07-06 03:52:32,389 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\_utils.py', reloading
+2026-07-06 03:52:32,389 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\_utils.py', reloading
+2026-07-06 03:52:32,411 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\_winconsole.py', reloading
+2026-07-06 03:52:32,411 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\_winconsole.py', reloading
+2026-07-06 03:52:32,426 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\__init__.py', reloading
+2026-07-06 03:52:32,426 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\click\\__init__.py', reloading
+2026-07-06 03:52:32,775 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\ansi.py', reloading
+2026-07-06 03:52:32,775 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\ansi.py', reloading
+2026-07-06 03:52:32,783 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\ansitowin32.py', reloading
+2026-07-06 03:52:32,783 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\ansitowin32.py', reloading
+2026-07-06 03:52:32,791 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\initialise.py', reloading
+2026-07-06 03:52:32,791 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\initialise.py', reloading
+2026-07-06 03:52:32,799 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\win32.py', reloading
+2026-07-06 03:52:32,799 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\win32.py', reloading
+2026-07-06 03:52:32,807 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\winterm.py', reloading
+2026-07-06 03:52:32,807 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\winterm.py', reloading
+2026-07-06 03:52:32,817 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\__init__.py', reloading
+2026-07-06 03:52:32,817 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\__init__.py', reloading
+2026-07-06 03:52:32,825 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\tests\\ansitowin32_test.py', reloading
+2026-07-06 03:52:32,825 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\tests\\ansitowin32_test.py', reloading
+2026-07-06 03:52:32,836 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\tests\\ansi_test.py', reloading
+2026-07-06 03:52:32,836 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\tests\\ansi_test.py', reloading
+2026-07-06 03:52:32,843 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\tests\\initialise_test.py', reloading
+2026-07-06 03:52:32,843 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\tests\\initialise_test.py', reloading
+2026-07-06 03:52:32,857 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\tests\\isatty_test.py', reloading
+2026-07-06 03:52:32,858 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\tests\\isatty_test.py', reloading
+2026-07-06 03:52:32,868 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\tests\\utils.py', reloading
+2026-07-06 03:52:32,868 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\tests\\utils.py', reloading
+2026-07-06 03:52:32,876 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\tests\\winterm_test.py', reloading
+2026-07-06 03:52:32,876 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\tests\\winterm_test.py', reloading
+2026-07-06 03:52:32,888 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\tests\\__init__.py', reloading
+2026-07-06 03:52:32,888 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\colorama\\tests\\__init__.py', reloading
+2026-07-06 03:52:33,047 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\dotenv\\cli.py', reloading
+2026-07-06 03:52:33,047 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\dotenv\\cli.py', reloading
+2026-07-06 03:52:33,053 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\dotenv\\ipython.py', reloading
+2026-07-06 03:52:33,053 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\dotenv\\ipython.py', reloading
+2026-07-06 03:52:33,059 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\dotenv\\main.py', reloading
+2026-07-06 03:52:33,059 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\dotenv\\main.py', reloading
+2026-07-06 03:52:33,066 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\dotenv\\parser.py', reloading
+2026-07-06 03:52:33,066 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\dotenv\\parser.py', reloading
+2026-07-06 03:52:33,080 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\dotenv\\variables.py', reloading
+2026-07-06 03:52:33,080 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\dotenv\\variables.py', reloading
+2026-07-06 03:52:33,088 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\dotenv\\version.py', reloading
+2026-07-06 03:52:33,088 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\dotenv\\version.py', reloading
+2026-07-06 03:52:33,096 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\dotenv\\__init__.py', reloading
+2026-07-06 03:52:33,096 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\dotenv\\__init__.py', reloading
+2026-07-06 03:52:33,104 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\dotenv\\__main__.py', reloading
+2026-07-06 03:52:33,104 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\dotenv\\__main__.py', reloading
+2026-07-06 03:52:33,267 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:52:33,274 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:52:33,574 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:52:33,585 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:52:33,597 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:52:33,603 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:52:33,615 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:52:33,621 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:52:33,671 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\flask\\sansio\\app.py', reloading
+2026-07-06 03:52:33,671 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\flask\\sansio\\app.py', reloading
+2026-07-06 03:52:33,679 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\flask\\sansio\\blueprints.py', reloading
+2026-07-06 03:52:33,679 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\flask\\sansio\\blueprints.py', reloading
+2026-07-06 03:52:33,698 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\flask\\sansio\\scaffold.py', reloading
+2026-07-06 03:52:33,698 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\flask\\sansio\\scaffold.py', reloading
+2026-07-06 03:52:33,931 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\flask_cors\\core.py', reloading
+2026-07-06 03:52:33,931 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\flask_cors\\core.py', reloading
+2026-07-06 03:52:33,936 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\flask_cors\\decorator.py', reloading
+2026-07-06 03:52:33,936 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\flask_cors\\decorator.py', reloading
+2026-07-06 03:52:33,943 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\flask_cors\\extension.py', reloading
+2026-07-06 03:52:33,943 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\flask_cors\\extension.py', reloading
+2026-07-06 03:52:33,950 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\flask_cors\\version.py', reloading
+2026-07-06 03:52:33,950 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\flask_cors\\version.py', reloading
+2026-07-06 03:52:33,957 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\flask_cors\\__init__.py', reloading
+2026-07-06 03:52:33,957 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\flask_cors\\__init__.py', reloading
+2026-07-06 03:52:34,078 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\_abnf.py', reloading
+2026-07-06 03:52:34,078 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\_abnf.py', reloading
+2026-07-06 03:52:34,089 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\_connection.py', reloading
+2026-07-06 03:52:34,089 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\_connection.py', reloading
+2026-07-06 03:52:34,099 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\_events.py', reloading
+2026-07-06 03:52:34,099 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\_events.py', reloading
+2026-07-06 03:52:34,107 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\_headers.py', reloading
+2026-07-06 03:52:34,107 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\_headers.py', reloading
+2026-07-06 03:52:34,116 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\_readers.py', reloading
+2026-07-06 03:52:34,117 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\_readers.py', reloading
+2026-07-06 03:52:34,124 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\_receivebuffer.py', reloading
+2026-07-06 03:52:34,124 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\_receivebuffer.py', reloading
+2026-07-06 03:52:34,134 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\_state.py', reloading
+2026-07-06 03:52:34,134 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\_state.py', reloading
+2026-07-06 03:52:34,142 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\_util.py', reloading
+2026-07-06 03:52:34,142 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\_util.py', reloading
+2026-07-06 03:52:34,150 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\_version.py', reloading
+2026-07-06 03:52:34,150 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\_version.py', reloading
+2026-07-06 03:52:34,159 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\_writers.py', reloading
+2026-07-06 03:52:34,159 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\_writers.py', reloading
+2026-07-06 03:52:34,175 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\__init__.py', reloading
+2026-07-06 03:52:34,175 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\h11\\__init__.py', reloading
+2026-07-06 03:52:34,337 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\idna\\cli.py', reloading
+2026-07-06 03:52:34,337 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\idna\\cli.py', reloading
+2026-07-06 03:52:34,342 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\idna\\codec.py', reloading
+2026-07-06 03:52:34,343 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\idna\\codec.py', reloading
+2026-07-06 03:52:34,351 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\idna\\compat.py', reloading
+2026-07-06 03:52:34,351 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\idna\\compat.py', reloading
+2026-07-06 03:52:34,356 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\idna\\core.py', reloading
+2026-07-06 03:52:34,356 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\idna\\core.py', reloading
+2026-07-06 03:52:34,366 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\idna\\idnadata.py', reloading
+2026-07-06 03:52:34,366 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\idna\\idnadata.py', reloading
+2026-07-06 03:52:34,372 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\idna\\intranges.py', reloading
+2026-07-06 03:52:34,372 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\idna\\intranges.py', reloading
+2026-07-06 03:52:34,380 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\idna\\package_data.py', reloading
+2026-07-06 03:52:34,381 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\idna\\package_data.py', reloading
+2026-07-06 03:52:34,392 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\idna\\uts46data.py', reloading
+2026-07-06 03:52:34,392 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\idna\\uts46data.py', reloading
+2026-07-06 03:52:34,399 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\idna\\__init__.py', reloading
+2026-07-06 03:52:34,399 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\idna\\__init__.py', reloading
+2026-07-06 03:52:34,405 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\idna\\__main__.py', reloading
+2026-07-06 03:52:34,405 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\idna\\__main__.py', reloading
+2026-07-06 03:52:34,527 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\itsdangerous\\encoding.py', reloading
+2026-07-06 03:52:34,535 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\itsdangerous\\exc.py', reloading
+2026-07-06 03:52:34,536 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\itsdangerous\\exc.py', reloading
+2026-07-06 03:52:34,550 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\itsdangerous\\serializer.py', reloading
+2026-07-06 03:52:34,551 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\itsdangerous\\serializer.py', reloading
+2026-07-06 03:52:34,556 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\itsdangerous\\signer.py', reloading
+2026-07-06 03:52:34,556 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\itsdangerous\\signer.py', reloading
+2026-07-06 03:52:34,564 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\itsdangerous\\timed.py', reloading
+2026-07-06 03:52:34,569 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\itsdangerous\\url_safe.py', reloading
+2026-07-06 03:52:34,569 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\itsdangerous\\url_safe.py', reloading
+2026-07-06 03:52:34,576 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\itsdangerous\\_json.py', reloading
+2026-07-06 03:52:34,575 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\itsdangerous\\_json.py', reloading
+2026-07-06 03:52:34,584 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\itsdangerous\\__init__.py', reloading
+2026-07-06 03:52:34,584 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\itsdangerous\\__init__.py', reloading
+2026-07-06 03:52:34,740 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:52:34,785 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:52:35,237 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:52:35,245 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:52:35,267 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:52:35,270 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:52:35,272 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:52:35,275 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:52:35,304 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\jinja2\\parser.py', reloading
+2026-07-06 03:52:35,305 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\jinja2\\parser.py', reloading
+2026-07-06 03:52:35,319 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\jinja2\\runtime.py', reloading
+2026-07-06 03:52:35,319 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\jinja2\\runtime.py', reloading
+2026-07-06 03:52:35,326 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\jinja2\\sandbox.py', reloading
+2026-07-06 03:52:35,327 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\jinja2\\sandbox.py', reloading
+2026-07-06 03:52:35,335 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\jinja2\\tests.py', reloading
+2026-07-06 03:52:35,335 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\jinja2\\tests.py', reloading
+2026-07-06 03:52:35,343 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\jinja2\\utils.py', reloading
+2026-07-06 03:52:35,343 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\jinja2\\utils.py', reloading
+2026-07-06 03:52:35,351 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\jinja2\\visitor.py', reloading
+2026-07-06 03:52:35,357 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\jinja2\\_identifier.py', reloading
+2026-07-06 03:52:35,358 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\jinja2\\_identifier.py', reloading
+2026-07-06 03:52:35,367 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\jinja2\\__init__.py', reloading
+2026-07-06 03:52:35,367 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\jinja2\\__init__.py', reloading
+2026-07-06 03:52:35,619 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\markupsafe\\_native.py', reloading
+2026-07-06 03:52:35,619 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\markupsafe\\_native.py', reloading
+2026-07-06 03:52:35,649 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\markupsafe\\__init__.py', reloading
+2026-07-06 03:52:35,649 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\markupsafe\\__init__.py', reloading
+2026-07-06 03:52:35,715 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\outcome\\_impl.py', reloading
+2026-07-06 03:52:35,715 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\outcome\\_impl.py', reloading
+2026-07-06 03:52:35,721 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\outcome\\_util.py', reloading
+2026-07-06 03:52:35,721 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\outcome\\_util.py', reloading
+2026-07-06 03:52:35,727 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\outcome\\_version.py', reloading
+2026-07-06 03:52:35,727 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\outcome\\_version.py', reloading
+2026-07-06 03:52:35,735 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\outcome\\__init__.py', reloading
+2026-07-06 03:52:35,735 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\outcome\\__init__.py', reloading
+2026-07-06 03:52:35,871 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\dependency_groups.py', reloading
+2026-07-06 03:52:35,871 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\dependency_groups.py', reloading
+2026-07-06 03:52:35,877 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\direct_url.py', reloading
+2026-07-06 03:52:35,877 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\direct_url.py', reloading
+2026-07-06 03:52:35,884 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\errors.py', reloading
+2026-07-06 03:52:35,884 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\errors.py', reloading
+2026-07-06 03:52:35,892 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\markers.py', reloading
+2026-07-06 03:52:35,892 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\markers.py', reloading
+2026-07-06 03:52:35,900 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\metadata.py', reloading
+2026-07-06 03:52:35,900 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\metadata.py', reloading
+2026-07-06 03:52:35,915 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\pylock.py', reloading
+2026-07-06 03:52:35,915 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\pylock.py', reloading
+2026-07-06 03:52:35,924 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\requirements.py', reloading
+2026-07-06 03:52:35,932 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\specifiers.py', reloading
+2026-07-06 03:52:35,932 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\specifiers.py', reloading
+2026-07-06 03:52:35,938 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\tags.py', reloading
+2026-07-06 03:52:35,938 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\tags.py', reloading
+2026-07-06 03:52:35,945 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\utils.py', reloading
+2026-07-06 03:52:35,945 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\utils.py', reloading
+2026-07-06 03:52:35,953 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\version.py', reloading
+2026-07-06 03:52:35,954 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\version.py', reloading
+2026-07-06 03:52:35,961 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\_elffile.py', reloading
+2026-07-06 03:52:35,961 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\_elffile.py', reloading
+2026-07-06 03:52:35,972 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\_manylinux.py', reloading
+2026-07-06 03:52:35,972 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\_manylinux.py', reloading
+2026-07-06 03:52:35,980 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\_musllinux.py', reloading
+2026-07-06 03:52:35,980 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\_musllinux.py', reloading
+2026-07-06 03:52:35,988 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\_parser.py', reloading
+2026-07-06 03:52:35,988 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\_parser.py', reloading
+2026-07-06 03:52:35,998 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\_structures.py', reloading
+2026-07-06 03:52:35,998 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\_structures.py', reloading
+2026-07-06 03:52:36,005 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\_tokenizer.py', reloading
+2026-07-06 03:52:36,005 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\_tokenizer.py', reloading
+2026-07-06 03:52:36,017 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\__init__.py', reloading
+2026-07-06 03:52:36,017 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\__init__.py', reloading
+2026-07-06 03:52:36,024 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\licenses\\_spdx.py', reloading
+2026-07-06 03:52:36,024 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\licenses\\_spdx.py', reloading
+2026-07-06 03:52:36,034 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\licenses\\__init__.py', reloading
+2026-07-06 03:52:36,034 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\packaging\\licenses\\__init__.py', reloading
+2026-07-06 03:52:36,360 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:52:36,366 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:52:36,772 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:52:36,780 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:52:36,800 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:52:36,803 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:52:36,807 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:52:36,809 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:52:36,838 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\cli\\spinners.py', reloading
+2026-07-06 03:52:36,838 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\cli\\spinners.py', reloading
+2026-07-06 03:52:36,850 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\cli\\status_codes.py', reloading
+2026-07-06 03:52:36,850 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\cli\\status_codes.py', reloading
+2026-07-06 03:52:36,860 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\cli\\__init__.py', reloading
+2026-07-06 03:52:36,860 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\cli\\__init__.py', reloading
+2026-07-06 03:52:37,080 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\cache.py', reloading
+2026-07-06 03:52:37,080 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\cache.py', reloading
+2026-07-06 03:52:37,110 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\check.py', reloading
+2026-07-06 03:52:37,110 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\check.py', reloading
+2026-07-06 03:52:37,156 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\completion.py', reloading
+2026-07-06 03:52:37,156 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\completion.py', reloading
+2026-07-06 03:52:37,214 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\configuration.py', reloading
+2026-07-06 03:52:37,214 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\configuration.py', reloading
+2026-07-06 03:52:37,279 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\debug.py', reloading
+2026-07-06 03:52:37,279 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\debug.py', reloading
+2026-07-06 03:52:37,305 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\download.py', reloading
+2026-07-06 03:52:37,342 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\freeze.py', reloading
+2026-07-06 03:52:37,342 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\freeze.py', reloading
+2026-07-06 03:52:37,379 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\hash.py', reloading
+2026-07-06 03:52:37,423 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\help.py', reloading
+2026-07-06 03:52:37,455 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\index.py', reloading
+2026-07-06 03:52:37,455 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\index.py', reloading
+2026-07-06 03:52:37,476 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\inspect.py', reloading
+2026-07-06 03:52:37,476 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\inspect.py', reloading
+2026-07-06 03:52:37,496 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\install.py', reloading
+2026-07-06 03:52:37,515 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\list.py', reloading
+2026-07-06 03:52:37,526 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\search.py', reloading
+2026-07-06 03:52:37,526 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\search.py', reloading
+2026-07-06 03:52:37,540 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\show.py', reloading
+2026-07-06 03:52:37,540 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\show.py', reloading
+2026-07-06 03:52:37,553 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\uninstall.py', reloading
+2026-07-06 03:52:37,553 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\uninstall.py', reloading
+2026-07-06 03:52:37,566 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\wheel.py', reloading
+2026-07-06 03:52:37,566 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\wheel.py', reloading
+2026-07-06 03:52:37,574 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\__init__.py', reloading
+2026-07-06 03:52:37,574 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\commands\\__init__.py', reloading
+2026-07-06 03:52:37,735 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\distributions\\base.py', reloading
+2026-07-06 03:52:37,735 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\distributions\\base.py', reloading
+2026-07-06 03:52:37,741 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\distributions\\installed.py', reloading
+2026-07-06 03:52:37,741 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\distributions\\installed.py', reloading
+2026-07-06 03:52:37,750 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\distributions\\sdist.py', reloading
+2026-07-06 03:52:37,750 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\distributions\\sdist.py', reloading
+2026-07-06 03:52:37,757 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\distributions\\wheel.py', reloading
+2026-07-06 03:52:37,757 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\distributions\\wheel.py', reloading
+2026-07-06 03:52:37,765 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\distributions\\__init__.py', reloading
+2026-07-06 03:52:37,765 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\distributions\\__init__.py', reloading
+2026-07-06 03:52:37,805 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\index\\collector.py', reloading
+2026-07-06 03:52:37,806 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\index\\collector.py', reloading
+2026-07-06 03:52:37,813 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\index\\package_finder.py', reloading
+2026-07-06 03:52:37,813 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\index\\package_finder.py', reloading
+2026-07-06 03:52:37,821 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\index\\sources.py', reloading
+2026-07-06 03:52:37,821 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\index\\sources.py', reloading
+2026-07-06 03:52:37,827 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\index\\__init__.py', reloading
+2026-07-06 03:52:37,827 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\index\\__init__.py', reloading
+2026-07-06 03:52:37,907 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:52:37,909 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:52:38,416 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:52:38,428 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:52:38,438 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:52:38,448 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:52:38,452 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:52:38,457 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:52:38,525 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\candidate.py', reloading
+2026-07-06 03:52:38,525 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\candidate.py', reloading
+2026-07-06 03:52:38,533 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\direct_url.py', reloading
+2026-07-06 03:52:38,534 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\direct_url.py', reloading
+2026-07-06 03:52:38,539 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\format_control.py', reloading
+2026-07-06 03:52:38,539 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\format_control.py', reloading
+2026-07-06 03:52:38,547 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\index.py', reloading
+2026-07-06 03:52:38,554 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\installation_report.py', reloading
+2026-07-06 03:52:38,554 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\installation_report.py', reloading
+2026-07-06 03:52:38,561 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\link.py', reloading
+2026-07-06 03:52:38,561 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\link.py', reloading
+2026-07-06 03:52:38,569 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\scheme.py', reloading
+2026-07-06 03:52:38,569 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\scheme.py', reloading
+2026-07-06 03:52:38,574 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\search_scope.py', reloading
+2026-07-06 03:52:38,575 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\search_scope.py', reloading
+2026-07-06 03:52:38,583 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\selection_prefs.py', reloading
+2026-07-06 03:52:38,583 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\selection_prefs.py', reloading
+2026-07-06 03:52:38,590 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\target_python.py', reloading
+2026-07-06 03:52:38,590 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\target_python.py', reloading
+2026-07-06 03:52:38,600 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\wheel.py', reloading
+2026-07-06 03:52:38,600 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\wheel.py', reloading
+2026-07-06 03:52:38,606 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\__init__.py', reloading
+2026-07-06 03:52:38,607 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\models\\__init__.py', reloading
+2026-07-06 03:52:38,708 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\network\\auth.py', reloading
+2026-07-06 03:52:38,708 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\network\\auth.py', reloading
+2026-07-06 03:52:38,719 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\network\\cache.py', reloading
+2026-07-06 03:52:38,719 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\network\\cache.py', reloading
+2026-07-06 03:52:38,727 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\network\\download.py', reloading
+2026-07-06 03:52:38,738 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\network\\lazy_wheel.py', reloading
+2026-07-06 03:52:38,738 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\network\\lazy_wheel.py', reloading
+2026-07-06 03:52:38,752 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\network\\session.py', reloading
+2026-07-06 03:52:38,752 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\network\\session.py', reloading
+2026-07-06 03:52:38,759 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\network\\utils.py', reloading
+2026-07-06 03:52:38,759 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\network\\utils.py', reloading
+2026-07-06 03:52:38,772 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\network\\xmlrpc.py', reloading
+2026-07-06 03:52:38,772 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\network\\xmlrpc.py', reloading
+2026-07-06 03:52:38,779 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\network\\__init__.py', reloading
+2026-07-06 03:52:38,779 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\network\\__init__.py', reloading
+2026-07-06 03:52:38,860 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\check.py', reloading
+2026-07-06 03:52:38,860 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\check.py', reloading
+2026-07-06 03:52:38,871 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\freeze.py', reloading
+2026-07-06 03:52:38,872 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\freeze.py', reloading
+2026-07-06 03:52:38,881 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\prepare.py', reloading
+2026-07-06 03:52:38,881 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\prepare.py', reloading
+2026-07-06 03:52:38,892 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\build\\build_tracker.py', reloading
+2026-07-06 03:52:38,892 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\build\\build_tracker.py', reloading
+2026-07-06 03:52:38,901 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\build\\metadata.py', reloading
+2026-07-06 03:52:38,901 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\build\\metadata.py', reloading
+2026-07-06 03:52:38,909 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\build\\metadata_editable.py', reloading
+2026-07-06 03:52:38,909 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\build\\metadata_editable.py', reloading
+2026-07-06 03:52:38,920 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\build\\metadata_legacy.py', reloading
+2026-07-06 03:52:38,920 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\build\\metadata_legacy.py', reloading
+2026-07-06 03:52:38,928 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\build\\wheel.py', reloading
+2026-07-06 03:52:38,928 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\build\\wheel.py', reloading
+2026-07-06 03:52:38,936 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\build\\wheel_editable.py', reloading
+2026-07-06 03:52:38,937 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\build\\wheel_editable.py', reloading
+2026-07-06 03:52:38,942 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\build\\wheel_legacy.py', reloading
+2026-07-06 03:52:38,942 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\build\\wheel_legacy.py', reloading
+2026-07-06 03:52:39,018 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\install\\editable_legacy.py', reloading
+2026-07-06 03:52:39,018 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\install\\editable_legacy.py', reloading
+2026-07-06 03:52:39,024 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\install\\wheel.py', reloading
+2026-07-06 03:52:39,025 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\install\\wheel.py', reloading
+2026-07-06 03:52:39,037 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\install\\__init__.py', reloading
+2026-07-06 03:52:39,037 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\operations\\install\\__init__.py', reloading
+2026-07-06 03:52:39,111 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\req\\constructors.py', reloading
+2026-07-06 03:52:39,111 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\req\\constructors.py', reloading
+2026-07-06 03:52:39,122 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\req\\req_file.py', reloading
+2026-07-06 03:52:39,122 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\req\\req_file.py', reloading
+2026-07-06 03:52:39,135 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\req\\req_install.py', reloading
+2026-07-06 03:52:39,135 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\req\\req_install.py', reloading
+2026-07-06 03:52:39,149 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\req\\req_set.py', reloading
+2026-07-06 03:52:39,149 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\req\\req_set.py', reloading
+2026-07-06 03:52:39,157 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\req\\req_uninstall.py', reloading
+2026-07-06 03:52:39,157 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\req\\req_uninstall.py', reloading
+2026-07-06 03:52:39,167 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\req\\__init__.py', reloading
+2026-07-06 03:52:39,167 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\req\\__init__.py', reloading
+2026-07-06 03:52:39,263 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\resolution\\base.py', reloading
+2026-07-06 03:52:39,263 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\resolution\\base.py', reloading
+2026-07-06 03:52:39,288 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\resolution\\legacy\\resolver.py', reloading
+2026-07-06 03:52:39,288 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\resolution\\legacy\\resolver.py', reloading
+2026-07-06 03:52:39,365 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\resolution\\resolvelib\\base.py', reloading
+2026-07-06 03:52:39,365 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\resolution\\resolvelib\\base.py', reloading
+2026-07-06 03:52:39,381 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\resolution\\resolvelib\\candidates.py', reloading
+2026-07-06 03:52:39,381 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\resolution\\resolvelib\\candidates.py', reloading
+2026-07-06 03:52:39,388 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\resolution\\resolvelib\\factory.py', reloading
+2026-07-06 03:52:39,389 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\resolution\\resolvelib\\factory.py', reloading
+2026-07-06 03:52:39,399 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\resolution\\resolvelib\\found_candidates.py', reloading
+2026-07-06 03:52:39,408 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\resolution\\resolvelib\\provider.py', reloading
+2026-07-06 03:52:39,408 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\resolution\\resolvelib\\provider.py', reloading
+2026-07-06 03:52:39,419 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\resolution\\resolvelib\\reporter.py', reloading
+2026-07-06 03:52:39,419 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\resolution\\resolvelib\\reporter.py', reloading
+2026-07-06 03:52:39,425 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\resolution\\resolvelib\\requirements.py', reloading
+2026-07-06 03:52:39,425 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\resolution\\resolvelib\\requirements.py', reloading
+2026-07-06 03:52:39,435 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\resolution\\resolvelib\\resolver.py', reloading
+2026-07-06 03:52:39,436 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\resolution\\resolvelib\\resolver.py', reloading
+2026-07-06 03:52:39,610 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:52:39,646 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:52:40,034 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:52:40,044 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:52:40,059 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:52:40,068 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:52:40,073 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:52:40,083 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:52:40,103 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\misc.py', reloading
+2026-07-06 03:52:40,114 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\models.py', reloading
+2026-07-06 03:52:40,115 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\models.py', reloading
+2026-07-06 03:52:40,132 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\packaging.py', reloading
+2026-07-06 03:52:40,132 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\packaging.py', reloading
+2026-07-06 03:52:40,140 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\setuptools_build.py', reloading
+2026-07-06 03:52:40,140 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\setuptools_build.py', reloading
+2026-07-06 03:52:40,152 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\subprocess.py', reloading
+2026-07-06 03:52:40,152 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\subprocess.py', reloading
+2026-07-06 03:52:40,160 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\temp_dir.py', reloading
+2026-07-06 03:52:40,188 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\unpacking.py', reloading
+2026-07-06 03:52:40,189 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\unpacking.py', reloading
+2026-07-06 03:52:40,204 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\urls.py', reloading
+2026-07-06 03:52:40,204 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\urls.py', reloading
+2026-07-06 03:52:40,226 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\virtualenv.py', reloading
+2026-07-06 03:52:40,226 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\virtualenv.py', reloading
+2026-07-06 03:52:40,241 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\wheel.py', reloading
+2026-07-06 03:52:40,257 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\_jaraco_text.py', reloading
+2026-07-06 03:52:40,257 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\_jaraco_text.py', reloading
+2026-07-06 03:52:40,273 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\utils\\_log.py', reloading
+2026-07-06 03:52:40,522 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\vcs\\bazaar.py', reloading
+2026-07-06 03:52:40,529 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\vcs\\git.py', reloading
+2026-07-06 03:52:40,529 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\vcs\\git.py', reloading
+2026-07-06 03:52:40,536 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\vcs\\mercurial.py', reloading
+2026-07-06 03:52:40,536 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\vcs\\mercurial.py', reloading
+2026-07-06 03:52:40,544 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\vcs\\subversion.py', reloading
+2026-07-06 03:52:40,544 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\vcs\\subversion.py', reloading
+2026-07-06 03:52:40,554 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\vcs\\versioncontrol.py', reloading
+2026-07-06 03:52:40,554 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\vcs\\versioncontrol.py', reloading
+2026-07-06 03:52:40,560 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\vcs\\__init__.py', reloading
+2026-07-06 03:52:40,560 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_internal\\vcs\\__init__.py', reloading
+2026-07-06 03:52:40,668 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\six.py', reloading
+2026-07-06 03:52:40,668 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\six.py', reloading
+2026-07-06 03:52:40,674 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\typing_extensions.py', reloading
+2026-07-06 03:52:40,675 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\typing_extensions.py', reloading
+2026-07-06 03:52:40,688 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\__init__.py', reloading
+2026-07-06 03:52:40,696 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\adapter.py', reloading
+2026-07-06 03:52:40,696 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\adapter.py', reloading
+2026-07-06 03:52:40,702 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\cache.py', reloading
+2026-07-06 03:52:40,702 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\cache.py', reloading
+2026-07-06 03:52:40,707 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\controller.py', reloading
+2026-07-06 03:52:40,718 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\filewrapper.py', reloading
+2026-07-06 03:52:40,718 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\filewrapper.py', reloading
+2026-07-06 03:52:40,724 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\heuristics.py', reloading
+2026-07-06 03:52:40,724 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\heuristics.py', reloading
+2026-07-06 03:52:40,739 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\serialize.py', reloading
+2026-07-06 03:52:40,739 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\serialize.py', reloading
+2026-07-06 03:52:40,749 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\wrapper.py', reloading
+2026-07-06 03:52:40,749 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\wrapper.py', reloading
+2026-07-06 03:52:40,776 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\_cmd.py', reloading
+2026-07-06 03:52:40,776 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\_cmd.py', reloading
+2026-07-06 03:52:40,788 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\__init__.py', reloading
+2026-07-06 03:52:40,789 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\__init__.py', reloading
+2026-07-06 03:52:40,800 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\caches\\file_cache.py', reloading
+2026-07-06 03:52:40,800 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\caches\\file_cache.py', reloading
+2026-07-06 03:52:40,812 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\caches\\redis_cache.py', reloading
+2026-07-06 03:52:40,812 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\caches\\redis_cache.py', reloading
+2026-07-06 03:52:40,823 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\caches\\__init__.py', reloading
+2026-07-06 03:52:40,823 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\cachecontrol\\caches\\__init__.py', reloading
+2026-07-06 03:52:40,991 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\certifi\\core.py', reloading
+2026-07-06 03:52:40,991 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\certifi\\core.py', reloading
+2026-07-06 03:52:41,016 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\certifi\\__init__.py', reloading
+2026-07-06 03:52:41,017 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\certifi\\__init__.py', reloading
+2026-07-06 03:52:41,034 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\certifi\\__main__.py', reloading
+2026-07-06 03:52:41,034 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\certifi\\__main__.py', reloading
+2026-07-06 03:52:41,176 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:52:41,205 | INFO     | werkzeug |  * Restarting with watchdog (windowsapi)
+2026-07-06 03:52:41,620 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:52:41,631 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-06 03:52:41,645 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:52:41,654 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:52:41,655 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-06 03:52:41,665 | INFO     | werkzeug |  * Debugger PIN: 106-337-974
+2026-07-06 03:52:41,691 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\langbulgarianmodel.py', reloading
+2026-07-06 03:52:41,710 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\langgreekmodel.py', reloading
+2026-07-06 03:52:41,711 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\langgreekmodel.py', reloading
+2026-07-06 03:52:41,736 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\langhebrewmodel.py', reloading
+2026-07-06 03:52:41,736 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\langhebrewmodel.py', reloading
+2026-07-06 03:52:41,764 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\langhungarianmodel.py', reloading
+2026-07-06 03:52:41,764 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\langhungarianmodel.py', reloading
+2026-07-06 03:52:41,792 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\langrussianmodel.py', reloading
+2026-07-06 03:52:41,792 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\langrussianmodel.py', reloading
+2026-07-06 03:52:41,818 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\langthaimodel.py', reloading
+2026-07-06 03:52:41,818 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\langthaimodel.py', reloading
+2026-07-06 03:52:41,874 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\langturkishmodel.py', reloading
+2026-07-06 03:52:41,874 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\langturkishmodel.py', reloading
+2026-07-06 03:52:41,931 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\latin1prober.py', reloading
+2026-07-06 03:52:41,998 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\macromanprober.py', reloading
+2026-07-06 03:52:41,997 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\macromanprober.py', reloading
+2026-07-06 03:52:42,020 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\mbcharsetprober.py', reloading
+2026-07-06 03:52:42,020 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\mbcharsetprober.py', reloading
+2026-07-06 03:52:42,052 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\mbcsgroupprober.py', reloading
+2026-07-06 03:52:42,076 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\.venv\\Lib\\site-packages\\pip\\_vendor\\chardet\\mbcssm.py', reloading

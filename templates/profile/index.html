@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block title %}Profile{% endblock %}{% block page_title %}Profile{% endblock %}
+{% block content %}<div class="card" style="max-width:400px"><div class="card-header">User Profile</div><div class="card-body">
+<p><b>Username:</b> {{ user.username }}</p>
+<p><b>Email:</b> {{ user.email or '-' }}</p>
+<p><b>Role:</b> {{ user.role }}</p>
+<p><b>Last Login:</b> {{ user.last_login[:16] if user.last_login else 'Never' }}</p>
+</div></div>{% endblock %}

@@ -1,17 +1,1 @@
-[
-    {
-        "execution_id": "193e8495-1c13-4c8a-8944-d1cde1757645",
-        "timestamp": "2026-06-30 10:50:25",
-        "total_tests": 7,
-        "passed": 0,
-        "failed": 7,
-        "flaky": 0,
-        "execution_time": "30.84 sec",
-        "report_path": "report_20260630_105025.html",
-        "ai_analysis_count": 0,
-        "exceptions": [],
-        "root_causes": [],
-        "recommendations": [],
-        "flaky_tests": []
-    }
-]
+[]

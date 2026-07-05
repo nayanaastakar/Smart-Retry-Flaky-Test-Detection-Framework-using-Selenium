@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block title %}Quick Run{% endblock %}{% block page_title %}Quick Run{% endblock %}
+{% block content %}
+<div class="card" style="max-width:600px">
+<div class="card-header">Run a Test</div>
+<div class="card-body">
+<p class="text-muted">Use Projects for full test automation. For a quick run, go to a specific project.</p>
+<a href="{{ url_for('projects.index') }}" class="btn btn-purple">Go to Projects</a>
+</div></div>{% endblock %}

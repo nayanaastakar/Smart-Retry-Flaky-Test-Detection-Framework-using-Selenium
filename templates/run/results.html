@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% block title %}Results - {{ project_name }}{% endblock %}{% block page_title %}Results: {{ project_name }}{% endblock %}
+{% block content %}
+<div class="card"><div class="card-header">Execution Results</div><div class="card-body p-0">
+{% if executions %}<table class="table table-dark mb-0">
+<thead><tr><th>Test</th><th>Status</th><th>Retries</th><th>Time</th></tr></thead>
+<tbody>{% for e in executions %}<tr>
+<td>{{ e.test_name }}</td>
+<td>{% if e.status=='pass'%}<span class="badge badge-pass">PASS</span>{% elif e.status=='fail'%}<span class="badge badge-fail">FAIL</span>{% else %}<span class="badge badge-flaky">FLAKY</span>{% endif %}</td>
+<td>{{ e.retry_count or 0 }}</td>
+<td class="text-muted small">{{ e.started_at[:16] if e.started_at else '-' }}</td>
+</tr>{% endfor %}</tbody></table>
+{% else %}<div class="text-center py-4 text-muted">No results yet.</div>{% endif %}
+</div></div>{% endblock %}

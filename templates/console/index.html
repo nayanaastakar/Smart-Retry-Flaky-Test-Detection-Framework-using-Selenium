@@ -1,0 +1,19 @@
+{% extends "base.html" %}{% block title %}Live Console{% endblock %}{% block page_title %}Live Console{% endblock %}
+{% block content %}
+<div class="card"><div class="card-header">Live Execution Console</div>
+<div class="card-body" style="background:#0a0a0f;border-radius:6px;min-height:400px">
+<pre class="text-success mb-0" id="console">Waiting for execution... Run a test from Projects to see live output.</pre>
+</div></div>
+<script>
+function poll() {
+  fetch('/api/v1/executions').then(r=>r.json()).then(data=>{
+    if(data.length>0){
+      const latest = data[0];
+      document.getElementById('console').textContent = latest.log_output || 'No log output available.';
+    }
+  }).catch(()=>{});
+  setTimeout(poll, 2000);
+}
+poll();
+</script>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Execution #{{ execution.id }}{% endblock %}
+{% block page_title %}Execution #{{ execution.id }}{% endblock %}
+{% block content %}
+<a href="{{ url_for('history.index') }}" class="btn btn-outline-secondary mb-3">← Back</a>
+<div class="row g-3">
+  <div class="col-md-8">
+    <div class="card mb-3"><div class="card-header">Details</div><div class="card-body">
+      <p><b>Test:</b> {{ execution.test_name }}</p>
+      <p><b>Status:</b> {% if execution.status=='pass'%}<span class="badge badge-pass">PASS</span>{% elif execution.status=='fail'%}<span class="badge badge-fail">FAIL</span>{% elif execution.status=='flaky'%}<span class="badge badge-flaky">FLAKY</span>{% else %}<span class="badge bg-secondary">{{execution.status}}</span>{% endif %}</p>
+      <p><b>Retries:</b> {{ execution.retry_count or 0 }}</p>
+      <p class="mb-0"><b>Browser:</b> {{ execution.browser }}</p>
+      {% if execution.error_message %}<div class="alert alert-danger mt-2"><b>Error:</b> {{ execution.error_message }}</div>{% endif %}
+    </div></div>
+    {% if execution.log_output %}
+    <div class="card mb-3"><div class="card-header">Logs</div><div class="card-body p-0">
+      <pre class="text-success small mb-0" style="max-height:300px;overflow-y:auto;background:#0a0a0f;padding:1rem;border-radius:0 0 10px 10px">{{ execution.log_output }}</pre>
+    </div></div>
+    {% endif %}
+    {% if retries %}
+    <div class="card mb-3"><div class="card-header">Retry Attempts</div><div class="card-body p-0">
+      <table class="table table-dark mb-0">
+        <thead><tr><th>Attempt</th><th>Status</th><th>Error</th></tr></thead>
+        <tbody>{% for r in retries %}<tr><td>{{ r.attempt_number }}</td><td>{{ r.status }}</td><td class="text-muted small">{{ r.error_message or '-' }}</td></tr>{% endfor %}</tbody>
+      </table>
+    </div></div>
+    {% endif %}
+    {% if ai %}
+    <div class="card"><div class="card-header">AI Analysis</div><div class="card-body">
+      <p><b>Root Cause:</b> {{ ai.root_cause }}</p>
+      <p><b>Suggested Fix:</b> {{ ai.suggested_fix }}</p>
+      <p class="mb-0"><b>Severity:</b> <span class="badge bg-warning">{{ ai.severity }}</span></p>
+    </div></div>
+    {% endif %}
+  </div>
+  <div class="col-md-4">
+    <div class="card mt-0"><div class="card-header">Actions</div><div class="card-body">
+      {% if execution.status in ['fail','flaky'] %}
+      <form method="POST" action="{{ url_for('ai_analysis.analyze', exec_id=execution.id) }}">
+        <button class="btn btn-outline-info w-100 mb-2"><i class="bi bi-robot"></i> Analyze with AI</button>
+      </form>
+      {% endif %}
+      <form method="POST" action="{{ url_for('history.delete', exec_id=execution.id) }}" onsubmit="return confirm('Delete?')">
+        <button class="btn btn-outline-danger w-100">Delete</button>
+      </form>
+    </div></div>
+  </div>
+</div>
+{% endblock %}
