@@ -123,10 +123,10 @@ function renderSteps() {
     d.className = 'step-card d-flex gap-2 align-items-start';
     const label = STEP_TYPES.find(t => t.id === s.action)?.label || s.action;
     d.innerHTML = `<div class="step-num">${i+1}</div>
-      <div class="flex-grow-1">
+      <div class="flex-grow-1" style="min-width: 0;">
         <strong>${label}</strong>
-        ${s.locator_value ? `<span class="badge bg-secondary ms-1">${s.locator_type}=${s.locator_value}</span>` : ''}
-        ${s.input_value ? `<span class="badge bg-dark ms-1">"${s.input_value}"</span>` : ''}
+        ${s.locator_value ? `<span class="badge bg-secondary ms-1 text-wrap text-break d-inline-block" style="max-width: 100%; word-break: break-all; text-align: left;">${s.locator_type}=${s.locator_value}</span>` : ''}
+        ${s.input_value ? `<span class="badge bg-dark ms-1 text-wrap text-break d-inline-block mt-1" style="max-width: 100%; word-break: break-all; white-space: normal; text-align: left; font-family: monospace;">"${s.input_value}"</span>` : ''}
       </div>
       <div class="d-flex gap-1">
         <button type="button" class="btn btn-sm btn-outline-secondary py-0" onclick="moveUp(${i})">↑</button>

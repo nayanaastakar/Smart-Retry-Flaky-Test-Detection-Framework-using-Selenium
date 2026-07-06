@@ -32,6 +32,28 @@
       <p class="mb-0"><b>Severity:</b> <span class="badge bg-warning">{{ ai.severity }}</span></p>
     </div></div>
     {% endif %}
+
+    {% if screenshots %}
+    <div class="card mt-3">
+      <div class="card-header">Evidence</div>
+      <div class="card-body">
+        <div class="row g-2">
+          {% for s in screenshots %}
+          <div class="col-sm-6 col-md-4">
+            <div class="card bg-dark border-secondary h-100">
+              <a href="{{ s.url }}" target="_blank">
+                <img src="{{ s.url }}" class="card-img-top p-1" style="object-fit: contain; max-height: 150px; cursor: pointer;">
+              </a>
+              <div class="card-footer p-1 text-center small text-truncate" title="{{ s.name }}">
+                {{ s.name }}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
   </div>
   <div class="col-md-4">
     <div class="card mt-0"><div class="card-header">Actions</div><div class="card-body">

@@ -47,7 +47,63 @@ def detail(exec_id):
     execution = fetchone("SELECT * FROM executions WHERE id=?", (exec_id,))
     retries = fetchall("SELECT * FROM retries WHERE execution_id=? ORDER BY attempt_number", (exec_id,))
     ai = fetchone("SELECT * FROM ai_analysis WHERE execution_id=?", (exec_id,))
-    return render_template("history/detail.html", execution=execution, retries=retries, ai=ai)
+
+    from config import settings
+    screenshots = []
+    prefix = f"exec_{exec_id}_"
+    if settings.EVIDENCE_DIR.exists():
+        for f in settings.EVIDENCE_DIR.iterdir():
+            if f.is_file() and f.name.startswith(prefix) and f.suffix.lower() in ('.png', '.jpg'):
+                screenshots.append({
+                    "name": f.name,
+                    "url": url_for('history.serve_evidence', filename=f.name)
+                })
+    screenshots.sort(key=lambda x: x["name"])
+
+    return render_template("history/detail.html", execution=execution, retries=retries, ai=ai, screenshots=screenshots)
+
+
+@history_bp.route("/evidence/<path:filename>")
+def serve_evidence(filename):
+    from flask import send_from_directory
+    from config import settings
+    return send_from_directory(settings.EVIDENCE_DIR, filename)
+
+
+@history_bp.route("/evidence")
+@login_required
+def evidence_list():
+    from config import settings
+    by_execution = {}
+    
+    if settings.EVIDENCE_DIR.exists():
+        for f in settings.EVIDENCE_DIR.iterdir():
+            if f.is_file() and f.name.startswith("exec_") and f.suffix.lower() in ('.png', '.jpg'):
+                parts = f.name.split("_")
+                if len(parts) >= 2:
+                    try:
+                        exec_id = int(parts[1])
+                        if exec_id not in by_execution:
+                            by_execution[exec_id] = []
+                        by_execution[exec_id].append({
+                            "name": f.name,
+                            "url": url_for('history.serve_evidence', filename=f.name)
+                        })
+                    except ValueError:
+                        continue
+
+    evidence_data = []
+    for exec_id, screenshots in by_execution.items():
+        exec_info = fetchone("SELECT e.*, p.name as project_name FROM executions e LEFT JOIN projects p ON e.project_id=p.id WHERE e.id=?", (exec_id,))
+        if exec_info:
+            screenshots.sort(key=lambda x: x["name"])
+            evidence_data.append({
+                "execution": exec_info,
+                "screenshots": screenshots
+            })
+            
+    evidence_data.sort(key=lambda x: x["execution"]["id"], reverse=True)
+    return render_template("history/evidence.html", evidence_data=evidence_data)
 
 
 @history_bp.route("/<int:exec_id>/delete", methods=["POST"])

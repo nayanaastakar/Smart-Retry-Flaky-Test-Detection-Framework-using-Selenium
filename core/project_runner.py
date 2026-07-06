@@ -18,7 +18,7 @@ def _take_screenshot(driver, execution_id: int, step_num: int, attempt: int) -> 
     try:
         ts = int(time.time())
         fname = f"exec_{execution_id}_step{step_num}_attempt{attempt}_{ts}.png"
-        path = settings.EVIDENCE_DIR / "screenshots" / fname
+        path = settings.EVIDENCE_DIR / fname
         path.parent.mkdir(parents=True, exist_ok=True)
         driver.save_screenshot(str(path))
         return str(path)
@@ -58,73 +58,92 @@ def run_single_test_case(test_case_id: int) -> dict:
     logs = []
     attempt = 0
 
-    for attempt in range(settings.MAX_RETRIES + 1):
-        driver = None
-        try:
-            from core.driver_factory import create_driver
-            driver = create_driver(browser)
-            logs.append(f"[Attempt {attempt+1}] Browser launched")
+    driver = None
+    try:
+        from core.driver_factory import create_driver
+        driver = create_driver(browser)
 
-            step_results = []
-            all_passed = True
+        for attempt in range(settings.MAX_RETRIES + 1):
+            try:
+                logs.append(f"[Attempt {attempt+1}] " + ("Browser launched" if attempt == 0 else "Reusing existing browser"))
+                
+                step_results = []
+                all_passed = True
 
-            for i, step in enumerate(steps):
-                action = step.get("action", "")
-                result = execute_step(driver, step)
-                logs.append(f"  Step {i+1} [{action}]: {result['message']}")
+                for i, step in enumerate(steps):
+                    action = step.get("action", "")
+                    result = execute_step(driver, step)
+                    logs.append(f"  Step {i+1} [{action}]: {result['message']}")
 
-                # Take screenshot if requested or on failure
-                if result.get("take_screenshot") or not result["success"]:
-                    sc = _take_screenshot(driver, exec_id, i+1, attempt+1)
-                    if sc:
-                        screenshot_path = sc
+                    # Take screenshot only if requested
+                    if result.get("take_screenshot"):
+                        sc = _take_screenshot(driver, exec_id, i+1, attempt+1)
+                        if sc:
+                            screenshot_path = sc
 
-                if not result["success"]:
-                    all_passed = False
-                    last_error = result["message"]
+                    if not result["success"]:
+                        # Capture where it went wrong
+                        sc = _take_screenshot(driver, exec_id, i+1, attempt+1)
+                        if sc:
+                            screenshot_path = sc
+                        all_passed = False
+                        last_error = result["message"]
+                        break
+
+                if all_passed:
+                    passed = True
+                    logs.append(f"[Attempt {attempt+1}] PASSED")
                     break
+                else:
+                    logs.append(f"[Attempt {attempt+1}] FAILED: {last_error}")
 
-            if all_passed:
-                passed = True
-                # Final screenshot
+            except Exception as e:
+                last_error = str(e)
+                # Capture exception screenshot
                 sc = _take_screenshot(driver, exec_id, len(steps), attempt+1)
                 if sc:
                     screenshot_path = sc
-                logs.append(f"[Attempt {attempt+1}] PASSED")
+                logs.append(f"[Attempt {attempt+1}] EXCEPTION: {last_error}")
+                log.exception("Attempt %d failed for test %s", attempt+1, test_name)
+                
+            # Save retry record
+            execute(
+                """INSERT INTO retries (execution_id, attempt_number, status, error_message)
+                   VALUES (?,?,?,?)""",
+                (exec_id, attempt+1, "pass" if passed else "fail", last_error)
+            )
+
+            if passed:
                 break
-            else:
-                logs.append(f"[Attempt {attempt+1}] FAILED: {last_error}")
 
-        except Exception as e:
-            last_error = str(e)
-            logs.append(f"[Attempt {attempt+1}] EXCEPTION: {last_error}")
-            log.exception("Attempt %d failed for test %s", attempt+1, test_name)
-        finally:
-            if driver:
-                try:
-                    driver.quit()
-                except Exception:
-                    pass
+            if attempt < settings.MAX_RETRIES:
+                delay = settings.RETRY_DELAY_SECONDS * (settings.RETRY_BACKOFF_MULTIPLIER ** attempt)
+                time.sleep(delay)
 
-        # Save retry record
-        execute(
-            """INSERT INTO retries (execution_id, attempt_number, status, error_message)
-               VALUES (?,?,?,?)""",
-            (exec_id, attempt+1, "pass" if passed else "fail", last_error)
-        )
-
-        if passed:
-            break
-
-        if attempt < settings.MAX_RETRIES:
-            delay = settings.RETRY_DELAY_SECONDS * (settings.RETRY_BACKOFF_MULTIPLIER ** attempt)
-            time.sleep(delay)
+    finally:
+        if driver:
+            try:
+                driver.quit()
+            except Exception:
+                pass
 
     # Determine flaky: passed on retry (not first attempt)
     flaky = passed and attempt > 0
     status = "pass" if passed else "fail"
     if flaky:
         status = "flaky"
+
+    # If NOT flaky, delete all screenshots for this execution
+    if not flaky:
+        prefix = f"exec_{exec_id}_"
+        if settings.EVIDENCE_DIR.exists():
+            for f in settings.EVIDENCE_DIR.iterdir():
+                if f.is_file() and f.name.startswith(prefix):
+                    try:
+                        f.unlink()
+                    except Exception:
+                        pass
+        screenshot_path = None
 
     log_output = "\n".join(logs)
 
