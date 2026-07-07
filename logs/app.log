@@ -5067,3 +5067,40 @@
 2026-07-06 12:18:16,547 | INFO     | werkzeug | 127.0.0.1 - - [06/Jul/2026 12:18:16] "[36mGET /history/evidence/exec_24_step2_attempt1_1783297907.png HTTP/1.1[0m" 304 -
 2026-07-06 12:18:16,551 | INFO     | werkzeug | 127.0.0.1 - - [06/Jul/2026 12:18:16] "[36mGET /history/evidence/exec_24_step6_attempt2_1783297916.png HTTP/1.1[0m" 304 -
 2026-07-06 12:18:17,711 | INFO     | werkzeug | 127.0.0.1 - - [06/Jul/2026 12:18:17] "GET /reports/ HTTP/1.1" 200 -
+2026-07-07 14:43:15,835 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-07 14:43:15,901 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.17.13.192:8080
+2026-07-07 14:43:15,901 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-07 14:43:15,903 | INFO     | werkzeug |  * Restarting with stat
+2026-07-07 14:43:16,121 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-07 14:43:16,144 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-07 14:43:16,148 | INFO     | werkzeug |  * Debugger PIN: 489-777-182
+2026-07-07 14:43:37,624 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:43:37] "[32mGET / HTTP/1.1[0m" 302 -
+2026-07-07 14:43:37,740 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:43:37] "GET /login HTTP/1.1" 200 -
+2026-07-07 14:43:38,128 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:43:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-07 14:44:31,397 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:44:31] "[32mGET / HTTP/1.1[0m" 302 -
+2026-07-07 14:44:31,460 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:44:31] "GET /login HTTP/1.1" 200 -
+2026-07-07 14:44:39,388 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:44:39] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-07-07 14:44:39,764 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:44:39] "GET / HTTP/1.1" 200 -
+2026-07-07 14:44:45,924 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:44:45] "GET /test-cases/ HTTP/1.1" 200 -
+2026-07-07 14:44:47,439 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:44:47] "GET /projects/ HTTP/1.1" 200 -
+2026-07-07 14:44:52,177 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:44:52] "GET /projects/8 HTTP/1.1" 200 -
+2026-07-07 14:44:53,718 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:44:53] "GET /run/ HTTP/1.1" 200 -
+2026-07-07 14:44:54,418 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:44:54] "GET /test-cases/ HTTP/1.1" 200 -
+2026-07-07 14:44:55,020 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:44:55] "GET /run/ HTTP/1.1" 200 -
+2026-07-07 14:44:56,200 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:44:56] "GET /history/ HTTP/1.1" 200 -
+2026-07-07 14:44:56,999 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:44:56] "GET /ai-analysis/ HTTP/1.1" 200 -
+2026-07-07 14:44:59,036 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:44:59] "GET /ai-analysis/ HTTP/1.1" 200 -
+2026-07-07 14:45:00,332 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:45:00] "GET /reports/ HTTP/1.1" 200 -
+2026-07-07 14:55:33,803 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:55:33] "GET /reports/ HTTP/1.1" 200 -
+2026-07-07 14:55:34,035 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:55:34] "GET /reports/ HTTP/1.1" 200 -
+2026-07-07 14:55:36,949 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:55:36] "GET /test-cases/ HTTP/1.1" 200 -
+2026-07-07 14:55:42,165 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 14:55:42] "GET /projects/7/tests/11/edit HTTP/1.1" 200 -
+2026-07-07 15:00:22,505 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\routes\\projects_routes.py', reloading
+2026-07-07 15:00:22,594 | INFO     | werkzeug |  * Restarting with stat
+2026-07-07 15:00:22,888 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-07 15:00:22,924 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-07 15:00:22,927 | INFO     | werkzeug |  * Debugger PIN: 489-777-182
+2026-07-07 15:03:13,157 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\routes\\projects_routes.py', reloading

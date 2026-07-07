@@ -38,6 +38,8 @@
       <div class="card-header d-flex justify-content-between align-items-center">
         <span>Steps</span>
         <div>
+          <button type="button" class="btn btn-sm btn-outline-success me-1" onclick="document.getElementById('sideFileInput').click()"><i class="bi bi-upload"></i> Import .side</button>
+          <input type="file" id="sideFileInput" accept=".side" style="display:none;" onchange="handleSideUpload(event)">
           <button type="button" class="btn btn-sm btn-outline-info me-1" onclick="openBulkEdit()"><i class="bi bi-pencil-square"></i> Bulk Edit / Paste JSON</button>
           <button type="button" class="btn btn-sm btn-purple" onclick="addStep()"><i class="bi bi-plus"></i> Add Step</button>
         </div>
@@ -141,6 +143,73 @@ function renderSteps() {
 }
 
 function submitForm() { document.getElementById('stepsJson').value = JSON.stringify(steps); }
+
+function handleSideUpload(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const data = JSON.parse(e.target.result);
+      if (!data.tests || data.tests.length === 0) throw new Error("No tests found in .side file");
+      
+      const test = data.tests[0]; // Take first test by default
+      const sideUrl = data.url || "";
+      
+      const newSteps = [];
+      test.commands.forEach(cmd => {
+        let action = "wait";
+        let locator_type = "";
+        let locator_value = "";
+        let input_value = "";
+        
+        // Parse target
+        if (cmd.target) {
+          if (cmd.target.startsWith("id=")) { locator_type = "id"; locator_value = cmd.target.substring(3); }
+          else if (cmd.target.startsWith("name=")) { locator_type = "name"; locator_value = cmd.target.substring(5); }
+          else if (cmd.target.startsWith("xpath=")) { locator_type = "xpath"; locator_value = cmd.target.substring(6); }
+          else if (cmd.target.startsWith("css=")) { locator_type = "css_selector"; locator_value = cmd.target.substring(4); }
+          else if (cmd.target.startsWith("linkText=")) { locator_type = "link_text"; locator_value = cmd.target.substring(9); }
+          else if (cmd.target.startsWith("//")) { locator_type = "xpath"; locator_value = cmd.target; }
+        }
+        
+        // Parse command
+        if (cmd.command === "open") {
+           action = "open_url";
+           input_value = cmd.target.startsWith("http") ? cmd.target : (sideUrl + cmd.target);
+        } else if (cmd.command === "click") {
+           action = "click";
+        } else if (cmd.command === "type" || cmd.command === "sendKeys") {
+           action = "type_text";
+           input_value = cmd.value || "";
+           if (cmd.command === "sendKeys" && input_value.includes("${KEY_ENTER}")) {
+              action = "press_key";
+              input_value = "ENTER";
+           }
+        } else if (cmd.command.includes("assert") || cmd.command.includes("verify")) {
+           action = "assert_text";
+           input_value = cmd.value || cmd.target;
+        } else {
+           return; 
+        }
+        
+        newSteps.push({ action, locator_type, locator_value, input_value, timeout: 10 });
+      });
+      
+      steps = steps.concat(newSteps);
+      renderSteps();
+      
+      if (test.name) {
+         document.querySelector('input[name="name"]').value = test.name;
+      }
+      
+    } catch(err) {
+      alert("Failed to parse .side file: " + err.message);
+    }
+    event.target.value = ''; // reset
+  };
+  reader.readAsText(file);
+}
 
 function openBulkEdit() {
   const modal = new bootstrap.Modal(document.getElementById('bulkEditModal'));
