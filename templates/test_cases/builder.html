@@ -37,10 +37,13 @@
     <div class="card">
       <div class="card-header d-flex justify-content-between align-items-center">
         <span>Steps</span>
-        <button type="button" class="btn btn-sm btn-purple" onclick="addStep()"><i class="bi bi-plus"></i> Add Step</button>
+        <div>
+          <button type="button" class="btn btn-sm btn-outline-info me-1" onclick="openBulkEdit()"><i class="bi bi-pencil-square"></i> Bulk Edit / Paste JSON</button>
+          <button type="button" class="btn btn-sm btn-purple" onclick="addStep()"><i class="bi bi-plus"></i> Add Step</button>
+        </div>
       </div>
       <div class="card-body" id="stepsContainer">
-        <div id="noSteps" class="text-center py-3 text-muted">No steps yet. Click "Add Step" to begin.</div>
+        <div id="noSteps" class="text-center py-3 text-muted">No steps yet. Click "Add Step" or "Bulk Edit" to begin.</div>
       </div>
     </div>
   </div>
@@ -139,7 +142,65 @@ function renderSteps() {
 
 function submitForm() { document.getElementById('stepsJson').value = JSON.stringify(steps); }
 
+function openBulkEdit() {
+  const modal = new bootstrap.Modal(document.getElementById('bulkEditModal'));
+  document.getElementById('bulkStepsJson').value = JSON.stringify(steps, null, 2);
+  document.getElementById('bulkError').style.display = 'none';
+  modal.show();
+}
+
+function applyBulkSteps() {
+  const raw = document.getElementById('bulkStepsJson').value;
+  try {
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) throw new Error("Must be a JSON array of step objects.");
+    steps = parsed;
+    renderSteps();
+    const modalEl = document.getElementById('bulkEditModal');
+    const modal = bootstrap.Modal.getInstance(modalEl);
+    modal.hide();
+  } catch (err) {
+    const errDiv = document.getElementById('bulkError');
+    errDiv.textContent = "Invalid JSON: " + err.message;
+    errDiv.style.display = 'block';
+  }
+}
+
+function loadSampleJSON() {
+  const sample = [
+    { "action": "open_url", "input_value": "https://en.wikipedia.org" },
+    { "action": "type_text", "locator_type": "name", "locator_value": "search", "input_value": "Artificial Intelligence" },
+    { "action": "press_key", "locator_type": "name", "locator_value": "search", "input_value": "ENTER" },
+    { "action": "assert_text", "input_value": "intelligence exhibited by machines" }
+  ];
+  document.getElementById('bulkStepsJson').value = JSON.stringify(sample, null, 2);
+}
+
 toggleLocator();
 renderSteps();
 </script>
+
+<!-- Modal for Bulk Edit -->
+<div class="modal fade" id="bulkEditModal" tabindex="-1" aria-labelledby="bulkEditModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content bg-dark border-secondary">
+      <div class="modal-header border-secondary">
+        <h5 class="modal-title text-white" id="bulkEditModalLabel">Bulk Edit Steps (JSON)</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-muted small">You can paste or edit the raw JSON array of steps directly. This makes it extremely fast to create or duplicate test cases.</p>
+        <textarea class="form-control text-success font-monospace" id="bulkStepsJson" rows="12" style="background:#0a0a0f; border-color:#374151;"></textarea>
+        <div id="bulkError" class="text-danger mt-2 small" style="display:none;"></div>
+      </div>
+      <div class="modal-footer border-secondary d-flex justify-content-between">
+        <button type="button" class="btn btn-outline-info btn-sm" onclick="loadSampleJSON()">Load Wikipedia Sample</button>
+        <div>
+          <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-sm btn-purple" onclick="applyBulkSteps()">Apply Steps</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
