@@ -21,7 +21,7 @@
     <div class="card mb-3"><div class="card-header">Retry Attempts</div><div class="card-body p-0">
       <table class="table table-dark mb-0">
         <thead><tr><th>Attempt</th><th>Status</th><th>Error</th></tr></thead>
-        <tbody>{% for r in retries %}<tr><td>{{ r.attempt_number }}</td><td>{{ r.status }}</td><td class="text-muted small">{{ r.error_message or '-' }}</td></tr>{% endfor %}</tbody>
+        <tbody>{% for r in retries %}<tr><td>{{ r.attempt_number }}</td><td>{{ r.status }}</td><td class="text-muted small">{{ r.error_message | clean_error }}</td></tr>{% endfor %}</tbody>
       </table>
     </div></div>
     {% endif %}

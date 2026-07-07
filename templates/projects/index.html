@@ -9,15 +9,18 @@
   <div class="card-body p-0">
     {% if projects %}
     <div class="table-responsive">
-      <table class="table table-dark table-hover mb-0">
-        <thead><tr><th>Name</th><th>URL</th><th>Browser</th><th>Created</th><th>Actions</th></tr></thead>
+      <table class="table table-dark table-hover mb-0 align-middle">
+        <thead><tr><th>Name</th><th>URL</th><th>Browser</th><th>Actions</th></tr></thead>
         <tbody>
         {% for p in projects %}
         <tr>
-          <td><a href="{{ url_for('projects.detail', project_id=p.id) }}" class="text-info">{{ p.name }}</a></td>
-          <td class="text-muted small">{{ p.url }}</td>
+          <td><a href="{{ url_for('projects.detail', project_id=p.id) }}" class="text-info fw-semibold">{{ p.name }}</a></td>
+          <td class="text-muted small" title="{{ p.url }}">
+            <span style="max-width:220px; display:inline-block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; vertical-align:middle;">
+              {{ p.url[:50] }}{% if p.url|length > 50 %}…{% endif %}
+            </span>
+          </td>
           <td><span class="badge bg-secondary">{{ p.browser }}</span></td>
-          <td class="text-muted small">{{ p.created_at[:10] if p.created_at else '-' }}</td>
           <td>
             <a href="{{ url_for('projects.detail', project_id=p.id) }}" class="btn btn-sm btn-outline-info">Open</a>
             <form method="POST" action="{{ url_for('projects.delete', project_id=p.id) }}" class="d-inline" onsubmit="return confirm('Delete?')">

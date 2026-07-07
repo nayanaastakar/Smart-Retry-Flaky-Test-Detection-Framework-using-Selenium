@@ -40,14 +40,11 @@
         <div>
           <button type="button" class="btn btn-sm btn-outline-warning me-1" onclick="openAIGenerator()"><i class="bi bi-robot"></i> AI Generate</button>
           <button type="button" class="btn btn-sm btn-outline-secondary me-1" onclick="openTemplates()"><i class="bi bi-file-earmark-text"></i> Templates</button>
-          <button type="button" class="btn btn-sm btn-outline-success me-1" onclick="document.getElementById('sideFileInput').click()"><i class="bi bi-upload"></i> Import .side</button>
-          <input type="file" id="sideFileInput" accept=".side" style="display:none;" onchange="handleSideUpload(event)">
-          <button type="button" class="btn btn-sm btn-outline-info me-1" onclick="openBulkEdit()"><i class="bi bi-pencil-square"></i> Bulk Edit / Paste JSON</button>
           <button type="button" class="btn btn-sm btn-purple" onclick="addStep()"><i class="bi bi-plus"></i> Add Step</button>
         </div>
       </div>
       <div class="card-body" id="stepsContainer">
-        <div id="noSteps" class="text-center py-3 text-muted">No steps yet. Click "Add Step" or "Bulk Edit" to begin.</div>
+        <div id="noSteps" class="text-center py-3 text-muted">No steps yet. Click <strong>Add Step</strong>, <strong>AI Generate</strong>, or <strong>Templates</strong> to begin.</div>
       </div>
     </div>
   </div>

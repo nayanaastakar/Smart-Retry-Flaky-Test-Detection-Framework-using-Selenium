@@ -48,6 +48,31 @@ def create_app() -> Flask:
     def basename_filter(value):
         return Path(value).name if value else ""
 
+    @app.template_filter("clean_error")
+    def clean_error_filter(value):
+        if not value: return "-"
+        import re
+        # Remove stacktrace dump
+        if "Stacktrace:" in value:
+            value = value.split("Stacktrace:")[0]
+        # Keep only the first relevant exception line if it's very long
+        lines = value.split('\n')
+        msg = lines[0] if lines else value
+        # Clean common selenium verbose patterns
+        msg = re.sub(r'\(Session info:.*?\)', '', msg)
+        msg = msg.strip()
+        if "no such element" in msg.lower():
+            return "Element not found on the page."
+        if "timeout" in msg.lower():
+            return "Timed out waiting for element or page load."
+        if "element not interactable" in msg.lower():
+            return "Element is present but not interactable (e.g. hidden)."
+        if "stale element" in msg.lower():
+            return "Element became stale (page reloaded or DOM changed)."
+        if "invalid selector" in msg.lower():
+            return "Invalid CSS or XPath selector provided."
+        return msg[:150] + ("..." if len(msg) > 150 else "")
+
     # Blueprints
     from routes.auth_routes import auth_bp
     from routes.dashboard_routes import dashboard_bp
