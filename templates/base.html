@@ -8,14 +8,14 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 <style>
 :root { --sidebar-width: 240px; }
-body { background: #0f1117; color: #e2e8f0; font-family: 'Segoe UI', system-ui, sans-serif; }
-.sidebar { position: fixed; top: 0; left: 0; width: var(--sidebar-width); height: 100vh; background: #1a1d27; border-right: 1px solid #2d3748; z-index: 100; overflow-y: auto; }
-.sidebar-brand { padding: 1.25rem 1rem; border-bottom: 1px solid #2d3748; font-size: 1.1rem; font-weight: 700; color: #7c3aed; }
+body { background: #0f1117; color: #e2e8f0; font-family: 'Segoe UI', system-ui, sans-serif; overflow-x: hidden; }
+.sidebar { position: fixed; top: 0; left: 0; width: var(--sidebar-width); height: 100vh; background: #1a1d27; border-right: 1px solid #2d3748; z-index: 1040; overflow-y: auto; transition: transform 0.3s ease-in-out; }
+.sidebar-brand { padding: 1.25rem 1rem; border-bottom: 1px solid #2d3748; font-size: 1.1rem; font-weight: 700; color: #7c3aed; display: flex; justify-content: space-between; align-items: center; }
 .sidebar-brand span { color: #e2e8f0; }
 .sidebar .nav-link { color: #94a3b8; padding: .5rem 1rem; border-radius: 6px; margin: 2px 8px; transition: all .2s; display: flex; align-items: center; gap: .5rem; }
 .sidebar .nav-link:hover, .sidebar .nav-link.active { background: #2d3748; color: #e2e8f0; }
 .sidebar .nav-link i { width: 20px; text-align: center; }
-.main-content { margin-left: var(--sidebar-width); padding: 1.5rem; min-height: 100vh; }
+.main-content { margin-left: var(--sidebar-width); padding: 1.5rem; min-height: 100vh; transition: margin-left 0.3s ease-in-out; }
 .topbar { background: #1a1d27; border-bottom: 1px solid #2d3748; padding: .75rem 1.5rem; margin: -1.5rem -1.5rem 1.5rem -1.5rem; display: flex; align-items: center; justify-content: space-between; }
 .card { background: #1a1d27; border: 1px solid #2d3748; border-radius: 10px; }
 .card-header { background: transparent; border-bottom: 1px solid #2d3748; font-weight: 600; }
@@ -31,12 +31,27 @@ table { color: #e2e8f0; }
 .table-dark { --bs-table-bg: #1a1d27; }
 .form-control, .form-select { background: #0f1117; border-color: #2d3748; color: #e2e8f0; }
 .form-control:focus, .form-select:focus { background: #0f1117; color: #e2e8f0; border-color: #7c3aed; box-shadow: 0 0 0 .2rem rgba(124,58,237,.25); }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .sidebar { transform: translateX(-100%); }
+  .sidebar.show { transform: translateX(0); }
+  .main-content { margin-left: 0; }
+  .sidebar-backdrop { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.5); z-index: 1030; display: none; }
+  .sidebar-backdrop.show { display: block; }
+}
+.sidebar-close-btn { display: none; background: none; border: none; color: #94a3b8; font-size: 1.5rem; }
+@media (max-width: 768px) { .sidebar-close-btn { display: block; } }
 </style>
 {% block extra_head %}{% endblock %}
 </head>
 <body>
-<nav class="sidebar">
-  <div class="sidebar-brand"><i class="bi bi-arrow-repeat text-purple"></i> Smart<span>Retry</span></div>
+<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <div><i class="bi bi-arrow-repeat text-purple"></i> Smart<span>Retry</span></div>
+    <button class="sidebar-close-btn" onclick="toggleSidebar()"><i class="bi bi-x"></i></button>
+  </div>
   <div class="py-2">
     <div class="px-3 py-1 text-uppercase text-muted" style="font-size:.7rem;letter-spacing:.1em;">Main</div>
     <a href="{{ url_for('dashboard.index') }}" class="nav-link {% if request.endpoint == 'dashboard.index' %}active{% endif %}"><i class="bi bi-speedometer2"></i> Dashboard</a>
@@ -57,7 +72,10 @@ table { color: #e2e8f0; }
 </nav>
 <div class="main-content">
   <div class="topbar">
-    <h5 class="mb-0">{% block page_title %}Dashboard{% endblock %}</h5>
+    <div class="d-flex align-items-center gap-2">
+      <button class="btn btn-outline-secondary d-md-none border-0" onclick="toggleSidebar()"><i class="bi bi-list fs-4"></i></button>
+      <h5 class="mb-0">{% block page_title %}Dashboard{% endblock %}</h5>
+    </div>
     <span class="text-muted small">{{ session.get('username', 'User') }}</span>
   </div>
   {% with messages = get_flashed_messages(with_categories=true) %}
@@ -72,6 +90,12 @@ table { color: #e2e8f0; }
   {% block content %}{% endblock %}
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script>
+  function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('show');
+    document.getElementById('sidebarBackdrop').classList.toggle('show');
+  }
+</script>
 {% block extra_scripts %}{% endblock %}
 </body>
 </html>

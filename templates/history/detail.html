@@ -10,7 +10,7 @@
       <p><b>Status:</b> {% if execution.status=='pass'%}<span class="badge badge-pass">PASS</span>{% elif execution.status=='fail'%}<span class="badge badge-fail">FAIL</span>{% elif execution.status=='flaky'%}<span class="badge badge-flaky">FLAKY</span>{% else %}<span class="badge bg-secondary">{{execution.status}}</span>{% endif %}</p>
       <p><b>Retries:</b> {{ execution.retry_count or 0 }}</p>
       <p class="mb-0"><b>Browser:</b> {{ execution.browser }}</p>
-      {% if execution.error_message %}<div class="alert alert-danger mt-2"><b>Error:</b> {{ execution.error_message }}</div>{% endif %}
+      {% if execution.error_message %}<div class="alert alert-danger mt-2"><b>Error:</b> {{ execution.error_message | clean_error }}</div>{% endif %}
     </div></div>
     {% if execution.log_output %}
     <div class="card mb-3"><div class="card-header">Logs</div><div class="card-body p-0">
@@ -27,7 +27,7 @@
     {% endif %}
     {% if ai %}
     <div class="card"><div class="card-header">AI Analysis</div><div class="card-body">
-      <p><b>Root Cause:</b> {{ ai.root_cause }}</p>
+      <p><b>Root Cause:</b> {{ ai.root_cause | clean_error }}</p>
       <p><b>Suggested Fix:</b> {{ ai.suggested_fix }}</p>
       <p class="mb-0"><b>Severity:</b> <span class="badge bg-warning">{{ ai.severity }}</span></p>
     </div></div>

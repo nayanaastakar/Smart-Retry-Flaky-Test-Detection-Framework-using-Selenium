@@ -52,12 +52,24 @@ def create_app() -> Flask:
     def clean_error_filter(value):
         if not value: return "-"
         import re
-        # Remove stacktrace dump
+        
+        # 1. Remove everything after "Stacktrace:"
         if "Stacktrace:" in value:
             value = value.split("Stacktrace:")[0]
-        # Keep only the first relevant exception line if it's very long
-        lines = value.split('\n')
-        msg = lines[0] if lines else value
+            
+        # 2. Extract the actual message (remove "Message:" prefix if it exists on its own line)
+        lines = [line.strip() for line in value.split('\n') if line.strip()]
+        if not lines:
+            return "-"
+            
+        # If the first line is just "Message:", the real error is on the second line
+        if lines[0] == "Message:" and len(lines) > 1:
+            msg = lines[1]
+        else:
+            msg = lines[0]
+            if msg.startswith("Message:"):
+                msg = msg.replace("Message:", "").strip()
+
         # Clean common selenium verbose patterns
         msg = re.sub(r'\(Session info:.*?\)', '', msg)
         msg = msg.strip()
