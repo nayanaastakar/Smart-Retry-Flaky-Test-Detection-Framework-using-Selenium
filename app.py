@@ -61,16 +61,25 @@ def create_app() -> Flask:
         # Clean common selenium verbose patterns
         msg = re.sub(r'\(Session info:.*?\)', '', msg)
         msg = msg.strip()
-        if "no such element" in msg.lower():
+        
+        msg_lower = msg.lower()
+        if "no such element" in msg_lower or "unable to locate element" in msg_lower:
             return "Element not found on the page."
-        if "timeout" in msg.lower():
+        if "timeout" in msg_lower:
             return "Timed out waiting for element or page load."
-        if "element not interactable" in msg.lower():
+        if "element not interactable" in msg_lower:
             return "Element is present but not interactable (e.g. hidden)."
-        if "stale element" in msg.lower():
+        if "stale element" in msg_lower:
             return "Element became stale (page reloaded or DOM changed)."
-        if "invalid selector" in msg.lower():
+        if "invalid selector" in msg_lower:
             return "Invalid CSS or XPath selector provided."
+        if "assertionerror" in msg_lower:
+            if "welcome" in msg_lower or "dashboard" in msg_lower or "login" in msg_lower:
+                return "Validation Failed: Invalid password or username, or login failed."
+            return f"Validation Failed: {msg.replace('AssertionError:', '').strip()}"
+        if "webdriverexception" in msg_lower or "fatal error" in msg_lower:
+            return "Fatal Error: Browser or Driver crashed unexpectedly."
+        
         return msg[:150] + ("..." if len(msg) > 150 else "")
 
     # Blueprints

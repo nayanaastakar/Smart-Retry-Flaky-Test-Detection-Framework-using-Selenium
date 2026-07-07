@@ -275,6 +275,29 @@ function applyTemplate() {
       { action: "type_text", locator_type: "name", locator_value: "firstname", input_value: "John", timeout: 10 },
       { action: "type_text", locator_type: "name", locator_value: "email", input_value: "john@example.com", timeout: 10 },
       { action: "click", locator_type: "id", locator_value: "registerBtn", timeout: 10 }
+    ],
+    form_submission: [
+      { action: "open_url", input_value: "https://example.com/contact", timeout: 10 },
+      { action: "type_text", locator_type: "name", locator_value: "subject", input_value: "Inquiry", timeout: 10 },
+      { action: "type_text", locator_type: "name", locator_value: "message", input_value: "Hello, I have a question.", timeout: 10 },
+      { action: "click", locator_type: "xpath", locator_value: "//button[text()='Submit']", timeout: 10 },
+      { action: "assert_text", input_value: "Thank you for contacting us", timeout: 10 }
+    ],
+    social_post: [
+      { action: "click", locator_type: "css_selector", locator_value: "div[aria-label='Create a post']", timeout: 10 },
+      { action: "type_text", locator_type: "css_selector", locator_value: "div[role='textbox']", input_value: "This is a new test post!", timeout: 10 },
+      { action: "click", locator_type: "xpath", locator_value: "//button[text()='Post']", timeout: 10 },
+      { action: "wait", input_value: "3", timeout: 10 }
+    ],
+    data_extraction: [
+      { action: "open_url", input_value: "https://example.com/data", timeout: 10 },
+      { action: "wait", input_value: "2", timeout: 10 },
+      { action: "assert_text", input_value: "Total Revenue", timeout: 10 }
+    ],
+    simple_navigation: [
+      { action: "open_url", input_value: "https://example.com", timeout: 10 },
+      { action: "click", locator_type: "link_text", locator_value: "About Us", timeout: 10 },
+      { action: "assert_text", input_value: "Our Story", timeout: 10 }
     ]
   };
   
@@ -371,6 +394,10 @@ renderSteps();
           <option value="search">E-Commerce Search</option>
           <option value="cart">Add to Cart Flow</option>
           <option value="registration">User Registration</option>
+          <option value="form_submission">Form Submission</option>
+          <option value="social_post">Social Media Post</option>
+          <option value="data_extraction">Data Extraction</option>
+          <option value="simple_navigation">Simple Navigation</option>
         </select>
         <p class="text-muted small">Loading a template will append predefined steps. You can edit the locators and values afterwards.</p>
       </div>
