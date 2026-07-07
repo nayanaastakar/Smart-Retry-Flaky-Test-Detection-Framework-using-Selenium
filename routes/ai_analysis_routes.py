@@ -25,25 +25,46 @@ def analyze(exec_id):
         return redirect(url_for("ai_analysis.index"))
     # Heuristic analysis (no Ollama required)
     error = execution["error_message"] or ""
-    if "TimeoutException" in error or "timeout" in error.lower():
-        root_cause = "Element wait timeout - element may not exist or page load is slow"
-        fix = "Increase timeout, check locator, or add explicit waits"
+    error_lower = error.lower()
+    
+    if "timeout" in error_lower:
+        root_cause = "Element wait timeout - element may not exist or page load is slow."
+        fix = "Increase the timeout value in the test step. If the page is slow, add an explicit wait for page load. If the element locator changed, update the locator."
         severity = "high"
-    elif "NoSuchElement" in error or "no such element" in error.lower():
-        root_cause = "Element not found - locator may be incorrect or element is dynamic"
-        fix = "Review and update the element locator"
+    elif "no such element" in error_lower or "unable to locate" in error_lower:
+        root_cause = "Element not found - the locator is incorrect, or the element is not yet attached to the DOM."
+        fix = "Use the DOM inspector to verify the locator (XPath/CSS/ID). Ensure the element isn't inside an iframe, or add a wait step before this action."
         severity = "high"
-    elif "StaleElement" in error:
-        root_cause = "Stale element reference - DOM was updated after element was found"
-        fix = "Re-find the element or add a wait before interaction"
+    elif "stale element" in error_lower:
+        root_cause = "Stale element reference - the DOM was updated or refreshed after the element was initially found."
+        fix = "Do not cache elements across page loads. Re-fetch the element immediately before interacting with it, or add a brief wait."
         severity = "medium"
+    elif "element not interactable" in error_lower:
+        root_cause = "Element not interactable - it exists in the DOM but is hidden, disabled, or covered by another element (like a modal or overlay)."
+        fix = "Check if an overlay/modal is blocking the element. You may need to scroll to the element, wait for it to become visible, or close the blocking modal first."
+        severity = "medium"
+    elif "invalid selector" in error_lower:
+        root_cause = "Invalid selector - the provided XPath or CSS selector has a syntax error."
+        fix = "Review the selector string. Check for missing quotes, brackets, or invalid XPath syntax. Test the selector manually in your browser's console."
+        severity = "high"
+    elif "assertionerror" in error_lower:
+        root_cause = "Validation failure - the application did not return the expected state or text."
+        if "welcome" in error_lower or "dashboard" in error_lower or "login" in error_lower:
+            fix = "Check if the test credentials are valid. The authentication step might have failed."
+        else:
+            fix = "Verify if the application's UI or data has legitimately changed. If the new behavior is correct, update the test assertion string."
+        severity = "critical"
+    elif "webdriverexception" in error_lower or "fatal" in error_lower:
+        root_cause = "Fatal WebDriver Error - the browser crashed or the driver connection was lost."
+        fix = "Ensure your ChromeDriver matches your installed Chrome browser version. Check server resources (RAM/CPU) if the browser is crashing under load."
+        severity = "critical"
     elif error:
-        root_cause = f"Test failure: {error[:200]}"
-        fix = "Review test steps and application state"
+        root_cause = f"Test failure: {error.split('Stacktrace:')[0][:150]}..."
+        fix = "Review the test steps, execution logs, and application state at the time of failure."
         severity = "medium"
     else:
-        root_cause = "Unknown failure - no error message recorded"
-        fix = "Enable detailed logging and re-run the test"
+        root_cause = "Unknown failure - no error message recorded."
+        fix = "Enable detailed logging and re-run the test to capture the failure reason."
         severity = "low"
     execute(
         """INSERT OR REPLACE INTO ai_analysis 

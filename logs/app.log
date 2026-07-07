@@ -5963,3 +5963,12 @@
 2026-07-07 20:08:15,596 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
 2026-07-07 20:08:21,978 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:08:21] "[32mPOST /projects/8/tests/12/run HTTP/1.1[0m" 302 -
 2026-07-07 20:08:22,049 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:08:22] "GET /projects/8 HTTP/1.1" 200 -
+2026-07-07 20:09:44,067 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:09:44] "GET /projects/8 HTTP/1.1" 200 -
+2026-07-07 20:09:44,152 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:09:44] "GET /projects/8 HTTP/1.1" 200 -
+2026-07-07 20:09:44,324 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:09:44] "GET /projects/8 HTTP/1.1" 200 -
+2026-07-07 20:09:47,141 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:09:47] "GET /history/38 HTTP/1.1" 200 -
+2026-07-07 20:10:02,879 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:10:02] "GET / HTTP/1.1" 200 -
+2026-07-07 20:10:07,742 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:10:07] "GET /history/31 HTTP/1.1" 200 -
+2026-07-07 20:10:14,579 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:10:14] "[32mPOST /ai-analysis/analyze/31 HTTP/1.1[0m" 302 -
+2026-07-07 20:10:14,990 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:10:14] "GET /ai-analysis/ HTTP/1.1" 200 -
+2026-07-07 20:12:28,565 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\routes\\ai_analysis_routes.py', reloading
