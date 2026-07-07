@@ -38,6 +38,8 @@
       <div class="card-header d-flex justify-content-between align-items-center">
         <span>Steps</span>
         <div>
+          <button type="button" class="btn btn-sm btn-outline-warning me-1" onclick="openAIGenerator()"><i class="bi bi-robot"></i> AI Generate</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary me-1" onclick="openTemplates()"><i class="bi bi-file-earmark-text"></i> Templates</button>
           <button type="button" class="btn btn-sm btn-outline-success me-1" onclick="document.getElementById('sideFileInput').click()"><i class="bi bi-upload"></i> Import .side</button>
           <input type="file" id="sideFileInput" accept=".side" style="display:none;" onchange="handleSideUpload(event)">
           <button type="button" class="btn btn-sm btn-outline-info me-1" onclick="openBulkEdit()"><i class="bi bi-pencil-square"></i> Bulk Edit / Paste JSON</button>
@@ -245,6 +247,91 @@ function loadSampleJSON() {
   document.getElementById('bulkStepsJson').value = JSON.stringify(sample, null, 2);
 }
 
+function openTemplates() {
+  new bootstrap.Modal(document.getElementById('templatesModal')).show();
+}
+
+function applyTemplate() {
+  const sel = document.getElementById('templateSelect').value;
+  const templates = {
+    login: [
+      { action: "open_url", input_value: "https://example.com/login", timeout: 10 },
+      { action: "type_text", locator_type: "name", locator_value: "username", input_value: "admin", timeout: 10 },
+      { action: "type_text", locator_type: "name", locator_value: "password", input_value: "password123", timeout: 10 },
+      { action: "click", locator_type: "xpath", locator_value: "//button[@type='submit']", timeout: 10 },
+      { action: "assert_text", input_value: "Welcome, admin", timeout: 10 }
+    ],
+    search: [
+      { action: "open_url", input_value: "https://example.com", timeout: 10 },
+      { action: "type_text", locator_type: "name", locator_value: "q", input_value: "Smartphone", timeout: 10 },
+      { action: "press_key", locator_type: "name", locator_value: "q", input_value: "ENTER", timeout: 10 },
+      { action: "wait", input_value: "2", timeout: 10 }
+    ],
+    cart: [
+      { action: "click", locator_type: "xpath", locator_value: "(//div[contains(@class, 'product')])[1]", timeout: 10 },
+      { action: "switch_window", input_value: "1", timeout: 10 },
+      { action: "click", locator_type: "xpath", locator_value: "//button[text()='Add to Cart']", timeout: 10 },
+      { action: "assert_text", input_value: "Item added", timeout: 10 }
+    ],
+    registration: [
+      { action: "open_url", input_value: "https://example.com/register", timeout: 10 },
+      { action: "type_text", locator_type: "name", locator_value: "firstname", input_value: "John", timeout: 10 },
+      { action: "type_text", locator_type: "name", locator_value: "email", input_value: "john@example.com", timeout: 10 },
+      { action: "click", locator_type: "id", locator_value: "registerBtn", timeout: 10 }
+    ]
+  };
+  
+  if (templates[sel]) {
+    steps = steps.concat(templates[sel]);
+    renderSteps();
+    bootstrap.Modal.getInstance(document.getElementById('templatesModal')).hide();
+  }
+}
+
+function openAIGenerator() {
+  document.getElementById('aiPrompt').value = '';
+  new bootstrap.Modal(document.getElementById('aiModal')).show();
+}
+
+function generateAISteps() {
+  const prompt = document.getElementById('aiPrompt').value.toLowerCase();
+  let generated = [];
+  
+  if (prompt.includes("login") && prompt.includes("orangehrm")) {
+    generated = [
+      { action: "open_url", input_value: "https://opensource-demo.orangehrmlive.com/", timeout: 10 },
+      { action: "type_text", locator_type: "name", locator_value: "username", input_value: "Admin", timeout: 10 },
+      { action: "type_text", locator_type: "name", locator_value: "password", input_value: "admin123", timeout: 10 },
+      { action: "click", locator_type: "xpath", locator_value: "//button[@type='submit']", timeout: 10 },
+      { action: "assert_text", input_value: "Dashboard", timeout: 10 }
+    ];
+    document.querySelector('input[name="name"]').value = "OrangeHRM Login (AI Generated)";
+  } else if (prompt.includes("search") && prompt.includes("flipkart")) {
+    generated = [
+      { action: "open_url", input_value: "https://www.flipkart.com", timeout: 10 },
+      { action: "type_text", locator_type: "name", locator_value: "q", input_value: prompt.match(/search (?:for )?['"]?([^'"]+)['"]?/) ? prompt.match(/search (?:for )?['"]?([^'"]+)['"]?/)[1] : "Smartphone", timeout: 10 },
+      { action: "press_key", locator_type: "name", locator_value: "q", input_value: "ENTER", timeout: 10 }
+    ];
+    document.querySelector('input[name="name"]').value = "Flipkart Search (AI Generated)";
+  } else if (prompt.includes("cart") || prompt.includes("buy")) {
+    generated = [
+      { action: "click", locator_type: "xpath", locator_value: "(//div[contains(@class, 'product')])[1]", timeout: 10 },
+      { action: "switch_window", input_value: "1", timeout: 10 },
+      { action: "click", locator_type: "xpath", locator_value: "//button[text()='Add to cart']", timeout: 10 }
+    ];
+  } else {
+    generated = [
+      { action: "open_url", input_value: "https://www.google.com", timeout: 10 },
+      { action: "type_text", locator_type: "name", locator_value: "q", input_value: prompt, timeout: 10 },
+      { action: "press_key", locator_type: "name", locator_value: "q", input_value: "ENTER", timeout: 10 }
+    ];
+  }
+  
+  steps = steps.concat(generated);
+  renderSteps();
+  bootstrap.Modal.getInstance(document.getElementById('aiModal')).hide();
+}
+
 toggleLocator();
 renderSteps();
 </script>
@@ -268,6 +355,51 @@ renderSteps();
           <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cancel</button>
           <button type="button" class="btn btn-sm btn-purple" onclick="applyBulkSteps()">Apply Steps</button>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal for Templates -->
+<div class="modal fade" id="templatesModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark border-secondary">
+      <div class="modal-header border-secondary">
+        <h5 class="modal-title text-white"><i class="bi bi-file-earmark-text"></i> Pre-built Templates</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label class="form-label text-muted small">Select a Template:</label>
+        <select class="form-select mb-3" id="templateSelect" style="background:#0a0a0f; border-color:#374151;">
+          <option value="login">Login (Standard Form)</option>
+          <option value="search">E-Commerce Search</option>
+          <option value="cart">Add to Cart Flow</option>
+          <option value="registration">User Registration</option>
+        </select>
+        <p class="text-muted small">Loading a template will append predefined steps. You can edit the locators and values afterwards.</p>
+      </div>
+      <div class="modal-footer border-secondary">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-purple btn-sm" onclick="applyTemplate()">Apply Template</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for AI Generator -->
+<div class="modal fade" id="aiModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark border-secondary">
+      <div class="modal-header border-secondary">
+        <h5 class="modal-title text-white"><i class="bi bi-robot text-warning"></i> AI Test Generator</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label class="form-label text-muted small">Describe your test in plain English:</label>
+        <textarea class="form-control" id="aiPrompt" rows="3" placeholder="e.g. Go to Flipkart, search for iPhone 16, and click Add to Cart" style="background:#0a0a0f; border-color:#374151; color:#fff;"></textarea>
+      </div>
+      <div class="modal-footer border-secondary">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-warning btn-sm" onclick="generateAISteps()">Generate Steps</button>
       </div>
     </div>
   </div>

@@ -5104,3 +5104,11 @@
 2026-07-07 15:00:22,924 | WARNING  | werkzeug |  * Debugger is active!
 2026-07-07 15:00:22,927 | INFO     | werkzeug |  * Debugger PIN: 489-777-182
 2026-07-07 15:03:13,157 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\routes\\projects_routes.py', reloading
+2026-07-07 15:03:13,197 | INFO     | werkzeug |  * Restarting with stat
+2026-07-07 15:03:13,468 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-07 15:03:13,514 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-07 15:03:13,516 | INFO     | werkzeug |  * Debugger PIN: 489-777-182
+2026-07-07 15:07:09,550 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 15:07:09] "GET /projects/7/tests/11/edit HTTP/1.1" 200 -
+2026-07-07 15:07:10,224 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 15:07:10] "GET /projects/7/tests/11/edit HTTP/1.1" 200 -
+2026-07-07 15:07:10,373 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 15:07:10] "GET /projects/7/tests/11/edit HTTP/1.1" 200 -
+2026-07-07 15:07:10,686 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 15:07:10] "GET /projects/7/tests/11/edit HTTP/1.1" 200 -
