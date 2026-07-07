@@ -5905,3 +5905,61 @@
 2026-07-07 20:02:58,874 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
 2026-07-07 20:02:58,935 | WARNING  | werkzeug |  * Debugger is active!
 2026-07-07 20:02:58,940 | INFO     | werkzeug |  * Debugger PIN: 489-777-182
+2026-07-07 20:05:37,830 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:05:37] "GET /projects/ HTTP/1.1" 200 -
+2026-07-07 20:05:39,681 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:05:39] "GET /projects/ HTTP/1.1" 200 -
+2026-07-07 20:05:46,961 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:05:46] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-07-07 20:06:06,776 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:06:06] "GET / HTTP/1.1" 200 -
+2026-07-07 20:06:06,886 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:06:06] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2026-07-07 20:06:14,307 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:06:14] "GET /run/ HTTP/1.1" 200 -
+2026-07-07 20:06:15,568 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:06:15] "GET /test-cases/ HTTP/1.1" 200 -
+2026-07-07 20:06:18,945 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:06:18] "GET /history/ HTTP/1.1" 200 -
+2026-07-07 20:06:20,828 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:06:20] "GET /history/38 HTTP/1.1" 200 -
+2026-07-07 20:07:44,814 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:07:44] "GET /run/ HTTP/1.1" 200 -
+2026-07-07 20:07:45,446 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:07:45] "GET /test-cases/ HTTP/1.1" 200 -
+2026-07-07 20:07:47,151 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:07:47] "GET /projects/8/tests/12/edit HTTP/1.1" 200 -
+2026-07-07 20:08:01,969 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\app.py', reloading
+2026-07-07 20:08:02,232 | INFO     | werkzeug |  * Restarting with stat
+2026-07-07 20:08:02,598 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-07 20:08:02,633 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-07 20:08:02,641 | INFO     | werkzeug |  * Debugger PIN: 489-777-182
+2026-07-07 20:08:06,468 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:08:06] "[32mPOST /projects/8/tests/12/edit HTTP/1.1[0m" 302 -
+2026-07-07 20:08:06,582 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:08:06] "GET /projects/8 HTTP/1.1" 200 -
+2026-07-07 20:08:09,386 | INFO     | core.driver_factory | Using local 64-bit chromedriver: C:\Users\HP\Downloads\smartretry_screenshots_final\chromedriver_bin\chromedriver-win64\chromedriver.exe
+2026-07-07 20:08:09,387 | DEBUG    | selenium.webdriver.common.driver_finder | Skipping Selenium Manager; path to chrome driver specified in Service class: C:\Users\HP\Downloads\smartretry_screenshots_final\chromedriver_bin\chromedriver-win64\chromedriver.exe
+2026-07-07 20:08:09,509 | DEBUG    | selenium.webdriver.common.service | Started executable: `C:\Users\HP\Downloads\smartretry_screenshots_final\chromedriver_bin\chromedriver-win64\chromedriver.exe` in a child process with pid: 12620 using 0 to output -3
+2026-07-07 20:08:10,061 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:51523/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'chrome', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'goog:chromeOptions': {'extensions': [], 'args': ['--headless=new', '--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu', '--window-size=1920,1080', '--disable-extensions', '--disable-blink-features=AutomationControlled']}}}}
+2026-07-07 20:08:10,062 | DEBUG    | urllib3.connectionpool | Starting new HTTP connection (1): localhost:51523
+2026-07-07 20:08:11,003 | DEBUG    | urllib3.connectionpool | http://localhost:51523 "POST /session HTTP/1.1" 200 0
+2026-07-07 20:08:11,004 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":{"capabilities":{"acceptInsecureCerts":false,"browserName":"chrome","browserVersion":"149.0.7827.201","chrome":{"chromedriverVersion":"149.0.7827.155 (07b52360cc15066f987c910ab34dfbcd4a8778d2-refs/branch-heads/7827@{#3246})","userDataDir":"C:\\Users\\HP\\AppData\\Local\\Temp\\scoped_dir12620_897823737"},"fedcm:accounts":true,"goog:chromeOptions":{"debuggerAddress":"localhost:51526"},"goog:processID":20004,"networkConnectionEnabled":false,"pageLoadStrategy":"normal","platformName":"windows","proxy":{},"setWindowRect":true,"strictFileInteractability":false,"timeouts":{"implicit":0,"pageLoad":300000,"script":30000},"unhandledPromptBehavior":"dismiss and notify","webauthn:extension:credBlob":true,"webauthn:extension:largeBlob":true,"webauthn:extension:minPinLength":true,"webauthn:extension:prf":true,"webauthn:virtualAuthenticators":true},"sessionId":"9e11a04878cbdbff0a696d3116ef24b1"}} | headers=HTTPHeaderDict({'Content-Length': '903', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-07-07 20:08:11,005 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-07-07 20:08:11,006 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:51523/session/9e11a04878cbdbff0a696d3116ef24b1/timeouts {'implicit': 0}
+2026-07-07 20:08:11,010 | DEBUG    | urllib3.connectionpool | http://localhost:51523 "POST /session/9e11a04878cbdbff0a696d3116ef24b1/timeouts HTTP/1.1" 200 0
+2026-07-07 20:08:11,011 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-07-07 20:08:11,012 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-07-07 20:08:11,012 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:51523/session/9e11a04878cbdbff0a696d3116ef24b1/timeouts {'pageLoad': 120000}
+2026-07-07 20:08:11,015 | DEBUG    | urllib3.connectionpool | http://localhost:51523 "POST /session/9e11a04878cbdbff0a696d3116ef24b1/timeouts HTTP/1.1" 200 0
+2026-07-07 20:08:11,016 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-07-07 20:08:11,017 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-07-07 20:08:11,017 | INFO     | core.driver_factory | Driver created: chrome headless=True
+2026-07-07 20:08:11,017 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:51523/session/9e11a04878cbdbff0a696d3116ef24b1/url {'url': 'https://www.google.com'}
+2026-07-07 20:08:12,716 | DEBUG    | urllib3.connectionpool | http://localhost:51523 "POST /session/9e11a04878cbdbff0a696d3116ef24b1/url HTTP/1.1" 200 0
+2026-07-07 20:08:12,717 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-07-07 20:08:12,718 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-07-07 20:08:12,718 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:51523/session/9e11a04878cbdbff0a696d3116ef24b1/element {'using': 'css selector', 'value': '[name="q"]'}
+2026-07-07 20:08:12,754 | DEBUG    | urllib3.connectionpool | http://localhost:51523 "POST /session/9e11a04878cbdbff0a696d3116ef24b1/element HTTP/1.1" 200 0
+2026-07-07 20:08:12,754 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.76359F5CF5133B3118B2AC7D403DA02D.d.E3EBA182B1D78B8BB7B7B55BA566E068.e.1"}} | headers=HTTPHeaderDict({'Content-Length': '125', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-07-07 20:08:12,754 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-07-07 20:08:12,755 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:51523/session/9e11a04878cbdbff0a696d3116ef24b1/element/f.76359F5CF5133B3118B2AC7D403DA02D.d.E3EBA182B1D78B8BB7B7B55BA566E068.e.1/clear {}
+2026-07-07 20:08:12,852 | DEBUG    | urllib3.connectionpool | http://localhost:51523 "POST /session/9e11a04878cbdbff0a696d3116ef24b1/element/f.76359F5CF5133B3118B2AC7D403DA02D.d.E3EBA182B1D78B8BB7B7B55BA566E068.e.1/clear HTTP/1.1" 200 0
+2026-07-07 20:08:12,853 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-07-07 20:08:12,853 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-07-07 20:08:12,854 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:51523/session/9e11a04878cbdbff0a696d3116ef24b1/element/f.76359F5CF5133B3118B2AC7D403DA02D.d.E3EBA182B1D78B8BB7B7B55BA566E068.e.1/value {'text': 'go to rvce website and scroll down and open about rvce', 'value': ['g', 'o', ' ', 't', 'o', ' ', 'r', 'v', 'c', 'e', ' ', 'w', 'e', 'b', 's', 'i', 't', 'e', ' ', 'a', 'n', 'd', ' ', 's', 'c', 'r', 'o', 'l', 'l', ' ', 'd', 'o', 'w', 'n', ' ', 'a', 'n', 'd', ' ', 'o', 'p', 'e', 'n', ' ', 'a', 'b', 'o', 'u', 't', ' ', 'r', 'v', 'c', 'e']}
+2026-07-07 20:08:13,264 | DEBUG    | urllib3.connectionpool | http://localhost:51523 "POST /session/9e11a04878cbdbff0a696d3116ef24b1/element/f.76359F5CF5133B3118B2AC7D403DA02D.d.E3EBA182B1D78B8BB7B7B55BA566E068.e.1/value HTTP/1.1" 200 0
+2026-07-07 20:08:13,264 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-07-07 20:08:13,264 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-07-07 20:08:15,266 | DEBUG    | selenium.webdriver.remote.remote_connection | DELETE http://localhost:51523/session/9e11a04878cbdbff0a696d3116ef24b1 {}
+2026-07-07 20:08:15,595 | DEBUG    | urllib3.connectionpool | http://localhost:51523 "DELETE /session/9e11a04878cbdbff0a696d3116ef24b1 HTTP/1.1" 200 0
+2026-07-07 20:08:15,596 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-07-07 20:08:15,596 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-07-07 20:08:21,978 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:08:21] "[32mPOST /projects/8/tests/12/run HTTP/1.1[0m" 302 -
+2026-07-07 20:08:22,049 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:08:22] "GET /projects/8 HTTP/1.1" 200 -

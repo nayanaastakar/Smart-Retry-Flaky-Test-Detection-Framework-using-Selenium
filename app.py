@@ -50,48 +50,48 @@ def create_app() -> Flask:
 
     @app.template_filter("clean_error")
     def clean_error_filter(value):
-        if not value: return "-"
+        if not value: return "Unknown Error"
         import re
         
         # 1. Remove everything after "Stacktrace:"
         if "Stacktrace:" in value:
             value = value.split("Stacktrace:")[0]
             
-        # 2. Extract the actual message (remove "Message:" prefix if it exists on its own line)
+        # 2. Extract the actual message
         lines = [line.strip() for line in value.split('\n') if line.strip()]
         if not lines:
-            return "-"
+            return "Fatal Error: Browser or Driver crashed unexpectedly."
             
-        # If the first line is just "Message:", the real error is on the second line
         if lines[0] == "Message:" and len(lines) > 1:
             msg = lines[1]
         else:
             msg = lines[0]
             if msg.startswith("Message:"):
                 msg = msg.replace("Message:", "").strip()
+                
+        if not msg:
+            msg = "Fatal Error: Browser or Driver crashed unexpectedly."
 
-        # Clean common selenium verbose patterns
-        msg = re.sub(r'\(Session info:.*?\)', '', msg)
-        msg = msg.strip()
-        
+        msg = re.sub(r'\(Session info:.*?\)', '', msg).strip()
         msg_lower = msg.lower()
+        
         if "no such element" in msg_lower or "unable to locate element" in msg_lower:
-            return "Element not found on the page."
+            return "Element not found. (Reason: The locator is incorrect, or the element hasn't loaded yet)"
         if "timeout" in msg_lower:
-            return "Timed out waiting for element or page load."
+            return "Timeout. (Reason: The page or element took too long to load)"
         if "element not interactable" in msg_lower:
-            return "Element is present but not interactable (e.g. hidden)."
+            return "Element not interactable. (Reason: The element exists but is hidden or covered by another element)"
         if "stale element" in msg_lower:
-            return "Element became stale (page reloaded or DOM changed)."
+            return "Stale element. (Reason: The page refreshed or the DOM changed after finding the element)"
         if "invalid selector" in msg_lower:
-            return "Invalid CSS or XPath selector provided."
+            return "Invalid selector. (Reason: The XPath or CSS selector has a syntax error)"
         if "assertionerror" in msg_lower:
             if "welcome" in msg_lower or "dashboard" in msg_lower or "login" in msg_lower:
-                return "Validation Failed: Invalid password or username, or login failed."
-            return f"Validation Failed: {msg.replace('AssertionError:', '').strip()}"
-        if "webdriverexception" in msg_lower or "fatal error" in msg_lower:
-            return "Fatal Error: Browser or Driver crashed unexpectedly."
-        
+                return "Login Failed. (Reason: Invalid username or password, or dashboard didn't load)"
+            return f"Validation Failed. (Reason: {msg.replace('AssertionError:', '').strip()})"
+        if "webdriverexception" in msg_lower or "fatal error" in msg_lower or "fatal" in msg_lower:
+            return "Fatal Error. (Reason: Browser crashed or WebDriver failed to initialize)"
+            
         return msg[:150] + ("..." if len(msg) > 150 else "")
 
     # Blueprints
