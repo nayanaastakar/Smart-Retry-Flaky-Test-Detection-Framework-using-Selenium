@@ -136,17 +136,8 @@ def run_single_test_case(test_case_id: int) -> dict:
     if flaky:
         status = "flaky"
 
-    # If NOT flaky, delete all screenshots for this execution
-    if not flaky:
-        prefix = f"exec_{exec_id}_"
-        if settings.EVIDENCE_DIR.exists():
-            for f in settings.EVIDENCE_DIR.iterdir():
-                if f.is_file() and f.name.startswith(prefix):
-                    try:
-                        f.unlink()
-                    except Exception:
-                        pass
-        screenshot_path = None
+    # (We no longer delete screenshots on pass so that explicit 'Take Screenshot' steps are preserved)
+
 
     log_output = "\n".join(logs)
 
