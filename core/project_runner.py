@@ -16,6 +16,10 @@ log = logging.getLogger(__name__)
 
 def _take_screenshot(driver, execution_id: int, step_num: int, attempt: int) -> str | None:
     try:
+        # Small delay to ensure the browser has actually rendered the current frame
+        # (prevents completely blank/white images if taken instantly during a page transition)
+        time.sleep(0.5)
+        
         ts = int(time.time())
         fname = f"exec_{execution_id}_step{step_num}_attempt{attempt}_{ts}.png"
         path = settings.EVIDENCE_DIR / fname
