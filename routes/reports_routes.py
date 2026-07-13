@@ -20,9 +20,8 @@ def login_required(f):
 @reports_bp.route("/")
 @login_required
 def index():
-    executions = fetchall(
-        "SELECT * FROM executions ORDER BY started_at DESC LIMIT 100"
-    )
+    rows = fetchall("SELECT * FROM executions ORDER BY started_at DESC LIMIT 100")
+    executions = [dict(r) for r in rows]
     return render_template("reports/index.html", executions=executions)
 
 
