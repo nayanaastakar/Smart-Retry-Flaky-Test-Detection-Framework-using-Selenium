@@ -5972,3 +5972,126 @@
 2026-07-07 20:10:14,579 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:10:14] "[32mPOST /ai-analysis/analyze/31 HTTP/1.1[0m" 302 -
 2026-07-07 20:10:14,990 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:10:14] "GET /ai-analysis/ HTTP/1.1" 200 -
 2026-07-07 20:12:28,565 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\routes\\ai_analysis_routes.py', reloading
+2026-07-07 20:12:28,739 | INFO     | werkzeug |  * Restarting with stat
+2026-07-07 20:12:29,097 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-07 20:12:29,142 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-07 20:12:29,148 | INFO     | werkzeug |  * Debugger PIN: 489-777-182
+2026-07-07 20:14:37,512 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:14:37] "GET /ai-analysis/ HTTP/1.1" 200 -
+2026-07-07 20:14:39,940 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:14:39] "GET /ai-analysis/ HTTP/1.1" 200 -
+2026-07-07 20:14:40,122 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:14:40] "GET /ai-analysis/ HTTP/1.1" 200 -
+2026-07-07 20:14:40,440 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:14:40] "GET /ai-analysis/ HTTP/1.1" 200 -
+2026-07-07 20:14:51,913 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:14:51] "GET /ai-analysis/ HTTP/1.1" 200 -
+2026-07-07 20:14:54,827 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:14:54] "[32mPOST /ai-analysis/analyze/24 HTTP/1.1[0m" 302 -
+2026-07-07 20:14:55,207 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:14:55] "GET /ai-analysis/ HTTP/1.1" 200 -
+2026-07-07 20:15:47,914 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:15:47] "[32mPOST /ai-analysis/analyze/7 HTTP/1.1[0m" 302 -
+2026-07-07 20:15:47,966 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:15:47] "GET /ai-analysis/ HTTP/1.1" 200 -
+2026-07-07 20:15:58,073 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:15:58] "GET /ai-analysis/ HTTP/1.1" 200 -
+2026-07-07 20:16:00,773 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:16:00] "GET /history/ HTTP/1.1" 200 -
+2026-07-07 20:16:03,399 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:16:03] "GET /history/39 HTTP/1.1" 200 -
+2026-07-07 20:16:07,821 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:16:07] "GET /ai-analysis/ HTTP/1.1" 200 -
+2026-07-07 20:16:09,040 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:16:09] "GET /reports/ HTTP/1.1" 200 -
+2026-07-07 20:16:11,964 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:16:11] "GET /history/38 HTTP/1.1" 200 -
+2026-07-07 20:16:23,018 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:16:23] "GET /history/ HTTP/1.1" 200 -
+2026-07-07 20:16:24,456 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:16:24] "GET /reports/ HTTP/1.1" 200 -
+2026-07-07 20:16:28,437 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:16:28] "GET /history/34 HTTP/1.1" 200 -
+2026-07-07 20:16:30,425 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:16:30] "GET /history/ HTTP/1.1" 200 -
+2026-07-07 20:16:34,485 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:16:34] "GET /history/34 HTTP/1.1" 200 -
+2026-07-07 20:16:35,996 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:16:35] "GET /history/ HTTP/1.1" 200 -
+2026-07-07 20:16:37,974 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:16:37] "GET /history/34 HTTP/1.1" 200 -
+2026-07-07 20:16:39,931 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:16:39] "[32mPOST /history/34/delete HTTP/1.1[0m" 302 -
+2026-07-07 20:16:40,278 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:16:40] "GET /history/ HTTP/1.1" 200 -
+2026-07-07 20:16:43,604 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:16:43] "GET /history/33 HTTP/1.1" 200 -
+2026-07-07 20:16:46,092 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:16:46] "[32mPOST /history/33/delete HTTP/1.1[0m" 302 -
+2026-07-07 20:16:46,142 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:16:46] "GET /history/ HTTP/1.1" 200 -
+2026-07-07 20:16:49,407 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:16:49] "GET /test-cases/ HTTP/1.1" 200 -
+2026-07-07 20:17:00,625 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:17:00] "GET /projects/ HTTP/1.1" 200 -
+2026-07-07 20:17:05,808 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:17:05] "GET /projects/3 HTTP/1.1" 200 -
+2026-07-07 20:17:09,089 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:17:09] "GET /projects/3/tests/new HTTP/1.1" 200 -
+2026-07-07 20:18:15,756 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:18:15] "[32mPOST /projects/3/tests/new HTTP/1.1[0m" 302 -
+2026-07-07 20:18:15,822 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:18:15] "GET /projects/3 HTTP/1.1" 200 -
+2026-07-07 20:18:22,253 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:18:22] "GET /projects/3/tests/13/edit HTTP/1.1" 200 -
+2026-07-07 20:18:26,582 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:18:26] "[32mPOST /projects/3/tests/13/edit HTTP/1.1[0m" 302 -
+2026-07-07 20:18:26,924 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:18:26] "GET /projects/3 HTTP/1.1" 200 -
+2026-07-07 20:18:29,172 | INFO     | core.driver_factory | Using local 64-bit chromedriver: C:\Users\HP\Downloads\smartretry_screenshots_final\chromedriver_bin\chromedriver-win64\chromedriver.exe
+2026-07-07 20:18:29,174 | DEBUG    | selenium.webdriver.common.driver_finder | Skipping Selenium Manager; path to chrome driver specified in Service class: C:\Users\HP\Downloads\smartretry_screenshots_final\chromedriver_bin\chromedriver-win64\chromedriver.exe
+2026-07-07 20:18:29,306 | DEBUG    | selenium.webdriver.common.service | Started executable: `C:\Users\HP\Downloads\smartretry_screenshots_final\chromedriver_bin\chromedriver-win64\chromedriver.exe` in a child process with pid: 14624 using 0 to output -3
+2026-07-07 20:18:29,841 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:60361/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'chrome', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'goog:chromeOptions': {'extensions': [], 'args': ['--headless=new', '--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu', '--window-size=1920,1080', '--disable-extensions', '--disable-blink-features=AutomationControlled']}}}}
+2026-07-07 20:18:29,843 | DEBUG    | urllib3.connectionpool | Starting new HTTP connection (1): localhost:60361
+2026-07-07 20:18:30,683 | DEBUG    | urllib3.connectionpool | http://localhost:60361 "POST /session HTTP/1.1" 200 0
+2026-07-07 20:18:30,684 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":{"capabilities":{"acceptInsecureCerts":false,"browserName":"chrome","browserVersion":"149.0.7827.201","chrome":{"chromedriverVersion":"149.0.7827.155 (07b52360cc15066f987c910ab34dfbcd4a8778d2-refs/branch-heads/7827@{#3246})","userDataDir":"C:\\Users\\HP\\AppData\\Local\\Temp\\scoped_dir14624_1452861335"},"fedcm:accounts":true,"goog:chromeOptions":{"debuggerAddress":"localhost:60364"},"goog:processID":7300,"networkConnectionEnabled":false,"pageLoadStrategy":"normal","platformName":"windows","proxy":{},"setWindowRect":true,"strictFileInteractability":false,"timeouts":{"implicit":0,"pageLoad":300000,"script":30000},"unhandledPromptBehavior":"dismiss and notify","webauthn:extension:credBlob":true,"webauthn:extension:largeBlob":true,"webauthn:extension:minPinLength":true,"webauthn:extension:prf":true,"webauthn:virtualAuthenticators":true},"sessionId":"db621fb09571e777524ac0a82a9f9b13"}} | headers=HTTPHeaderDict({'Content-Length': '903', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-07-07 20:18:30,685 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-07-07 20:18:30,686 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:60361/session/db621fb09571e777524ac0a82a9f9b13/timeouts {'implicit': 0}
+2026-07-07 20:18:30,689 | DEBUG    | urllib3.connectionpool | http://localhost:60361 "POST /session/db621fb09571e777524ac0a82a9f9b13/timeouts HTTP/1.1" 200 0
+2026-07-07 20:18:30,690 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-07-07 20:18:30,690 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-07-07 20:18:30,691 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:60361/session/db621fb09571e777524ac0a82a9f9b13/timeouts {'pageLoad': 120000}
+2026-07-07 20:18:30,694 | DEBUG    | urllib3.connectionpool | http://localhost:60361 "POST /session/db621fb09571e777524ac0a82a9f9b13/timeouts HTTP/1.1" 200 0
+2026-07-07 20:18:30,695 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-07-07 20:18:30,696 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-07-07 20:18:30,697 | INFO     | core.driver_factory | Driver created: chrome headless=True
+2026-07-07 20:18:30,697 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:60361/session/db621fb09571e777524ac0a82a9f9b13/url {'url': 'https://www.google.com'}
+2026-07-07 20:18:32,140 | DEBUG    | urllib3.connectionpool | http://localhost:60361 "POST /session/db621fb09571e777524ac0a82a9f9b13/url HTTP/1.1" 200 0
+2026-07-07 20:18:32,140 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-07-07 20:18:32,141 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-07-07 20:18:32,141 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:60361/session/db621fb09571e777524ac0a82a9f9b13/element {'using': 'css selector', 'value': '[name="q"]'}
+2026-07-07 20:18:32,161 | DEBUG    | urllib3.connectionpool | http://localhost:60361 "POST /session/db621fb09571e777524ac0a82a9f9b13/element HTTP/1.1" 200 0
+2026-07-07 20:18:32,162 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.CAA311A0CE986B6E6B36A73DE3979FBD.d.9C495738FEFF880EE734605B44FFCDFB.e.1"}} | headers=HTTPHeaderDict({'Content-Length': '125', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-07-07 20:18:32,163 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-07-07 20:18:32,164 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:60361/session/db621fb09571e777524ac0a82a9f9b13/element/f.CAA311A0CE986B6E6B36A73DE3979FBD.d.9C495738FEFF880EE734605B44FFCDFB.e.1/clear {}
+2026-07-07 20:18:32,204 | DEBUG    | urllib3.connectionpool | http://localhost:60361 "POST /session/db621fb09571e777524ac0a82a9f9b13/element/f.CAA311A0CE986B6E6B36A73DE3979FBD.d.9C495738FEFF880EE734605B44FFCDFB.e.1/clear HTTP/1.1" 200 0
+2026-07-07 20:18:32,205 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-07-07 20:18:32,205 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-07-07 20:18:32,205 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:60361/session/db621fb09571e777524ac0a82a9f9b13/element/f.CAA311A0CE986B6E6B36A73DE3979FBD.d.9C495738FEFF880EE734605B44FFCDFB.e.1/value {'text': 'go to website search for red shoes and purchase the shoes which is under 2000', 'value': ['g', 'o', ' ', 't', 'o', ' ', 'w', 'e', 'b', 's', 'i', 't', 'e', ' ', 's', 'e', 'a', 'r', 'c', 'h', ' ', 'f', 'o', 'r', ' ', 'r', 'e', 'd', ' ', 's', 'h', 'o', 'e', 's', ' ', 'a', 'n', 'd', ' ', 'p', 'u', 'r', 'c', 'h', 'a', 's', 'e', ' ', 't', 'h', 'e', ' ', 's', 'h', 'o', 'e', 's', ' ', 'w', 'h', 'i', 'c', 'h', ' ', 'i', 's', ' ', 'u', 'n', 'd', 'e', 'r', ' ', '2', '0', '0', '0']}
+2026-07-07 20:18:32,519 | DEBUG    | urllib3.connectionpool | http://localhost:60361 "POST /session/db621fb09571e777524ac0a82a9f9b13/element/f.CAA311A0CE986B6E6B36A73DE3979FBD.d.9C495738FEFF880EE734605B44FFCDFB.e.1/value HTTP/1.1" 200 0
+2026-07-07 20:18:32,520 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-07-07 20:18:32,520 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-07-07 20:18:32,520 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:60361/session/db621fb09571e777524ac0a82a9f9b13/element {'using': 'css selector', 'value': '[name="q"]'}
+2026-07-07 20:18:32,579 | DEBUG    | urllib3.connectionpool | http://localhost:60361 "POST /session/db621fb09571e777524ac0a82a9f9b13/element HTTP/1.1" 200 0
+2026-07-07 20:18:32,580 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.CAA311A0CE986B6E6B36A73DE3979FBD.d.9C495738FEFF880EE734605B44FFCDFB.e.1"}} | headers=HTTPHeaderDict({'Content-Length': '125', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-07-07 20:18:32,580 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-07-07 20:18:32,582 | DEBUG    | selenium.webdriver.remote.remote_connection | POST http://localhost:60361/session/db621fb09571e777524ac0a82a9f9b13/element/f.CAA311A0CE986B6E6B36A73DE3979FBD.d.9C495738FEFF880EE734605B44FFCDFB.e.1/value {'text': '\ue007', 'value': ['\ue007']}
+2026-07-07 20:18:32,865 | DEBUG    | urllib3.connectionpool | http://localhost:60361 "POST /session/db621fb09571e777524ac0a82a9f9b13/element/f.CAA311A0CE986B6E6B36A73DE3979FBD.d.9C495738FEFF880EE734605B44FFCDFB.e.1/value HTTP/1.1" 200 0
+2026-07-07 20:18:32,866 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-07-07 20:18:32,867 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-07-07 20:18:32,867 | DEBUG    | selenium.webdriver.remote.remote_connection | DELETE http://localhost:60361/session/db621fb09571e777524ac0a82a9f9b13 {}
+2026-07-07 20:18:32,956 | DEBUG    | urllib3.connectionpool | http://localhost:60361 "DELETE /session/db621fb09571e777524ac0a82a9f9b13 HTTP/1.1" 200 0
+2026-07-07 20:18:32,956 | DEBUG    | selenium.webdriver.remote.remote_connection | Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2026-07-07 20:18:32,957 | DEBUG    | selenium.webdriver.remote.remote_connection | Finished Request
+2026-07-07 20:18:39,261 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:18:39] "[32mPOST /projects/3/tests/13/run HTTP/1.1[0m" 302 -
+2026-07-07 20:18:39,326 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:18:39] "GET /projects/3 HTTP/1.1" 200 -
+2026-07-07 20:18:42,691 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:18:42] "GET /history/40 HTTP/1.1" 200 -
+2026-07-07 20:18:54,992 | INFO     | werkzeug | 127.0.0.1 - - [07/Jul/2026 20:18:54] "GET /history/ HTTP/1.1" 200 -
+2026-07-07 20:19:59,370 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\zip_creator.py', reloading
+2026-07-07 20:19:59,570 | INFO     | werkzeug |  * Restarting with stat
+2026-07-07 20:20:00,165 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-07 20:20:00,217 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-07 20:20:00,224 | INFO     | werkzeug |  * Debugger PIN: 489-777-182
+2026-07-13 22:41:50,267 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-13 22:41:50,421 | INFO     | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.57.136.131:8080
+2026-07-13 22:41:50,421 | INFO     | werkzeug | [33mPress CTRL+C to quit[0m
+2026-07-13 22:41:50,425 | INFO     | werkzeug |  * Restarting with stat
+2026-07-13 22:41:51,102 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-13 22:41:51,277 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-13 22:41:51,286 | INFO     | werkzeug |  * Debugger PIN: 489-777-182
+2026-07-13 22:42:32,353 | INFO     | werkzeug | 127.0.0.1 - - [13/Jul/2026 22:42:32] "[32mGET / HTTP/1.1[0m" 302 -
+2026-07-13 22:42:32,649 | INFO     | werkzeug | 127.0.0.1 - - [13/Jul/2026 22:42:32] "GET /login HTTP/1.1" 200 -
+2026-07-13 22:42:33,969 | INFO     | werkzeug | 127.0.0.1 - - [13/Jul/2026 22:42:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-13 22:42:47,933 | INFO     | werkzeug | 127.0.0.1 - - [13/Jul/2026 22:42:47] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-07-13 22:42:48,077 | INFO     | werkzeug | 127.0.0.1 - - [13/Jul/2026 22:42:48] "GET / HTTP/1.1" 200 -
+2026-07-13 22:42:57,551 | INFO     | werkzeug | 127.0.0.1 - - [13/Jul/2026 22:42:57] "GET / HTTP/1.1" 200 -
+2026-07-13 22:43:47,343 | INFO     | werkzeug | 127.0.0.1 - - [13/Jul/2026 22:43:47] "GET /history/40 HTTP/1.1" 200 -
+2026-07-13 22:43:50,021 | INFO     | werkzeug | 127.0.0.1 - - [13/Jul/2026 22:43:50] "GET /history/ HTTP/1.1" 200 -
+2026-07-13 22:43:53,303 | INFO     | werkzeug | 127.0.0.1 - - [13/Jul/2026 22:43:53] "GET /history/24 HTTP/1.1" 200 -
+2026-07-13 22:43:54,007 | INFO     | werkzeug | 127.0.0.1 - - [13/Jul/2026 22:43:54] "GET /history/evidence/exec_24_step6_attempt2_1783297916.png HTTP/1.1" 200 -
+2026-07-13 22:43:54,009 | INFO     | werkzeug | 127.0.0.1 - - [13/Jul/2026 22:43:54] "GET /history/evidence/exec_24_step2_attempt1_1783297907.png HTTP/1.1" 200 -
+2026-07-13 22:44:00,227 | INFO     | werkzeug | 127.0.0.1 - - [13/Jul/2026 22:44:00] "[32mPOST /ai-analysis/analyze/24 HTTP/1.1[0m" 302 -
+2026-07-13 22:44:00,349 | INFO     | werkzeug | 127.0.0.1 - - [13/Jul/2026 22:44:00] "GET /ai-analysis/ HTTP/1.1" 200 -
+2026-07-13 22:47:25,954 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\routes\\dashboard_routes.py', reloading
+2026-07-13 22:47:26,164 | INFO     | werkzeug |  * Restarting with stat
+2026-07-13 22:47:26,833 | INFO     | database.db_manager | Database initialized at C:\Users\HP\Downloads\smartretry_screenshots_final\database\framework.db
+2026-07-13 22:47:26,874 | WARNING  | werkzeug |  * Debugger is active!
+2026-07-13 22:47:26,883 | INFO     | werkzeug |  * Debugger PIN: 489-777-182
+2026-07-13 22:48:35,043 | INFO     | werkzeug |  * Detected change in 'C:\\Users\\HP\\Downloads\\smartretry_screenshots_final\\routes\\reports_routes.py', reloading

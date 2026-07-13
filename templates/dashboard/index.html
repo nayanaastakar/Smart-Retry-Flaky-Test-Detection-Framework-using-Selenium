@@ -1,74 +1,87 @@
 {% extends "base.html" %}
 {% block title %}Dashboard{% endblock %}
 {% block page_title %}Dashboard{% endblock %}
+{% block extra_head %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+.stat-card { cursor: default; transition: transform 0.2s, box-shadow 0.2s; }
+.stat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+.spark-badge { font-size: 0.72rem; padding: 2px 7px; border-radius: 999px; font-weight: 600; }
+.trend-up   { background: rgba(52,211,153,0.15); color: #34d399; }
+.trend-down { background: rgba(248,113,113,0.15); color: #f87171; }
+.trend-flat { background: rgba(148,163,184,0.15); color: #94a3b8; }
+</style>
+{% endblock %}
 {% block content %}
+
+<!-- ─── KPI Row ─────────────────────────────────────────────── -->
 <div class="row g-3 mb-4">
-  <div class="col-6 col-lg-2">
+  {% set kpis = [
+    ('total',      stats.total,      'Total Runs',    '#38bdf8', 'play-circle'),
+    ('passed',     stats.passed,     'Passed',        '#34d399', 'check-circle'),
+    ('failed',     stats.failed,     'Failed',        '#f87171', 'x-circle'),
+    ('flaky',      stats.flaky,      'Flaky',         '#fbbf24', 'shuffle'),
+    ('projects',   stats.projects,   'Projects',      '#a78bfa', 'folder'),
+    ('test_cases', stats.test_cases, 'Test Cases',    '#f472b6', 'list-check'),
+  ] %}
+  {% for key, val, label, color, icon in kpis %}
+  <div class="col-6 col-sm-4 col-lg-2">
     <div class="stat-card position-relative overflow-hidden">
-      <i class="bi bi-play-circle position-absolute" style="font-size: 5rem; right: -10px; top: -15px; opacity: 0.05;"></i>
-      <div class="stat-val" style="color: #38bdf8;">{{ stats.total }}</div>
-      <div class="text-muted small text-uppercase" style="letter-spacing: 0.05em; font-size: 0.75rem; font-weight: 600;">Total Runs</div>
+      <i class="bi bi-{{ icon }} position-absolute" style="font-size:5rem;right:-10px;top:-15px;opacity:.05;color:{{ color }}"></i>
+      <div class="stat-val" style="color:{{ color }}">{{ val }}</div>
+      <div class="text-muted small text-uppercase" style="letter-spacing:.05em;font-size:.75rem;font-weight:600">{{ label }}</div>
     </div>
   </div>
-  <div class="col-6 col-lg-2">
-    <div class="stat-card position-relative overflow-hidden">
-      <i class="bi bi-check-circle position-absolute" style="font-size: 5rem; right: -10px; top: -15px; opacity: 0.05;"></i>
-      <div class="stat-val text-success" style="color: #34d399 !important;">{{ stats.passed }}</div>
-      <div class="text-muted small text-uppercase" style="letter-spacing: 0.05em; font-size: 0.75rem; font-weight: 600;">Passed</div>
-    </div>
-  </div>
-  <div class="col-6 col-lg-2">
-    <div class="stat-card position-relative overflow-hidden">
-      <i class="bi bi-x-circle position-absolute" style="font-size: 5rem; right: -10px; top: -15px; opacity: 0.05;"></i>
-      <div class="stat-val text-danger" style="color: #f87171 !important;">{{ stats.failed }}</div>
-      <div class="text-muted small text-uppercase" style="letter-spacing: 0.05em; font-size: 0.75rem; font-weight: 600;">Failed</div>
-    </div>
-  </div>
-  <div class="col-6 col-lg-2">
-    <div class="stat-card position-relative overflow-hidden">
-      <i class="bi bi-shuffle position-absolute" style="font-size: 5rem; right: -10px; top: -15px; opacity: 0.05;"></i>
-      <div class="stat-val text-warning" style="color: #fbbf24 !important;">{{ stats.flaky }}</div>
-      <div class="text-muted small text-uppercase" style="letter-spacing: 0.05em; font-size: 0.75rem; font-weight: 600;">Flaky</div>
-    </div>
-  </div>
-  <div class="col-6 col-lg-2">
-    <div class="stat-card position-relative overflow-hidden">
-      <i class="bi bi-folder position-absolute" style="font-size: 5rem; right: -10px; top: -15px; opacity: 0.05;"></i>
-      <div class="stat-val" style="color: #a78bfa;">{{ stats.projects }}</div>
-      <div class="text-muted small text-uppercase" style="letter-spacing: 0.05em; font-size: 0.75rem; font-weight: 600;">Projects</div>
-    </div>
-  </div>
-  <div class="col-6 col-lg-2">
-    <div class="stat-card position-relative overflow-hidden">
-      <i class="bi bi-list-check position-absolute" style="font-size: 5rem; right: -10px; top: -15px; opacity: 0.05;"></i>
-      <div class="stat-val" style="color: #f472b6;">{{ stats.test_cases }}</div>
-      <div class="text-muted small text-uppercase" style="letter-spacing: 0.05em; font-size: 0.75rem; font-weight: 600;">Test Cases</div>
-    </div>
-  </div>
+  {% endfor %}
 </div>
 
+<!-- ─── Health Bar ──────────────────────────────────────────── -->
+{% set total = stats.total %}
+{% set pass_pct  = (stats.passed / total * 100)|round(1) if total > 0 else 0 %}
+{% set flaky_pct = (stats.flaky  / total * 100)|round(1) if total > 0 else 0 %}
+{% set fail_pct  = (stats.failed / total * 100)|round(1) if total > 0 else 0 %}
 <div class="card mb-4">
   <div class="card-header d-flex justify-content-between align-items-center">
-    <span>Overall Health</span>
-    {% set pass_rate = (stats.passed / stats.total * 100)|round(1) if stats.total > 0 else 0 %}
-    <span class="text-success" style="font-weight: 600;">{{ pass_rate }}% Pass Rate</span>
+    <span><i class="bi bi-heart-pulse me-2 text-success"></i>Overall Health</span>
+    <span class="fw-600" style="color:#34d399;font-weight:600">{{ pass_pct }}% Pass Rate</span>
   </div>
   <div class="card-body">
-    {% set fail_rate = (stats.failed / stats.total * 100)|round(1) if stats.total > 0 else 0 %}
-    {% set flaky_rate = (stats.flaky / stats.total * 100)|round(1) if stats.total > 0 else 0 %}
-    <div class="progress mb-3" style="height: 10px; background-color: #2d3748;">
-      <div class="progress-bar bg-success" style="width: {{ pass_rate }}%"></div>
-      <div class="progress-bar bg-warning" style="width: {{ flaky_rate }}%"></div>
-      <div class="progress-bar bg-danger" style="width: {{ fail_rate }}%"></div>
+    <div class="progress mb-3" style="height:12px;background:#2d3748;border-radius:999px;overflow:hidden">
+      <div class="progress-bar bg-success" style="width:{{ pass_pct }}%;border-radius:0"></div>
+      <div class="progress-bar bg-warning" style="width:{{ flaky_pct }}%;border-radius:0"></div>
+      <div class="progress-bar bg-danger"  style="width:{{ fail_pct }}%;border-radius:0"></div>
     </div>
     <div class="d-flex gap-4 small">
-      <span style="color: #94a3b8;"><span style="color: #34d399; font-size: 0.5rem; vertical-align: middle; margin-right: 4px;">●</span>Pass {{ pass_rate }}%</span>
-      <span style="color: #94a3b8;"><span style="color: #fbbf24; font-size: 0.5rem; vertical-align: middle; margin-right: 4px;">●</span>Flaky {{ flaky_rate }}%</span>
-      <span style="color: #94a3b8;"><span style="color: #f87171; font-size: 0.5rem; vertical-align: middle; margin-right: 4px;">●</span>Fail {{ fail_rate }}%</span>
+      <span style="color:#94a3b8"><span style="color:#34d399;font-size:.5rem;vertical-align:middle;margin-right:4px">●</span>Pass {{ pass_pct }}%</span>
+      <span style="color:#94a3b8"><span style="color:#fbbf24;font-size:.5rem;vertical-align:middle;margin-right:4px">●</span>Flaky {{ flaky_pct }}%</span>
+      <span style="color:#94a3b8"><span style="color:#f87171;font-size:.5rem;vertical-align:middle;margin-right:4px">●</span>Fail {{ fail_pct }}%</span>
     </div>
   </div>
 </div>
 
+<!-- ─── Charts Row ─────────────────────────────────────────── -->
+<div class="row g-3 mb-4">
+  <!-- Donut -->
+  <div class="col-md-4">
+    <div class="card h-100">
+      <div class="card-header"><i class="bi bi-pie-chart me-2"></i>Result Distribution</div>
+      <div class="card-body d-flex align-items-center justify-content-center" style="min-height:220px">
+        <canvas id="donutChart" style="max-height:200px"></canvas>
+      </div>
+    </div>
+  </div>
+  <!-- Line trend -->
+  <div class="col-md-8">
+    <div class="card h-100">
+      <div class="card-header"><i class="bi bi-graph-up me-2"></i>Test Runs — Last 7 Days</div>
+      <div class="card-body" style="min-height:220px">
+        <canvas id="trendChart" style="max-height:200px"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Recent Executions ──────────────────────────────────── -->
 <div class="card">
   <div class="card-header d-flex justify-content-between align-items-center">
     <span><i class="bi bi-clock-history me-2"></i>Recent Executions</span>
@@ -77,20 +90,20 @@
   <div class="card-body p-0">
     {% if recent %}
     <div class="table-responsive">
-      <table class="table table-dark table-hover mb-0">
+      <table class="table table-dark table-hover mb-0 align-middle">
         <thead><tr><th>Test</th><th>Status</th><th>Retries</th><th>Duration</th><th>Time</th><th></th></tr></thead>
         <tbody>
         {% for e in recent %}
         <tr>
-          <td>{{ e.test_name }}</td>
+          <td class="fw-semibold">{{ e.test_name }}</td>
           <td>
             {% if e.status == 'pass' %}<span class="badge badge-pass">PASS</span>
             {% elif e.status == 'fail' %}<span class="badge badge-fail">FAIL</span>
             {% elif e.status == 'flaky' %}<span class="badge badge-flaky">FLAKY</span>
             {% else %}<span class="badge bg-secondary">{{ e.status|upper }}</span>{% endif %}
           </td>
-          <td>{{ e.retry_count or 0 }}</td>
-          <td>{{ "%.1f"|format(e.duration_seconds or 0) }}s</td>
+          <td><span class="badge bg-secondary">{{ e.retry_count or 0 }}</span></td>
+          <td class="text-muted small">{{ "%.1f"|format(e.duration_seconds or 0) }}s</td>
           <td class="text-muted small">{{ e.started_at[:16] if e.started_at else '-' }}</td>
           <td><a href="{{ url_for('history.detail', exec_id=e.id) }}" class="btn btn-sm btn-outline-secondary">View</a></td>
         </tr>
@@ -106,4 +119,130 @@
     {% endif %}
   </div>
 </div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+const passed = {{ stats.passed }};
+const failed = {{ stats.failed }};
+const flaky  = {{ stats.flaky  }};
+const recent = {{ recent | tojson }};
+
+// ── Donut Chart ──────────────────────────────────────────────
+const donutCtx = document.getElementById('donutChart').getContext('2d');
+new Chart(donutCtx, {
+  type: 'doughnut',
+  data: {
+    labels: ['Pass', 'Flaky', 'Fail'],
+    datasets: [{
+      data: [passed, flaky, failed],
+      backgroundColor: ['#34d399','#fbbf24','#f87171'],
+      borderColor: '#1a1d27',
+      borderWidth: 3,
+      hoverOffset: 6
+    }]
+  },
+  options: {
+    responsive: true,
+    cutout: '68%',
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: { color: '#94a3b8', padding: 16, font: { size: 12 } }
+      },
+      tooltip: {
+        callbacks: {
+          label: ctx => ` ${ctx.label}: ${ctx.parsed} runs`
+        }
+      }
+    }
+  }
+});
+
+// ── Line / Trend Chart ───────────────────────────────────────
+function buildTrendData() {
+  const days = [];
+  const passArr = [], failArr = [], flakyArr = [];
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date();
+    d.setDate(d.getDate() - i);
+    days.push(d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' }));
+    const dateStr = d.toISOString().slice(0, 10);
+    let p = 0, f = 0, fl = 0;
+    recent.forEach(e => {
+      if (e.started_at && e.started_at.startsWith(dateStr)) {
+        if (e.status === 'pass') p++;
+        else if (e.status === 'fail') f++;
+        else if (e.status === 'flaky') fl++;
+      }
+    });
+    passArr.push(p); failArr.push(f); flakyArr.push(fl);
+  }
+  return { days, passArr, failArr, flakyArr };
+}
+
+const td = buildTrendData();
+const trendCtx = document.getElementById('trendChart').getContext('2d');
+new Chart(trendCtx, {
+  type: 'line',
+  data: {
+    labels: td.days,
+    datasets: [
+      {
+        label: 'Pass',
+        data: td.passArr,
+        borderColor: '#34d399',
+        backgroundColor: 'rgba(52,211,153,0.1)',
+        tension: 0.4,
+        fill: true,
+        pointRadius: 4,
+        pointHoverRadius: 6
+      },
+      {
+        label: 'Fail',
+        data: td.failArr,
+        borderColor: '#f87171',
+        backgroundColor: 'rgba(248,113,113,0.08)',
+        tension: 0.4,
+        fill: true,
+        pointRadius: 4,
+        pointHoverRadius: 6
+      },
+      {
+        label: 'Flaky',
+        data: td.flakyArr,
+        borderColor: '#fbbf24',
+        backgroundColor: 'rgba(251,191,36,0.08)',
+        tension: 0.4,
+        fill: true,
+        pointRadius: 4,
+        pointHoverRadius: 6
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: {
+        position: 'top',
+        labels: { color: '#94a3b8', font: { size: 12 }, padding: 16 }
+      }
+    },
+    scales: {
+      x: {
+        ticks: { color: '#64748b', font: { size: 11 } },
+        grid: { color: 'rgba(45,55,72,0.5)' }
+      },
+      y: {
+        beginAtZero: true,
+        ticks: { color: '#64748b', precision: 0, font: { size: 11 } },
+        grid: { color: 'rgba(45,55,72,0.5)' }
+      }
+    }
+  }
+});
+</script>
 {% endblock %}

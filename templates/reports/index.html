@@ -1,16 +1,114 @@
-{% extends "base.html" %}{% block title %}Reports{% endblock %}{% block page_title %}Reports{% endblock %}
+{% extends "base.html" %}
+{% block title %}Reports{% endblock %}
+{% block page_title %}Reports{% endblock %}
+{% block extra_head %}
+<style>
+.export-btn { border-radius: 8px; font-size: 0.85rem; font-weight: 600; }
+.stat-pill {
+  background: rgba(45,55,72,0.6);
+  border: 1px solid #374151;
+  border-radius: 10px;
+  padding: 12px 20px;
+  text-align: center;
+}
+.stat-pill .val { font-size: 1.6rem; font-weight: 700; }
+.stat-pill .lbl { font-size: 0.75rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; }
+</style>
+{% endblock %}
 {% block content %}
-<div class="card"><div class="card-header">Execution Reports</div><div class="card-body p-0">
-{% if executions %}
-<table class="table table-dark table-hover mb-0">
-<thead><tr><th>Test</th><th>Status</th><th>Time</th><th>Actions</th></tr></thead>
-<tbody>
-{% for e in executions %}<tr>
-<td>{{ e.test_name }}</td>
-<td>{% if e.status=='pass'%}<span class="badge badge-pass">PASS</span>{% elif e.status=='fail'%}<span class="badge badge-fail">FAIL</span>{% else %}<span class="badge badge-flaky">FLAKY</span>{% endif %}</td>
-<td class="text-muted small">{{ e.started_at[:16] if e.started_at else '-' }}</td>
-<td><a href="{{ url_for('history.detail', exec_id=e.id) }}" class="btn btn-sm btn-outline-info">View</a></td>
-</tr>{% endfor %}
-</tbody></table>
-{% else %}<div class="text-center py-4 text-muted">No reports yet.</div>{% endif %}
-</div></div>{% endblock %}
+
+<!-- ── Summary Pills ─────────────────────────────────────── -->
+{% set total  = executions|length %}
+{% set passed = executions|selectattr('status','equalto','pass')|list|length %}
+{% set failed = executions|selectattr('status','equalto','fail')|list|length %}
+{% set flaky  = executions|selectattr('status','equalto','flaky')|list|length %}
+{% set pass_pct = ((passed / total * 100)|round(1)) if total > 0 else 0 %}
+
+<div class="row g-3 mb-4">
+  <div class="col-6 col-md-3">
+    <div class="stat-pill">
+      <div class="val" style="color:#38bdf8">{{ total }}</div>
+      <div class="lbl">Total Runs</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="stat-pill">
+      <div class="val" style="color:#34d399">{{ passed }}</div>
+      <div class="lbl">Passed</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="stat-pill">
+      <div class="val" style="color:#f87171">{{ failed }}</div>
+      <div class="lbl">Failed</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="stat-pill">
+      <div class="val" style="color:#34d399">{{ pass_pct }}%</div>
+      <div class="lbl">Pass Rate</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Table + Export ────────────────────────────────────── -->
+<div class="card">
+  <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
+    <span><i class="bi bi-file-earmark-bar-graph me-2"></i>Execution Reports</span>
+    <div class="d-flex gap-2">
+      <a href="{{ url_for('reports.export_csv') }}" class="btn btn-sm btn-outline-success export-btn">
+        <i class="bi bi-download me-1"></i>Export CSV
+      </a>
+      <a href="{{ url_for('reports.export_json') }}" class="btn btn-sm btn-outline-info export-btn">
+        <i class="bi bi-braces me-1"></i>Export JSON
+      </a>
+    </div>
+  </div>
+  <div class="card-body p-0">
+    {% if executions %}
+    <div class="table-responsive">
+      <table class="table table-dark table-hover mb-0 align-middle">
+        <thead>
+          <tr>
+            <th>Test Name</th>
+            <th>Status</th>
+            <th>Retries</th>
+            <th>Duration</th>
+            <th>Browser</th>
+            <th>Started At</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for e in executions %}
+          <tr>
+            <td class="fw-semibold">{{ e.test_name }}</td>
+            <td>
+              {% if e.status == 'pass' %}<span class="badge badge-pass">PASS</span>
+              {% elif e.status == 'fail' %}<span class="badge badge-fail">FAIL</span>
+              {% elif e.status == 'flaky' %}<span class="badge badge-flaky">FLAKY</span>
+              {% else %}<span class="badge bg-secondary">{{ e.status|upper }}</span>{% endif %}
+            </td>
+            <td><span class="badge bg-secondary">{{ e.retry_count or 0 }}</span></td>
+            <td class="text-muted small">{{ "%.1f"|format(e.duration_seconds or 0) }}s</td>
+            <td><span class="badge bg-secondary">{{ e.browser or 'chrome' }}</span></td>
+            <td class="text-muted small">{{ e.started_at[:16] if e.started_at else '-' }}</td>
+            <td>
+              <a href="{{ url_for('history.detail', exec_id=e.id) }}" class="btn btn-sm btn-outline-info">
+                <i class="bi bi-eye me-1"></i>View
+              </a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <div class="text-center py-5 text-muted">
+      <i class="bi bi-file-earmark-bar-graph" style="font-size:3rem;color:#374151"></i>
+      <p class="mt-3">No execution data yet. Run some tests first.</p>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

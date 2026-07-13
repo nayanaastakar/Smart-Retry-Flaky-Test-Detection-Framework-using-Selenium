@@ -1,36 +1,290 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Login - SmartRetry</title>
+<title>Login — SmartRetry</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
-<style>body{background:#0f1117;color:#e2e8f0;min-height:100vh;display:flex;align-items:center;justify-content:center}.card{background:#1a1d27;border:1px solid #2d3748;border-radius:14px;}.form-control{background:#0f1117;border-color:#374151;color:#e2e8f0}.form-control:focus{background:#0f1117;color:#e2e8f0;border-color:#7c3aed;box-shadow:0 0 0 .2rem rgba(124,58,237,.25)}</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #06060f;
+    color: #e2e8f0;
+    font-family: 'Inter', system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Animated gradient orbs */
+  .bg-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.25;
+    animation: float 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .orb1 { width: 500px; height: 500px; background: #7c3aed; top: -150px; left: -150px; animation-delay: 0s; }
+  .orb2 { width: 400px; height: 400px; background: #2563eb; bottom: -100px; right: -100px; animation-delay: 3s; }
+  .orb3 { width: 300px; height: 300px; background: #db2777; top: 50%; left: 50%; animation-delay: 5s; }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-30px) scale(1.05); }
+  }
+
+  /* Grid overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(124,58,237,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124,58,237,0.07) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .login-wrapper {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 900px;
+    width: 100%;
+    padding: 2rem;
+  }
+
+  /* Left brand panel */
+  .brand-panel {
+    flex: 1;
+    display: none;
+  }
+  @media (min-width: 768px) { .brand-panel { display: block; } }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 2rem;
+  }
+  .brand-logo .logo-icon {
+    width: 52px; height: 52px;
+    background: linear-gradient(135deg, #7c3aed, #2563eb);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem;
+  }
+  .brand-logo .logo-text { font-size: 1.8rem; font-weight: 800; }
+  .brand-logo .logo-text span { color: #7c3aed; }
+
+  .brand-tagline {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #e2e8f0, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .brand-sub {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  .feature-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #94a3b8;
+    font-size: 0.9rem;
+  }
+  .feature-list li .fi {
+    width: 28px; height: 28px;
+    background: rgba(124,58,237,0.15);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: #7c3aed;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  /* Login card */
+  .login-card {
+    background: rgba(26, 29, 39, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(124,58,237,0.25);
+    border-radius: 20px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(124,58,237,0.1);
+  }
+
+  .card-heading {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+  .card-sub {
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+  }
+
+  .form-label { color: #94a3b8; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+
+  .input-group-icon {
+    position: relative;
+  }
+  .input-group-icon .form-control {
+    background: rgba(15,17,23,0.8);
+    border: 1px solid #374151;
+    border-radius: 10px;
+    color: #e2e8f0;
+    padding: 0.7rem 1rem 0.7rem 2.75rem;
+    font-size: 0.9rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .input-group-icon .form-control:focus {
+    background: rgba(15,17,23,0.9);
+    color: #e2e8f0;
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124,58,237,0.2);
+    outline: none;
+  }
+  .input-group-icon .icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4b5563;
+    font-size: 1rem;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .btn-login {
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.75rem;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-login::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #6d28d9, #4338ca);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .btn-login:hover::after { opacity: 1; }
+  .btn-login span { position: relative; z-index: 1; }
+
+  .default-cred {
+    background: rgba(124,58,237,0.08);
+    border: 1px solid rgba(124,58,237,0.2);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .default-cred i { color: #7c3aed; }
+  .default-cred code { color: #a78bfa; font-size: 0.82rem; }
+
+  .alert-danger {
+    background: rgba(127,29,29,0.4);
+    border: 1px solid rgba(248,113,113,0.3);
+    color: #f87171;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    padding: 10px 14px;
+    margin-bottom: 1rem;
+  }
+</style>
 </head>
 <body>
-<div class="card p-4" style="width:380px">
-  <div class="text-center mb-4">
-    <div style="font-size:2rem;color:#7c3aed">↺</div>
-    <h4 class="fw-bold">SmartRetry</h4>
-    <p class="text-muted small">Flaky Test Detection Framework</p>
+<div class="bg-orb orb1"></div>
+<div class="bg-orb orb2"></div>
+<div class="bg-orb orb3"></div>
+
+<div class="login-wrapper">
+  <!-- Left Brand Panel -->
+  <div class="brand-panel">
+    <div class="brand-logo">
+      <div class="logo-icon">↺</div>
+      <div class="logo-text">Smart<span>Retry</span></div>
+    </div>
+    <div class="brand-tagline">Intelligent Test<br>Automation at Scale</div>
+    <p class="brand-sub">
+      Automatically detect, retry, and diagnose flaky Selenium tests.
+      Get AI-powered root cause analysis and actionable fixes — instantly.
+    </p>
+    <ul class="feature-list">
+      <li><div class="fi"><i class="bi bi-arrow-repeat"></i></div> Smart retry engine with exponential backoff</li>
+      <li><div class="fi"><i class="bi bi-robot"></i></div> AI-powered failure analysis & diagnosis</li>
+      <li><div class="fi"><i class="bi bi-bar-chart-line"></i></div> Flaky test scoring & trend analytics</li>
+      <li><div class="fi"><i class="bi bi-camera"></i></div> Screenshot evidence collection</li>
+      <li><div class="fi"><i class="bi bi-file-earmark-text"></i></div> Visual test builder — no code needed</li>
+    </ul>
   </div>
-  {% with messages = get_flashed_messages(with_categories=true) %}
-    {% for cat, msg in messages %}
-    <div class="alert alert-danger">{{ msg }}</div>
-    {% endfor %}
-  {% endwith %}
-  <form method="POST">
-    <div class="mb-3">
-      <label class="form-label">Username</label>
-      <input type="text" name="username" class="form-control" required autofocus>
+
+  <!-- Login Card -->
+  <div class="login-card">
+    <div class="card-heading">Welcome back 👋</div>
+    <div class="card-sub">Sign in to your SmartRetry dashboard</div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for cat, msg in messages %}
+      <div class="alert-danger"><i class="bi bi-exclamation-circle me-1"></i>{{ msg }}</div>
+      {% endfor %}
+    {% endwith %}
+
+    <form method="POST">
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <div class="input-group-icon">
+          <i class="bi bi-person icon"></i>
+          <input type="text" name="username" class="form-control" required autofocus placeholder="Enter username">
+        </div>
+      </div>
+      <div class="mb-4">
+        <label class="form-label">Password</label>
+        <div class="input-group-icon">
+          <i class="bi bi-lock icon"></i>
+          <input type="password" name="password" class="form-control" required placeholder="Enter password">
+        </div>
+      </div>
+      <button type="submit" class="btn-login"><span><i class="bi bi-box-arrow-in-right me-2"></i>Sign In</span></button>
+    </form>
+
+    <div class="default-cred">
+      <i class="bi bi-info-circle"></i>
+      Default: <code>admin</code> / <code>Admin@123</code>
     </div>
-    <div class="mb-3">
-      <label class="form-label">Password</label>
-      <input type="password" name="password" class="form-control" required>
-    </div>
-    <button type="submit" class="btn btn-primary w-100" style="background:#7c3aed;border-color:#7c3aed">Login</button>
-  </form>
-  <p class="text-center text-muted small mt-3">Default: admin / Admin@123</p>
+  </div>
 </div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

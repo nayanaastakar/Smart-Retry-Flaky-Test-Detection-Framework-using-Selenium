@@ -1,30 +1,131 @@
-{% extends "base.html" %}{% block title %}AI Analysis{% endblock %}{% block page_title %}AI Analysis{% endblock %}
+{% extends "base.html" %}
+{% block title %}AI Analysis{% endblock %}
+{% block page_title %}AI Analysis{% endblock %}
+{% block extra_head %}
+<style>
+.severity-critical { background: rgba(220,38,38,0.15); color: #f87171; border: 1px solid rgba(248,113,113,0.3); }
+.severity-high     { background: rgba(234,88,12,0.15);  color: #fb923c; border: 1px solid rgba(251,146,60,0.3);  }
+.severity-medium   { background: rgba(161,98,7,0.15);   color: #fbbf24; border: 1px solid rgba(251,191,36,0.3);  }
+.severity-low      { background: rgba(5,150,105,0.15);  color: #34d399; border: 1px solid rgba(52,211,153,0.3);  }
+.confidence-bar { height: 6px; border-radius: 999px; background: #2d3748; overflow: hidden; }
+.confidence-fill { height: 100%; border-radius: 999px; transition: width 0.8s ease; }
+.analysis-card {
+  background: #1a1d27;
+  border: 1px solid #2d3748;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s;
+}
+.analysis-card:hover { border-color: #4b5563; }
+.root-cause-box {
+  background: rgba(15,17,23,0.6);
+  border-left: 3px solid #7c3aed;
+  border-radius: 0 8px 8px 0;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  margin: 8px 0;
+}
+.fix-box {
+  background: rgba(5,150,105,0.08);
+  border-left: 3px solid #34d399;
+  border-radius: 0 8px 8px 0;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  margin: 8px 0;
+}
+.pending-badge { animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.6} }
+</style>
+{% endblock %}
 {% block content %}
+
+<!-- ── Pending Analysis ──────────────────────────────────── -->
 {% if pending %}
-<div class="card mb-3"><div class="card-header text-warning"><i class="bi bi-exclamation-triangle"></i> Pending Analysis</div><div class="card-body p-0">
-<table class="table table-dark mb-0">
-<thead><tr><th>Test</th><th>Status</th><th>Action</th></tr></thead>
-<tbody>{% for e in pending %}<tr>
-<td>{{ e.test_name }}</td>
-<td><span class="badge badge-fail">{{ e.status|upper }}</span></td>
-<td><form method="POST" action="{{ url_for('ai_analysis.analyze', exec_id=e.id) }}">
-<button class="btn btn-sm btn-outline-info"><i class="bi bi-robot"></i> Analyze</button></form></td>
-</tr>{% endfor %}</tbody></table>
-</div></div>
+<div class="card mb-4" style="border-color: rgba(251,191,36,0.3);">
+  <div class="card-header" style="color:#fbbf24; border-bottom-color: rgba(251,191,36,0.2);">
+    <i class="bi bi-exclamation-triangle me-2 pending-badge"></i>Pending Analysis
+    <span class="badge bg-warning text-dark ms-2">{{ pending|length }}</span>
+  </div>
+  <div class="card-body p-0">
+    <table class="table table-dark mb-0 align-middle">
+      <thead><tr><th>Test</th><th>Status</th><th>Action</th></tr></thead>
+      <tbody>
+        {% for e in pending %}
+        <tr>
+          <td class="fw-semibold">{{ e.test_name }}</td>
+          <td><span class="badge badge-fail">{{ e.status|upper }}</span></td>
+          <td>
+            <form method="POST" action="{{ url_for('ai_analysis.analyze', exec_id=e.id) }}">
+              <button class="btn btn-sm btn-outline-warning"><i class="bi bi-robot me-1"></i>Analyze Now</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
 {% endif %}
 
-<div class="card"><div class="card-header">Analysis Results</div><div class="card-body p-0">
-{% if analyses %}
-<table class="table table-dark table-hover mb-0">
-<thead><tr><th>Test</th><th>Severity</th><th>Root Cause</th><th>Fix</th><th>Time</th></tr></thead>
-<tbody>{% for a in analyses %}<tr>
-<td>{{ a.test_name }}</td>
-<td><span class="badge {% if a.severity=='high' %}bg-danger{% elif a.severity=='medium' %}bg-warning{% else %}bg-info{% endif %}">{{ a.severity }}</span></td>
-<td class="small" style="max-width:250px">{{ a.root_cause[:100] if a.root_cause else '-' }}</td>
-<td class="small" style="max-width:200px">{{ a.suggested_fix[:80] if a.suggested_fix else '-' }}</td>
-<td class="text-muted small">{{ a.analyzed_at[:16] if a.analyzed_at else '-' }}</td>
-</tr>{% endfor %}</tbody></table>
-{% else %}
-<div class="text-center py-5 text-muted"><i class="bi bi-robot" style="font-size:3rem"></i><p class="mt-2">No analyses yet. Run some tests and analyze failures above.</p></div>
-{% endif %}
-</div></div>{% endblock %}
+<!-- ── Analysis Results ──────────────────────────────────── -->
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    <span><i class="bi bi-robot me-2" style="color:#7c3aed"></i>Analysis Results</span>
+    <span class="badge bg-secondary">{{ analyses|length }} total</span>
+  </div>
+  <div class="card-body" style="padding: 1rem;">
+    {% if analyses %}
+      {% for a in analyses %}
+      {% set sev = a.severity or 'low' %}
+      {% set conf = a.confidence_score or 75 %}
+      {% if sev == 'critical' %}{% set conf_color = '#f87171' %}
+      {% elif sev == 'high' %}{% set conf_color = '#fb923c' %}
+      {% elif sev == 'medium' %}{% set conf_color = '#fbbf24' %}
+      {% else %}{% set conf_color = '#34d399' %}{% endif %}
+
+      <div class="analysis-card">
+        <div class="d-flex align-items-start justify-content-between flex-wrap gap-2 mb-3">
+          <div>
+            <div class="fw-semibold" style="font-size:1rem">{{ a.test_name }}</div>
+            <div class="text-muted small mt-1">
+              <i class="bi bi-clock me-1"></i>{{ a.analyzed_at[:16] if a.analyzed_at else '-' }}
+            </div>
+          </div>
+          <div class="text-end">
+            <span class="badge severity-{{ sev }} px-3 py-2" style="font-size:0.8rem;border-radius:8px;">
+              {% if sev == 'critical' %}🔴{% elif sev == 'high' %}🟠{% elif sev == 'medium' %}🟡{% else %}🟢{% endif %}
+              {{ sev|upper }}
+            </span>
+            <div class="mt-2">
+              <div class="d-flex align-items-center gap-2">
+                <div class="confidence-bar" style="width:90px">
+                  <div class="confidence-fill" style="width:{{ conf }}%;background:{{ conf_color }}"></div>
+                </div>
+                <span class="text-muted" style="font-size:0.75rem">{{ conf }}% confidence</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-2">
+          <div class="text-muted small fw-semibold mb-1"><i class="bi bi-search me-1" style="color:#7c3aed"></i>ROOT CAUSE</div>
+          <div class="root-cause-box text-light">{{ a.root_cause or 'No root cause identified.' }}</div>
+        </div>
+
+        <div>
+          <div class="text-muted small fw-semibold mb-1"><i class="bi bi-tools me-1" style="color:#34d399"></i>SUGGESTED FIX</div>
+          <div class="fix-box" style="color:#94a3b8">{{ a.suggested_fix or 'No fix suggested.' }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+    <div class="text-center py-5 text-muted">
+      <i class="bi bi-robot" style="font-size:3rem;color:#374151"></i>
+      <p class="mt-3 mb-1 fw-semibold">No analyses yet</p>
+      <p class="small">Run some tests, then click <strong>Analyze with AI</strong> on any failed execution.</p>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

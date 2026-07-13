@@ -1,177 +1,167 @@
-# Smart Retry & Flaky Test Detection Framework
+# SmartRetry — Flaky Test Detection Framework
 
-An enterprise-style Selenium test automation platform: **fully generalized —
-any website via dynamic Projects, not predefined profiles or dropdowns** —
-with automatic retries, statistical flaky-test detection, a visual test
-builder, execution history, a live Flask dashboard, and a REST API.
-
-## Architecture note: Projects replaced Website Profiles
-
-Earlier iterations of this project used a "Website Profiles" dropdown
-(SauceDemo, OrangeHRM, etc.). That's gone from the primary workflow. The
-current model:
-
-- **Project** = just a name + a URL. `POST /projects/create` with any
-  website — no predefined site knowledge required anywhere in the code.
-- **Test Case** = an ordered list of steps (`core/step_definitions.py` /
-  `core/step_executor.py`), built visually at `/projects/<id>/tests/new`.
-  22 step types: navigation, click / double-click / right-click, type text,
-  clear, select dropdown, checkbox, wait, scroll, hover, press key, switch
-  frame / window, screenshot checkpoint, 6 assertion types, and custom
-  JavaScript. Every step is data (locator type + value + input + timeout),
-  not code — so it works against any site's DOM.
-- **Run a Project** (`POST /projects/<id>/run`) drives one real Selenium
-  session through every enabled test case's steps via the same
-  `SmartRetryEngine` + `EvidenceCollector` + `FlakyDetector` used everywhere
-  else, then lands on the same flakiness-verdict page
-  (`/run/results/<project_name>`) that Quick Run uses.
-- The old `website_profiles` table/blueprint/Quick-Run-by-domain feature
-  still exists and still works (kept for backward compatibility and as a
-  zero-setup instant check), but it's no longer the primary nav item —
-  **Projects** is.
-
-## Status
-
-| Module | Status |
-|---|---|
-| Projects — generalized "any website" entity | Done |
-| Visual Test Builder — 22 dynamic step types, add/reorder/remove, edit existing | Done |
-| Step Executor — interprets steps against any site's DOM at runtime | Done |
-| Project Runner — runs every enabled test case through retry/evidence/flaky pipeline | Done |
-| Flask app + auth (login/logout/sessions) | Done |
-| Smart Retry Engine (exponential backoff, per-attempt persistence) | Done |
-| Flaky Test Detection (flip-rate + retry-save scoring, 3-way classification) | Done |
-| Evidence Collector (screenshots, console logs, stack traces, OS/browser) | Done |
-| WebDriver Factory (Chrome/Edge/Firefox, headless toggle) | Done |
-| Analytics service (KPIs, trends, module breakdown, top failures) | Done |
-| Dashboard UI (dark/light theme, KPI tiles, 3 live Chart.js charts) | Done |
-| Execution History (search/filter/sort/delete/export CSV) | Done |
-| Reporting Engine — HTML / PDF / JSON / CSV (Module 5) | Done |
-| AI Failure Analysis via Ollama + heuristic fallback (Module 6) | Done |
-| Quick Run — paste any URL, N-iteration generic flaky check, no project needed | Done |
-| Live Console, AI Analysis browser, legacy Test Cases list, Settings, Profile | Done |
-| REST API (`/api/v1/...`) | Done |
-
-### What was verified in this sandbox vs. what needs your machine
-This sandbox has no browser and no network, so a real Selenium session
-could not be run end-to-end here. What was verified, against the real
-SQLite database via Flask's test client:
-
-- Full Project CRUD (create with URL auto-normalization, duplicate-name
-  rejection, delete cascades test cases).
-- The Test Builder: created a 5-step login-style test case (open URL, type
-  username, type password, click login, assert URL contains /dashboard),
-  confirmed it persisted correctly, confirmed the edit page pre-fills every
-  field, confirmed updates save.
-- Malformed step JSON is rejected cleanly (no crash).
-- Running an empty project (no test cases) degrades gracefully with a clear
-  message instead of trying to launch a browser for nothing.
-- Running a project with test cases correctly attempts a real Selenium
-  session and fails gracefully with a clear "Selenium isn't installed"
-  message in this sandbox (expected, since Selenium isn't installed here)
-  instead of a 500 error.
-- A static consistency check confirming all 22 step types shown in the
-  builder UI have a real corresponding execution handler, and vice versa.
-
-Two real bugs were caught and fixed during this verification, not left in
-the delivered code: the edit page was missing a `steps_list` conversion
-(would have crashed on first click), and `run_project()` imported Selenium
-before checking whether there were any test cases to run (would have made
-even an empty project require Selenium installed just to say it's empty).
-Both are fixed and covered by the tests above.
-
-What still needs your machine: an actual browser driving an actual website
-end-to-end. The code path is proven up to the Selenium boundary; run it
-once locally with Chrome, Firefox, or Edge installed to confirm the last
-mile.
+> **Automatically detect, retry, and diagnose flaky Selenium tests with AI-powered root cause analysis.**
 
 ---
 
-## Quick start
+## What is SmartRetry?
+
+SmartRetry is a full-stack QA automation platform built with **Python Flask + Selenium**.  
+It solves one of the biggest problems in software testing — **flaky tests** — by:
+
+1. **Automatically retrying** failed tests using an exponential backoff strategy
+2. **Detecting flaky patterns** by analysing pass/fail flip rates across multiple runs
+3. **Providing AI-powered diagnosis** with a specific root cause and actionable fix for every failure
+
+---
+
+## Technology Stack
+
+| Layer | Technology |
+|---|---|
+| **Backend** | Python 3.11, Flask 3.x |
+| **Browser Automation** | Selenium WebDriver 4.x |
+| **Database** | SQLite (via custom `db_manager`) |
+| **Frontend** | Bootstrap 5.3, Chart.js 4, Bootstrap Icons |
+| **AI Analysis** | Heuristic rule engine (7 failure categories) |
+| **Auth** | Flask session-based authentication |
+| **Driver Management** | Custom 64-bit ChromeDriver validator |
+
+---
+
+## Features
+
+| Module | Description |
+|---|---|
+| 🔁 **Smart Retry Engine** | Exponential backoff retry with per-attempt persistence |
+| 🧠 **AI Failure Analysis** | 7-category heuristic engine: Timeout, Element not found, Stale element, Interactability, Selector errors, Assertion failures, WebDriver crashes |
+| 📊 **Dashboard** | Live KPI tiles, donut chart, 7-day trend line chart |
+| 🏗️ **Visual Test Builder** | 22 step types, no code needed — click, type, assert, wait, scroll, JS |
+| 🤖 **AI Test Generator** | Describe a test in English → auto-generate steps |
+| 📋 **Templates** | 8 pre-built templates (Login, Search, Cart, Registration, Form, Social, etc.) |
+| 📈 **Reports** | Export full execution history as CSV or JSON |
+| 🖼️ **Evidence** | Screenshot capture at each step for failed tests |
+| 📡 **REST API** | `/api/v1/` endpoints for external integrations |
+| 🖥️ **Live Console** | Real-time test execution log viewer |
+
+---
+
+## Quick Start
 
 ```bash
-python3 -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
+# 1. Clone the repo
+git clone https://github.com/nayanaastakar/Smart-Retry-Flaky-Test-Detection-Framework-using-Selenium.git
+cd Smart-Retry-Flaky-Test-Detection-Framework-using-Selenium
+
+# 2. Create & activate virtual environment
+python -m venv .venv
+.venv\Scripts\activate          # Windows
+# source .venv/bin/activate     # macOS / Linux
+
+# 3. Install dependencies
 pip install -r requirements.txt
-cp .env.example .env             # edit SECRET_KEY
-python app.py --init-db          # creates schema, runs migrations, seeds admin user
-python -m utils.generate_demo_data   # optional: populate dashboard with simulated history
+
+# 4. Run the app
 python app.py
 ```
 
-Open **http://localhost:5000** and log in:
+Open **http://localhost:8080** and log in:
+
 ```
 Username: admin
 Password: Admin@123
 ```
 
-## Using the generalized workflow
+> ⚠️ **Requires Google Chrome** installed on your machine. ChromeDriver is managed automatically.
 
-1. Sidebar -> **Projects** -> **Create Project**. Give it any name and any URL.
-2. Open the project -> **New Test Case** -> use the visual step builder to
-   describe a flow (open a page, type into a field, click a button, assert
-   something). Add as many steps as you need, in any order, reorder with
-   the up/down arrows.
-3. Save, then either run that one test case (play icon) or **Run All Tests**
-   on the project page.
-4. You land on `/run/results/<project_name>` -- a stability verdict (Stable /
-   Flaky / Chronic Failure) built from real execution history, with a
-   per-check breakdown (pass count, fail count, flip count, flaky score).
-5. Run it again (more times, or after fixing something) and the verdict
-   updates -- flakiness is a run-to-run property, so the more you run it,
-   the more reliable the score.
+---
 
-For a one-off check with no setup at all, the **Run Tests** button
-available from the dashboard still works exactly as before: paste a URL,
-pick how many times to run, get the same kind of verdict page, using a
-fixed generic battery (page loads, title present, links present, no broken
-images, no severe console errors) instead of custom steps.
+## How to Use
 
-## Project structure (files added/changed for this generalization)
+### 1. Create a Project
+Sidebar → **Projects** → **New Project**  
+Enter any name and a target URL (e.g. `https://www.saucedemo.com`)
+
+### 2. Build a Test Case
+Open the project → **New Test Case** → use the **Visual Step Builder**  
+Add steps: Open URL → Type Text → Click → Assert Text → Take Screenshot
+
+Or use:
+- **🤖 AI Generate** — describe your test in plain English
+- **📋 Templates** — pick from 8 ready-made flows
+
+### 3. Run & Analyse
+Click **Run All Tests** on the project page.  
+The **Smart Retry Engine** automatically retries failed steps.  
+View results in **History** → click **Analyze with AI** on any failure.
+
+### 4. Export Reports
+Go to **Reports** → click **Export CSV** or **Export JSON** to download your data.
+
+---
+
+## Project Structure
 
 ```
-core/
-├── step_definitions.py    # Selenium-free step metadata (powers the builder UI)
-├── step_executor.py       # Interprets step JSON against any Selenium driver
-└── project_runner.py      # Runs a project's (or a single test case's) steps
-                            # through SmartRetryEngine + EvidenceCollector + FlakyDetector
-
-routes/
-└── projects_routes.py     # Projects CRUD, Test Builder pages, run-all
-
-templates/
-├── projects/index.html    # Project list/create
-├── projects/detail.html   # Project dashboard: test cases, flaky summary, recent runs
-└── test_cases/builder.html  # Visual step editor (add/reorder/remove steps)
-
-database/db_manager.py     # projects table + test_cases.project_id/steps_json,
-                            # with a safe ALTER-TABLE migration for existing databases
+smartretry/
+├── app.py                    # Application entry point & Jinja2 filters
+├── config.py                 # Settings (port, secret key, directories)
+├── requirements.txt
+│
+├── core/
+│   ├── driver_factory.py     # ChromeDriver management & 64-bit validation
+│   ├── step_executor.py      # Executes 22 step types against any DOM
+│   ├── project_runner.py     # Smart Retry Engine + Flaky Detector pipeline
+│   ├── flaky_detector.py     # Flaky score calculation & verdict (stable/flaky/chronic)
+│   └── step_definitions.py   # Step metadata used by the visual builder
+│
+├── routes/
+│   ├── projects_routes.py    # Projects CRUD + Test Builder + Run endpoints
+│   ├── ai_analysis_routes.py # AI heuristic analysis engine
+│   ├── reports_routes.py     # Report views + CSV/JSON export
+│   ├── history_routes.py     # Execution history & evidence
+│   └── ...                   # auth, dashboard, console, settings, profile
+│
+├── templates/
+│   ├── base.html             # Responsive sidebar layout with hamburger menu
+│   ├── auth/login.html       # Animated login page
+│   ├── dashboard/index.html  # Charts + KPI tiles
+│   ├── ai_analysis/          # AI diagnosis with confidence bars
+│   ├── reports/              # Export-enabled reports table
+│   └── test_cases/builder.html  # Visual step builder
+│
+└── database/
+    └── db_manager.py         # Raw SQLite wrapper (fetchone, fetchall, execute)
 ```
 
-## Security note on the Test Builder
+---
 
-There is deliberately no "run arbitrary Python code" step type. The
-reference spec this was built from asked for one; it was intentionally
-omitted because letting user-submitted step data execute arbitrary Python
-on the host is a remote-code-execution hole, not a testing feature. Custom
-JavaScript is supported (`custom_js` step, via `driver.execute_script`),
-since that only runs inside the browser sandbox -- the same capability any
-Selenium script already has, no additional risk introduced.
+## AI Analysis — Error Categories
 
-## Roadmap (not yet built)
+| Error Type | Severity | Root Cause |
+|---|---|---|
+| Timeout | 🟠 High | Element load too slow or page unresponsive |
+| Element Not Found | 🟠 High | Wrong locator or element not in DOM yet |
+| Stale Element | 🟡 Medium | DOM refreshed after element was captured |
+| Not Interactable | 🟡 Medium | Element hidden or covered by overlay |
+| Invalid Selector | 🟠 High | XPath/CSS syntax error |
+| Assertion Error | 🔴 Critical | Expected text/state not found (e.g. login failed) |
+| WebDriver Crash | 🔴 Critical | Chrome version mismatch or resource exhaustion |
 
-- AI locator healing (suggesting a fixed locator when one breaks)
-- Drag-and-drop step reordering (currently up/down buttons -- functional,
-  less flashy)
-- File upload/download steps, execution video recording, network log capture
-- SQLAlchemy ORM migration (currently raw parameterized SQL, which is
-  simpler and sufficient at this scale but doesn't match the reference
-  spec's tech stack ask)
-- JWT-based auth, registration, forgot-password (currently server-side
-  session auth, which is simpler and safer for a self-hosted tool)
-- Swagger/OpenAPI documentation for the REST API
-- Marketing-style landing page with pricing cards/testimonials
-- True push-based Live Console (WebSocket/SSE) instead of 2s polling
-- Parallel test execution across multiple projects/browsers at once
+---
 
-Say which of these matters most and it's next.
+## REST API
+
+Base URL: `http://localhost:8080/api/v1/`
+
+| Endpoint | Method | Description |
+|---|---|---|
+| `/executions` | GET | List all executions |
+| `/executions/<id>` | GET | Get execution details |
+| `/projects` | GET | List all projects |
+
+---
+
+## License
+
+MIT — free to use, modify and distribute.

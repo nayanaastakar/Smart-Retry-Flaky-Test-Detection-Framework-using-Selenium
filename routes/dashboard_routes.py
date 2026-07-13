@@ -26,6 +26,6 @@ def index():
         "test_cases": fetchone("SELECT COUNT(*) as c FROM test_cases")["c"],
     }
     recent = fetchall(
-        "SELECT * FROM executions ORDER BY started_at DESC LIMIT 10"
+        "SELECT * FROM executions ORDER BY started_at DESC LIMIT 100"
     )
     return render_template("dashboard/index.html", stats=stats, recent=recent)
