@@ -396,40 +396,55 @@ function openAIGenerator() {
 
 function generateAISteps() {
   const prompt = document.getElementById('aiPrompt').value.toLowerCase();
+  if (!prompt.trim()) return;
+  
   let generated = [];
   
-  if (prompt.includes("login") && prompt.includes("orangehrm")) {
-    generated = [
-      { action: "open_url", input_value: "https://opensource-demo.orangehrmlive.com/", timeout: 10 },
-      { action: "type_text", locator_type: "name", locator_value: "username", input_value: "Admin", timeout: 10 },
-      { action: "type_text", locator_type: "name", locator_value: "password", input_value: "admin123", timeout: 10 },
-      { action: "click", locator_type: "xpath", locator_value: "//button[@type='submit']", timeout: 10 },
-      { action: "assert_text", input_value: "Dashboard", timeout: 10 }
-    ];
-    document.querySelector('input[name="name"]').value = "OrangeHRM Login (AI Generated)";
-  } else if (prompt.includes("search") && prompt.includes("flipkart")) {
-    generated = [
-      { action: "open_url", input_value: "https://www.flipkart.com", timeout: 10 },
-      { action: "type_text", locator_type: "name", locator_value: "q", input_value: prompt.match(/search (?:for )?['"]?([^'"]+)['"]?/) ? prompt.match(/search (?:for )?['"]?([^'"]+)['"]?/)[1] : "Smartphone", timeout: 10 },
-      { action: "press_key", locator_type: "name", locator_value: "q", input_value: "ENTER", timeout: 10 }
-    ];
-    document.querySelector('input[name="name"]').value = "Flipkart Search (AI Generated)";
-  } else if (prompt.includes("cart") || prompt.includes("buy")) {
-    generated = [
-      { action: "click", locator_type: "xpath", locator_value: "(//div[contains(@class, 'product')])[1]", timeout: 10 },
-      { action: "switch_window", input_value: "1", timeout: 10 },
-      { action: "click", locator_type: "xpath", locator_value: "//button[text()='Add to cart']", timeout: 10 }
-    ];
-  } else {
-    generated = [
-      { action: "open_url", input_value: "https://www.google.com", timeout: 10 },
-      { action: "type_text", locator_type: "name", locator_value: "q", input_value: prompt, timeout: 10 },
-      { action: "press_key", locator_type: "name", locator_value: "q", input_value: "ENTER", timeout: 10 }
-    ];
+  // Extract target domain
+  let url = "https://www.google.com";
+  let searchId = "q";
+  let searchType = "name";
+  
+  if (prompt.includes("amazon")) {
+    url = "https://www.amazon.in";
+    searchType = "id";
+    searchId = "twotabsearchtextbox";
+  } else if (prompt.includes("myntra")) {
+    url = "https://www.myntra.com";
+    searchType = "class";
+    searchId = "desktop-searchBar";
+  } else if (prompt.includes("wikipedia")) {
+    url = "https://en.wikipedia.org";
+  } else if (prompt.includes("flipkart")) {
+    url = "https://www.flipkart.com";
   }
+  
+  // Extract search term
+  let searchTerm = prompt;
+  const match = prompt.match(/search (?:for )?['"]?([^'"]+?)(['"]| press| and|$)/i);
+  if (match) {
+    searchTerm = match[1].trim();
+  } else if (prompt.includes("look for ")) {
+    searchTerm = prompt.split("look for ")[1].split(/,| and/)[0].trim();
+  }
+  
+  generated = [
+    { action: "open_url", input_value: url, timeout: 10 },
+    { action: "type_text", locator_type: searchType, locator_value: searchId, input_value: searchTerm, timeout: 10 },
+    { action: "press_key", locator_type: searchType, locator_value: searchId, input_value: "ENTER", timeout: 10 },
+    { action: "wait", input_value: "2", timeout: 10 },
+    { action: "screenshot", timeout: 10 }
+  ];
   
   steps = steps.concat(generated);
   renderSteps();
+  
+  // Attempt to auto-name the test case
+  const nameInput = document.querySelector('input[name="name"]');
+  if (!nameInput.value) {
+    nameInput.value = (url.split('.')[1] + " search").toUpperCase();
+  }
+  
   bootstrap.Modal.getInstance(document.getElementById('aiModal')).hide();
 }
 
