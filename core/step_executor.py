@@ -112,7 +112,8 @@ def execute_step(driver, step: dict) -> dict:
             return {"success": True, "message": "Unchecked checkbox"}
 
         elif action == "wait":
-            secs = float(input_value) if input_value else 1.0
+            # Cap at 1.5 s so a test doesn't sit idle for long explicit waits
+            secs = min(float(input_value) if input_value else 1.0, 1.5)
             time.sleep(secs)
             return {"success": True, "message": f"Waited {secs}s"}
 

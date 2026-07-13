@@ -62,6 +62,9 @@ def run_single_test_case(test_case_id: int) -> dict:
     try:
         from core.driver_factory import create_driver
         driver = create_driver(browser)
+        # Speed up: limit page load and script timeouts
+        driver.set_page_load_timeout(30)
+        driver.set_script_timeout(15)
 
         for attempt in range(settings.MAX_RETRIES + 1):
             try:

@@ -53,12 +53,12 @@ class Config:
     DEFAULT_BROWSER: str = os.getenv("DEFAULT_BROWSER", "chrome")  # chrome|edge|firefox
     HEADLESS: bool = _bool(os.getenv("HEADLESS"), default=True)
     IMPLICIT_WAIT: int = int(os.getenv("IMPLICIT_WAIT", "0"))
-    EXECUTION_TIMEOUT: int = int(os.getenv("EXECUTION_TIMEOUT", "120"))  # seconds per test
+    EXECUTION_TIMEOUT: int = int(os.getenv("EXECUTION_TIMEOUT", "60"))  # seconds per test
 
     # --- Smart Retry Engine ------------------------------------------------
-    MAX_RETRIES: int = int(os.getenv("MAX_RETRIES", "3"))
-    RETRY_DELAY_SECONDS: float = float(os.getenv("RETRY_DELAY_SECONDS", "1.0"))
-    RETRY_BACKOFF_MULTIPLIER: float = float(os.getenv("RETRY_BACKOFF_MULTIPLIER", "1.5"))
+    MAX_RETRIES: int = int(os.getenv("MAX_RETRIES", "2"))           # reduced from 3
+    RETRY_DELAY_SECONDS: float = float(os.getenv("RETRY_DELAY_SECONDS", "0.5"))  # reduced from 1.0
+    RETRY_BACKOFF_MULTIPLIER: float = float(os.getenv("RETRY_BACKOFF_MULTIPLIER", "1.2"))  # reduced from 1.5
 
     # --- Flaky Detection -----------------------------------------------------
     FLAKY_WINDOW_SIZE: int = int(os.getenv("FLAKY_WINDOW_SIZE", "10"))  # last N runs considered
