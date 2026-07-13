@@ -3,8 +3,15 @@
 {% block page_title %}{{ 'Edit' if test_case else 'New' }} Test Case{% endblock %}
 {% block extra_head %}
 <style>
-.step-card{background:#0f1117;border:1px solid #374151;border-radius:8px;padding:1rem;margin-bottom:.75rem}
+.step-card{background:#0f1117;border:1px solid #374151;border-radius:8px;padding:1rem;margin-bottom:.75rem;transition:border-color .2s}
+.step-card.editing{border-color:#7c3aed;}
 .step-num{background:#7c3aed;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;flex-shrink:0}
+.edit-form{background:#1a1d27;border:1px solid #374151;border-radius:8px;padding:1rem;margin-top:.75rem;}
+.edit-form label{color:#94a3b8;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;}
+.edit-form .form-control,.edit-form .form-select{background:#0f1117;border-color:#374151;color:#e2e8f0;font-size:.85rem;}
+.edit-form .form-control:focus,.edit-form .form-select:focus{border-color:#7c3aed;box-shadow:0 0 0 2px rgba(124,58,237,.2);}
+.btn-edit{background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.35);color:#a78bfa;}
+.btn-edit:hover{background:rgba(124,58,237,.3);color:#c4b5fd;}
 </style>
 {% endblock %}
 {% block content %}
@@ -117,6 +124,75 @@ function removeStep(i) { steps.splice(i, 1); renderSteps(); }
 function moveUp(i) { if(i>0){[steps[i-1],steps[i]]=[steps[i],steps[i-1]]; renderSteps();} }
 function moveDown(i) { if(i<steps.length-1){[steps[i],steps[i+1]]=[steps[i+1],steps[i]]; renderSteps();} }
 
+function openEditStep(i) {
+  // toggle: close if already open
+  const existing = document.getElementById(`editForm_${i}`);
+  if (existing) { renderSteps(); return; }
+  const card = document.getElementById(`stepCard_${i}`);
+  card.classList.add('editing');
+  const s = steps[i];
+  const locatorTypes = ['id','name','xpath','css','class','tag','link_text','partial_link_text'];
+  const actionOptions = STEP_TYPES.map(t =>
+    `<option value="${t.id}" ${t.id===s.action?'selected':''}>${t.label}</option>`
+  ).join('');
+  const locOptions = locatorTypes.map(l =>
+    `<option value="${l}" ${l===s.locator_type?'selected':''}>${l}</option>`
+  ).join('');
+  const form = document.createElement('div');
+  form.id = `editForm_${i}`;
+  form.className = 'edit-form';
+  form.innerHTML = `
+    <div class="row g-2 mb-2">
+      <div class="col-md-6">
+        <label>Action</label>
+        <select class="form-select form-select-sm" id="ea_action_${i}" onchange="toggleEditLocator(${i})">${actionOptions}</select>
+      </div>
+      <div class="col-md-3">
+        <label>Timeout (s)</label>
+        <input type="number" class="form-control form-control-sm" id="ea_timeout_${i}" value="${s.timeout||10}" min="1" max="60">
+      </div>
+    </div>
+    <div class="row g-2 mb-2" id="ea_locRow_${i}">
+      <div class="col-md-4">
+        <label>Locator Type</label>
+        <select class="form-select form-select-sm" id="ea_locType_${i}">${locOptions}</select>
+      </div>
+      <div class="col-md-8">
+        <label>Locator Value</label>
+        <input type="text" class="form-control form-control-sm" id="ea_locVal_${i}" value="${s.locator_value||''}" placeholder="e.g. login-button">
+      </div>
+    </div>
+    <div class="mb-2" id="ea_inpRow_${i}">
+      <label>Input Value</label>
+      <input type="text" class="form-control form-control-sm" id="ea_inp_${i}" value="${s.input_value||''}" placeholder="Value">
+    </div>
+    <div class="d-flex gap-2">
+      <button type="button" class="btn btn-sm btn-success" onclick="saveEditStep(${i})"><i class="bi bi-check-lg me-1"></i>Save</button>
+      <button type="button" class="btn btn-sm btn-outline-secondary" onclick="renderSteps()">Cancel</button>
+    </div>`;
+  card.appendChild(form);
+  toggleEditLocator(i);
+}
+
+function toggleEditLocator(i) {
+  const action = document.getElementById(`ea_action_${i}`).value;
+  const st = STEP_TYPES.find(t => t.id === action);
+  if (!st) return;
+  document.getElementById(`ea_locRow_${i}`).style.display = st.needs_locator ? '' : 'none';
+  document.getElementById(`ea_inpRow_${i}`).style.display = st.needs_input ? '' : 'none';
+}
+
+function saveEditStep(i) {
+  steps[i] = {
+    action:        document.getElementById(`ea_action_${i}`).value,
+    locator_type:  document.getElementById(`ea_locType_${i}`)?.value || '',
+    locator_value: document.getElementById(`ea_locVal_${i}`)?.value.trim() || '',
+    input_value:   document.getElementById(`ea_inp_${i}`)?.value.trim() || '',
+    timeout:       parseInt(document.getElementById(`ea_timeout_${i}`).value) || 10,
+  };
+  renderSteps();
+}
+
 function renderSteps() {
   const c = document.getElementById('stepsContainer');
   document.getElementById('noSteps').style.display = steps.length ? 'none' : '';
@@ -124,18 +200,23 @@ function renderSteps() {
   existing.forEach(e => e.remove());
   steps.forEach((s, i) => {
     const d = document.createElement('div');
-    d.className = 'step-card d-flex gap-2 align-items-start';
+    d.className = 'step-card';
+    d.id = `stepCard_${i}`;
     const label = STEP_TYPES.find(t => t.id === s.action)?.label || s.action;
-    d.innerHTML = `<div class="step-num">${i+1}</div>
-      <div class="flex-grow-1" style="min-width: 0;">
-        <strong>${label}</strong>
-        ${s.locator_value ? `<span class="badge bg-secondary ms-1 text-wrap text-break d-inline-block" style="max-width: 100%; word-break: break-all; text-align: left;">${s.locator_type}=${s.locator_value}</span>` : ''}
-        ${s.input_value ? `<span class="badge bg-dark ms-1 text-wrap text-break d-inline-block mt-1" style="max-width: 100%; word-break: break-all; white-space: normal; text-align: left; font-family: monospace;">"${s.input_value}"</span>` : ''}
-      </div>
-      <div class="d-flex gap-1">
-        <button type="button" class="btn btn-sm btn-outline-secondary py-0" onclick="moveUp(${i})">↑</button>
-        <button type="button" class="btn btn-sm btn-outline-secondary py-0" onclick="moveDown(${i})">↓</button>
-        <button type="button" class="btn btn-sm btn-outline-danger py-0" onclick="removeStep(${i})">×</button>
+    d.innerHTML = `
+      <div class="d-flex gap-2 align-items-start">
+        <div class="step-num">${i+1}</div>
+        <div class="flex-grow-1" style="min-width:0">
+          <strong>${label}</strong>
+          ${s.locator_value ? `<span class="badge bg-secondary ms-1" style="word-break:break-all;white-space:normal">${s.locator_type}=${s.locator_value}</span>` : ''}
+          ${s.input_value  ? `<span class="badge bg-dark ms-1 mt-1 d-inline-block" style="word-break:break-all;white-space:normal;font-family:monospace;text-align:left">&quot;${s.input_value}&quot;</span>` : ''}
+        </div>
+        <div class="d-flex gap-1 flex-shrink-0">
+          <button type="button" class="btn btn-sm btn-edit py-0 px-2" onclick="openEditStep(${i})" title="Edit step"><i class="bi bi-pencil"></i></button>
+          <button type="button" class="btn btn-sm btn-outline-secondary py-0" onclick="moveUp(${i})">↑</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary py-0" onclick="moveDown(${i})">↓</button>
+          <button type="button" class="btn btn-sm btn-outline-danger py-0" onclick="removeStep(${i})">×</button>
+        </div>
       </div>`;
     c.appendChild(d);
   });
