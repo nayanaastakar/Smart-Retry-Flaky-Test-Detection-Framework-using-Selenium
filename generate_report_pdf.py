@@ -1,4 +1,4 @@
-"""generate_report_pdf.py - Generates a premium PDF document for the examiner report."""
+"""generate_report_pdf.py - Generates a premium academic report PDF document for the examiner."""
 import os
 import sys
 from reportlab.lib.pagesizes import letter
@@ -37,7 +37,6 @@ class NumberedCanvas(canvas.Canvas):
 
     def draw_page_number(self, page_count):
         if self._pageNumber == 1:
-            # Suppress header/footer on cover page
             return
         
         self.saveState()
@@ -231,21 +230,23 @@ def build_pdf(filename="static/SmartRetry_Project_Report.pdf"):
     story.append(Paragraph(
         "To develop an intelligent web automation framework that dynamically executes test scripts, "
         "intercepts test failures mid-transition, attempts immediate smart retries with exponential backoffs, "
-        "flags non-deterministic results as 'flaky', and leverage Large Language Models (Gemini API) "
-        "to deliver instant root-cause diagnostics and recommendations.",
+        "flags non-deterministic results as 'flaky', and leverages Large Language Models (Gemini API) "
+        "to deliver root-cause diagnostics and recommendations.",
         body_style
     ))
 
     story.append(Paragraph("<b>1.3 Key Objectives</b>", h2_style))
     story.append(Paragraph(
-        "• <b>Non-Deterministic Isolation:</b> Bypass default Selenium page loading blocks to capture flaky "
-        "failures that resolve within milliseconds.<br/>"
-        "• <b>Smart Retry Loop:</b> Implement a self-healing retry engine containing configurable retry counters "
-        "and delay multipliers directly stored in SQLite database schema.<br/>"
-        "• <b>Cloud AI Integration:</b> Implement a dynamic, low-latency (<2s) failure triage engine powered "
-        "by the official Google GenAI SDK (Gemini-3.5-flash) generating varying confidence scores.<br/>"
-        "• <b>Comprehensive Web Dashboard:</b> Deliver a visual overview presenting execution history, flaky status markers, "
-        "screenshot evidence, and localized (IST) execution logs.",
+        "• <b>Objective 1: Non-Deterministic Defect Isolation:</b> Bypass default page loading blocks via customized driver "
+        "configurations, allowing the test suite to execute assertions during active element transition states.<br/>"
+        "• <b>Objective 2: Self-Healing Retry Loop:</b> Implement a robust retry engine containing configurable attempts, delays, "
+        "and backoff multipliers, automatically updating executions schema to isolate temporary environment errors.<br/>"
+        "• <b>Objective 3: Low-Latency Cloud AI Integration:</b> Integrate the Google GenAI SDK (gemini-3.5-flash) to evaluate "
+        "tracebacks, return real-time root causes, and output varying confidence scores under 2 seconds.<br/>"
+        "• <b>Objective 4: Live Timezone-Aware Evaluation Dashboards:</b> Deliver a visual user interface presenting localized "
+        "execution feeds (IST), status indicators, log terminals, and evidence screenshots per attempt.<br/>"
+        "• <b>Objective 5: Concurrency & Transaction Management:</b> Prevent application conflicts and write locks during parallel test "
+        "runs using SQLite Write-Ahead Logging (WAL) mode for high-throughput scaling.",
         body_style
     ))
     story.append(PageBreak())
@@ -279,37 +280,28 @@ def build_pdf(filename="static/SmartRetry_Project_Report.pdf"):
 
     story.append(Paragraph("<b>2.2 Core System Architecture</b>", h2_style))
     story.append(Paragraph(
-        "Below is a high-level representation of the data and execution flow of the SmartRetry Framework:",
+        "The following diagram represents the layout flow of the architecture:",
         body_style
     ))
 
-    arch_diagram = (
-        "+----------------------------------------------------------------------+\n"
-        "|                         Web UI Dashboard (Flask)                     |\n"
-        "+-----------------------------------+----------------------------------+\n"
-        "                                    | POST Run\n"
-        "                                    v\n"
-        "+-----------------------------------+----------------------------------+\n"
-        "|                    SmartRetry Engine (project_runner)                 |\n"
-        "|  - Spawns Headless Chrome (Page Load Strategy: NONE)                 |\n"
-        "|  - Evaluates steps sequentially via step_executor                    |\n"
-        "+-------------------+-------------------------------+------------------+\n"
-        "                    |                               |\n"
-        "                    | Fail on Step N                | Pass / Flaky Verdict\n"
-        "                    v                               v\n"
-        "+-------------------+---------------+       +-------+------------------+\n"
-        "|  Trigger Exponential Retry Loop  |       | DB Record Updated        |\n"
-        "|  (MAX_RETRIES=3, Delay=0.5s)      |       | - Status: Pass/Fail/Flaky|\n"
-        "+-------------------+---------------+       | - Screenshots Captured   |\n"
-        "                    |                       +-------+------------------+\n"
-        "                    | Permanent Fail/Flaky          | Analyze Click\n"
-        "                    v                               v\n"
-        "+-------------------+-------------------------------+------------------+\n"
-        "|               Gemini AI Diagnosis API (google-genai)                 |\n"
-        "|  Reads stack trace / logs -> Generates dynamic root cause & 97% conf  |\n"
-        "+----------------------------------------------------------------------+"
-    )
-    story.append(Paragraph(f"<pre>{arch_diagram}</pre>", code_style))
+    # Replaced ASCII Art with a beautiful, clean table diagram to prevent PDF warping
+    flow_data = [
+        [Paragraph("<b>Step 1: User Request</b>", table_header_style), Paragraph("User submits prompt or runs a test via the Flask Web Dashboard UI.", table_body_style)],
+        [Paragraph("<b>Step 2: Engine Setup</b>", table_header_style), Paragraph("SmartRetry Engine starts Chrome with <b>page_load_strategy = 'none'</b>.", table_body_style)],
+        [Paragraph("<b>Step 3: Test Execution</b>", table_header_style), Paragraph("Executes steps. If a step fails, it initiates the Exponential Retry Loop.", table_body_style)],
+        [Paragraph("<b>Step 4: State Analysis</b>", table_header_style), Paragraph("Saves screenshots and attempts. Sets final status to Pass, Fail, or Flaky.", table_body_style)],
+        [Paragraph("<b>Step 5: AI Diagnostics</b>", table_header_style), Paragraph("Google Gemini SDK reviews error trace, returning dynamic root cause & fix details.", table_body_style)],
+    ]
+    flow_table = Table(flow_data, colWidths=[130, 370])
+    flow_table.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (0,-1), SECONDARY),
+        ('GRID', (0,0), (-1,-1), 0.5, BORDER_COLOR),
+        ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+        ('PADDING', (0,0), (-1,-1), 8),
+        ('BACKGROUND', (1,0), (1,-1), colors.white),
+        ('ROWBACKGROUNDS', (1,0), (1,-1), [colors.white, LIGHT_BG])
+    ]))
+    story.append(flow_table)
     story.append(PageBreak())
 
     # ================= PAGE 4: FORMULAS & ALGORITHMS =================
@@ -319,41 +311,36 @@ def build_pdf(filename="static/SmartRetry_Project_Report.pdf"):
     
     story.append(Paragraph("<b>3.1.1 Exponential Backoff Retry Delay</b>", h2_style))
     story.append(Paragraph(
-        "To prevent swamping the browser during resource transitions, the delay duration $d$ "
-        "before attempt $i$ (where $i \\ge 1$ is the retry attempt index) is computed as:",
+        "To prevent swamping the browser during resource transitions, the delay duration <i>d</i> "
+        "before attempt <i>i</i> (where <i>i</i> is the retry attempt index, <i>i</i> ≥ 1) is computed as:",
         body_style
     ))
+    # Corrected LaTeX display formulas to clean ReportLab Paragraph tags
+    story.append(Paragraph("<b>d<sub>i</sub> = D<sub>base</sub> × M<sup>(i - 1)</sup></b>", ParagraphStyle('FormulaStyle', parent=styles['Normal'], alignment=TA_CENTER, fontName='Helvetica-Bold', fontSize=12, spaceAfter=8)))
     story.append(Paragraph(
-        "\\[d_i = D_{base} \\times M^{(i-1)}\\]",
-        body_style
-    ))
-    story.append(Paragraph(
-        "Where $D_{base}$ is the base retry delay (configured as `RETRY_DELAY_SECONDS` in `.env`, e.g., 0.5 seconds), "
-        "and $M$ is the growth factor (configured as `RETRY_BACKOFF_MULTIPLIER`, e.g., 1.0).",
+        "Where <b>D<sub>base</sub></b> is the base retry delay (configured as <code>RETRY_DELAY_SECONDS</code> in <code>.env</code>, e.g., 0.5 seconds), "
+        "and <b>M</b> is the growth factor (configured as <code>RETRY_BACKOFF_MULTIPLIER</code>, e.g., 1.0).",
         body_style
     ))
 
     story.append(Paragraph("<b>3.1.2 Flakiness Severity Score</b>", h2_style))
     story.append(Paragraph(
-        "The system aggregates execution logs within a sliding window of size $N$ (default 10) to determine "
-        "whether a test case is unstable. The flaky rating score $S$ is calculated as:",
+        "The system aggregates execution logs within a sliding window of size <i>N</i> (default 10) to determine "
+        "whether a test case is unstable. The flaky rating score <i>S</i> is calculated as:",
         body_style
     ))
+    story.append(Paragraph("<b>S = [ ( C<sub>flaky</sub> × 0.7 + C<sub>failed</sub> ) / N ] × 100</b>", ParagraphStyle('FormulaStyle2', parent=styles['Normal'], alignment=TA_CENTER, fontName='Helvetica-Bold', fontSize=12, spaceAfter=8)))
     story.append(Paragraph(
-        "\\[S = \\left( \\frac{C_{flaky} \\times 0.7 + C_{failed}}{N} \\right) \\times 100\\]",
-        body_style
-    ))
-    story.append(Paragraph(
-        "Where $C_{flaky}$ is the number of executions that passed on retry attempts (status = `flaky`), "
-        "and $C_{failed}$ is the number of executions that failed all attempts. If $S = 0$, the verdict is <b>stable</b>; "
-        "if $0 < S < 40$, it is <b>flaky</b>; and if $S \\ge 40$, it is flagged as <b>chronic</b>.",
+        "Where <b>C<sub>flaky</sub></b> is the number of executions that passed on retry attempts (status = 'flaky'), "
+        "and <b>C<sub>failed</sub></b> is the number of executions that failed all attempts. If <b>S = 0</b>, the verdict is <b>stable</b>; "
+        "if <b>0 &lt; S &lt; 40</b>, it is <b>flaky</b>; and if <b>S ≥ 40</b>, it is flagged as <b>chronic</b>.",
         body_style
     ))
 
     story.append(Paragraph("<b>3.2 Step Execution Implementation</b>", h2_style))
     story.append(Paragraph(
-        "To allow genuine flaky failure detection on step verification, the Selenium webdriver `page_load_strategy` "
-        "is set to `none`. When an assertion step is executed, the `step_executor` avoids standard implicitly blocking "
+        "To allow genuine flaky failure detection on step verification, the Selenium webdriver <code>page_load_strategy</code> "
+        "is set to <code>'none'</code>. When an assertion step is executed, the <code>step_executor</code> avoids standard implicitly blocking "
         "Selenium calls and executes an instant JavaScript query directly on the DOM:",
         body_style
     ))
