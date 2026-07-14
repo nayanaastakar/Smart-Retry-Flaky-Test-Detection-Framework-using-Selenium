@@ -18,7 +18,8 @@ reportlab==4.2.2      # PDF report generation
 Jinja2==3.1.4          # HTML report templating (duplicate pin kept intentional)
 
 # --- AI integration -----------------------------------------------------------
-requests==2.32.3       # HTTP client used to call the local Ollama API
+google-generativeai>=0.7.0  # Official Gemini SDK (supports AQ auth keys)
+requests==2.32.3             # HTTP client (kept for other uses)
 
 # --- Utilities -----------------------------------------------------------------
 python-dateutil==2.9.0

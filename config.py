@@ -67,7 +67,7 @@ class Config:
     # --- AI Integration (Gemini) ------------------------------------------
     AI_ENABLED: bool = _bool(os.getenv("AI_ENABLED"), default=True)
     GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
-    GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
+    GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-3.5-flash")
     AI_REQUEST_TIMEOUT: int = int(os.getenv("AI_REQUEST_TIMEOUT", "15"))
 
     # --- Auth ---------------------------------------------------------------
