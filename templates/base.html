@@ -54,19 +54,19 @@ table { color: #e2e8f0; }
   </div>
   <div class="py-2">
     <div class="px-3 py-1 text-uppercase text-muted" style="font-size:.7rem;letter-spacing:.1em;">Main</div>
-    <a href="{{ url_for('dashboard.index') }}" class="nav-link {% if request.endpoint == 'dashboard.index' %}active{% endif %}"><i class="bi bi-speedometer2"></i> Dashboard</a>
-    <a href="{{ url_for('projects.index') }}" class="nav-link {% if request.endpoint and 'projects' in request.endpoint %}active{% endif %}"><i class="bi bi-folder2"></i> Projects</a>
-    <a href="{{ url_for('test_cases.index') }}" class="nav-link"><i class="bi bi-list-check"></i> Test Cases</a>
-    <a href="{{ url_for('run.index') }}" class="nav-link"><i class="bi bi-play-circle"></i> Quick Run</a>
+    <a href="{{ url_for('dashboard.index') }}" class="nav-link {% if request.blueprint == 'dashboard' %}active{% endif %}"><i class="bi bi-speedometer2"></i> Dashboard</a>
+    <a href="{{ url_for('projects.index') }}" class="nav-link {% if request.blueprint == 'projects' %}active{% endif %}"><i class="bi bi-folder2"></i> Projects</a>
+    <a href="{{ url_for('test_cases.index') }}" class="nav-link {% if request.blueprint == 'test_cases' %}active{% endif %}"><i class="bi bi-list-check"></i> Test Cases</a>
+    <a href="{{ url_for('run.index') }}" class="nav-link {% if request.blueprint == 'run' %}active{% endif %}"><i class="bi bi-play-circle"></i> Quick Run</a>
     <div class="px-3 py-1 text-uppercase text-muted mt-2" style="font-size:.7rem;letter-spacing:.1em;">Analysis</div>
-    <a href="{{ url_for('history.index') }}" class="nav-link"><i class="bi bi-clock-history"></i> History</a>
-    <a href="{{ url_for('ai_analysis.index') }}" class="nav-link"><i class="bi bi-robot"></i> AI Analysis</a>
-    <a href="{{ url_for('reports.index') }}" class="nav-link"><i class="bi bi-file-earmark-bar-graph"></i> Reports</a>
+    <a href="{{ url_for('history.index') }}" class="nav-link {% if request.blueprint == 'history' and request.endpoint != 'history.evidence_list' %}active{% endif %}"><i class="bi bi-clock-history"></i> History</a>
+    <a href="{{ url_for('ai_analysis.index') }}" class="nav-link {% if request.blueprint == 'ai_analysis' %}active{% endif %}"><i class="bi bi-robot"></i> AI Analysis</a>
+    <a href="{{ url_for('reports.index') }}" class="nav-link {% if request.blueprint == 'reports' %}active{% endif %}"><i class="bi bi-file-earmark-bar-graph"></i> Reports</a>
     <a href="{{ url_for('history.evidence_list') }}" class="nav-link {% if request.endpoint == 'history.evidence_list' %}active{% endif %}"><i class="bi bi-image"></i> Evidence</a>
-    <a href="{{ url_for('console.index') }}" class="nav-link"><i class="bi bi-terminal"></i> Console</a>
+    <a href="{{ url_for('console.index') }}" class="nav-link {% if request.blueprint == 'console' %}active{% endif %}"><i class="bi bi-terminal"></i> Console</a>
     <div class="px-3 py-1 text-uppercase text-muted mt-2" style="font-size:.7rem;letter-spacing:.1em;">Account</div>
-    <a href="{{ url_for('settings.index') }}" class="nav-link"><i class="bi bi-gear"></i> Settings</a>
-    <a href="{{ url_for('profile.index') }}" class="nav-link"><i class="bi bi-person-circle"></i> Profile</a>
+    <a href="{{ url_for('settings.index') }}" class="nav-link {% if request.blueprint == 'settings' %}active{% endif %}"><i class="bi bi-gear"></i> Settings</a>
+    <a href="{{ url_for('profile.index') }}" class="nav-link {% if request.blueprint == 'profile' %}active{% endif %}"><i class="bi bi-person-circle"></i> Profile</a>
     <a href="{{ url_for('auth.logout') }}" class="nav-link text-danger"><i class="bi bi-box-arrow-right"></i> Logout</a>
   </div>
 </nav>
