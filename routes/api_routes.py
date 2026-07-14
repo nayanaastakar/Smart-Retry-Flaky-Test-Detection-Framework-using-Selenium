@@ -74,10 +74,24 @@ def generate_steps():
         from google import genai
 
         client = genai.Client(api_key=api_key)
-        response = client.models.generate_content(
-            model=settings.GEMINI_MODEL,
-            contents=full_prompt,
-        )
+        
+        # Try primary model, fallback if it is unavailable (503/429/etc)
+        response = None
+        models_to_try = [settings.GEMINI_MODEL, "gemini-2.0-flash", "gemini-2.5-flash-lite"]
+        last_error = None
+        for m in models_to_try:
+            try:
+                response = client.models.generate_content(
+                    model=m,
+                    contents=full_prompt,
+                )
+                break
+            except Exception as e:
+                last_error = e
+                continue
+                
+        if response is None:
+            raise last_error or Exception("All Gemini models were unavailable.")
 
         raw_text = response.text.strip()
 
