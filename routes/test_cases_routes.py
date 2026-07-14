@@ -22,5 +22,7 @@ def index():
         LEFT JOIN flaky_scores fs ON tc.id=fs.test_case_id
         ORDER BY tc.id DESC
     """
-    test_cases = fetchall(query)
+    rows = fetchall(query)
+    # Convert sqlite3.Row to standard dict for flawless Jinja2 property access
+    test_cases = [dict(r) for r in rows]
     return render_template("test_cases/index.html", test_cases=test_cases)
