@@ -77,7 +77,7 @@ def generate_steps():
         
         # Try primary model, fallback if it is unavailable (503/429/etc)
         response = None
-        models_to_try = [settings.GEMINI_MODEL, "gemini-2.0-flash", "gemini-2.5-flash-lite"]
+        models_to_try = [settings.GEMINI_MODEL, "gemini-3.1-flash-lite", "gemini-3-flash-preview"]
         last_error = None
         for m in models_to_try:
             try:
