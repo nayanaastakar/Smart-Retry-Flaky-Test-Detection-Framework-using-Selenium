@@ -154,8 +154,14 @@ def run_single_test_case(test_case_id: int) -> dict:
             status, 1 if passed else 0, 0 if passed else 1, 1 if flaky else 0,
             attempt, last_error, screenshot_path, log_output,
             datetime.utcnow().isoformat(), exec_id
-        )
     )
+
+    try:
+        from core.flaky_detector import calculate_flaky_score
+        calculate_flaky_score(test_case_id)
+    except Exception as e:
+        log.warning("Failed to calculate flaky score: %s", e)
+
 
     return {
         "pass": 1 if passed else 0,
