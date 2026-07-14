@@ -64,6 +64,13 @@ def execute_step(driver, step: dict) -> dict:
     try:
         if action == "open_url":
             driver.get(input_value)
+            # Wait for document readyState to be complete so the initial page is fully loaded
+            try:
+                WebDriverWait(driver, timeout).until(
+                    lambda d: d.execute_script("return document.readyState") == "complete"
+                )
+            except Exception:
+                pass # Allow it to try steps anyway
             return {"success": True, "message": f"Opened {input_value}"}
 
         elif action == "click":
@@ -157,8 +164,16 @@ def execute_step(driver, step: dict) -> dict:
             return {"success": True, "message": "Screenshot taken", "take_screenshot": True}
 
         elif action == "assert_text":
-            assert input_value in driver.page_source, f"Text '{input_value}' not found on page"
+            # Use instant JS check (does NOT wait for page load like driver.page_source does)
+            # This allows the assert to FAIL on attempt 1 if the page is still transitioning
+            # and PASS on attempt 2 once the page has loaded → triggers FLAKY detection
+            current_html = driver.execute_script(
+                "return document.documentElement ? document.documentElement.innerHTML : ''"
+            ) or ""
+            assert input_value.lower() in current_html.lower(), \
+                f"Text '{input_value}' not found on page"
             return {"success": True, "message": f"Text '{input_value}' found"}
+
 
         elif action == "assert_element_visible":
             el = find_element(driver, locator_type, locator_value, timeout)

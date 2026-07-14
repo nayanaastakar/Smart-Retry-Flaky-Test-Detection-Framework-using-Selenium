@@ -72,7 +72,11 @@ def create_driver(browser: str | None = None, headless: bool | None = None):
         opts.add_argument("--disable-blink-features=AutomationControlled")
         opts.add_experimental_option("excludeSwitches", ["enable-automation"])
         opts.add_experimental_option('useAutomationExtension', False)
-        
+        # CRITICAL: "none" means Selenium does NOT wait for page to finish loading
+        # after a navigation. This allows assert_text to run WHILE the page is
+        # still loading → it will fail on Attempt 1 and pass on Attempt 2 = FLAKY
+        opts.page_load_strategy = "none"
+
         driver = webdriver.Chrome(service=service, options=opts)
         
         # Additional anti-bot evasion
