@@ -72,7 +72,7 @@
           {% else %}<span class="badge bg-secondary">{{ e.status }}</span>{% endif %}
         </td>
         <td>{{ e.retry_count or 0 }}</td>
-        <td class="text-muted small">{{ e.started_at[:16] if e.started_at else '-' }}</td>
+        <td class="text-muted small">{{ e.started_at|localtime }}</td>
       </tr>
       {% endfor %}
       </tbody>

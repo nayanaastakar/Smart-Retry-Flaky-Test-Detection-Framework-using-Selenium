@@ -394,58 +394,41 @@ function openAIGenerator() {
   new bootstrap.Modal(document.getElementById('aiModal')).show();
 }
 
-function generateAISteps() {
-  const prompt = document.getElementById('aiPrompt').value.toLowerCase();
-  if (!prompt.trim()) return;
+async function generateAISteps() {
+  const prompt = document.getElementById('aiPrompt').value;
+  if (!prompt.trim()) { alert('Please describe what you want to test!'); return; }
   
-  let generated = [];
+  const btn = document.querySelector('#aiModal .btn-warning');
+  const originalText = btn.innerHTML;
+  btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>AI Generating...';
+  btn.disabled = true;
   
-  // Extract target domain
-  let url = "https://www.google.com";
-  let searchId = "q";
-  let searchType = "name";
-  
-  if (prompt.includes("amazon")) {
-    url = "https://www.amazon.in";
-    searchType = "id";
-    searchId = "twotabsearchtextbox";
-  } else if (prompt.includes("myntra")) {
-    url = "https://www.myntra.com";
-    searchType = "class";
-    searchId = "desktop-searchBar";
-  } else if (prompt.includes("wikipedia")) {
-    url = "https://en.wikipedia.org";
-  } else if (prompt.includes("flipkart")) {
-    url = "https://www.flipkart.com";
+  try {
+    const res = await fetch('/api/generate-steps', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt })
+    });
+    const data = await res.json();
+    if (data.error) throw new Error(data.error);
+    if (!data.steps || !data.steps.length) throw new Error('AI returned empty steps. Try rephrasing your prompt.');
+    
+    steps = steps.concat(data.steps);
+    renderSteps();
+    
+    // Auto-name the test case from the prompt
+    const nameInput = document.querySelector('input[name="name"]');
+    if (!nameInput.value) {
+      nameInput.value = prompt.substring(0, 40) + (prompt.length > 40 ? '...' : '');
+    }
+    
+    bootstrap.Modal.getInstance(document.getElementById('aiModal')).hide();
+  } catch(err) {
+    alert('AI Generation failed: ' + err.message);
+  } finally {
+    btn.innerHTML = originalText;
+    btn.disabled = false;
   }
-  
-  // Extract search term
-  let searchTerm = prompt;
-  const match = prompt.match(/search (?:for )?['"]?([^'"]+?)(['"]| press| and|$)/i);
-  if (match) {
-    searchTerm = match[1].trim();
-  } else if (prompt.includes("look for ")) {
-    searchTerm = prompt.split("look for ")[1].split(/,| and/)[0].trim();
-  }
-  
-  generated = [
-    { action: "open_url", input_value: url, timeout: 10 },
-    { action: "type_text", locator_type: searchType, locator_value: searchId, input_value: searchTerm, timeout: 10 },
-    { action: "press_key", locator_type: searchType, locator_value: searchId, input_value: "ENTER", timeout: 10 },
-    { action: "wait", input_value: "2", timeout: 10 },
-    { action: "screenshot", timeout: 10 }
-  ];
-  
-  steps = steps.concat(generated);
-  renderSteps();
-  
-  // Attempt to auto-name the test case
-  const nameInput = document.querySelector('input[name="name"]');
-  if (!nameInput.value) {
-    nameInput.value = (url.split('.')[1] + " search").toUpperCase();
-  }
-  
-  bootstrap.Modal.getInstance(document.getElementById('aiModal')).hide();
 }
 
 toggleLocator();

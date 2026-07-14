@@ -104,7 +104,7 @@
           </td>
           <td><span class="badge bg-secondary">{{ e.retry_count or 0 }}</span></td>
           <td class="text-muted small">{{ "%.1f"|format(e.duration_seconds or 0) }}s</td>
-          <td class="text-muted small">{{ e.started_at[:16] if e.started_at else '-' }}</td>
+          <td class="text-muted small">{{ e.started_at|localtime }}</td>
           <td><a href="{{ url_for('history.detail', exec_id=e.id) }}" class="btn btn-sm btn-outline-secondary">View</a></td>
         </tr>
         {% endfor %}

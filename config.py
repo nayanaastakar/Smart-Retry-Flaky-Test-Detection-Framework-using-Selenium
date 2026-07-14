@@ -64,11 +64,11 @@ class Config:
     FLAKY_WINDOW_SIZE: int = int(os.getenv("FLAKY_WINDOW_SIZE", "10"))  # last N runs considered
     FLAKY_THRESHOLD_PCT: float = float(os.getenv("FLAKY_THRESHOLD_PCT", "20.0"))
 
-    # --- AI Failure Analysis (Ollama) --------------------------------------
+    # --- AI Integration (Gemini) ------------------------------------------
     AI_ENABLED: bool = _bool(os.getenv("AI_ENABLED"), default=True)
-    OLLAMA_HOST: str = os.getenv("OLLAMA_HOST", "http://localhost:11434")
-    OLLAMA_MODEL: str = os.getenv("OLLAMA_MODEL", "llama3.1")
-    AI_REQUEST_TIMEOUT: int = int(os.getenv("AI_REQUEST_TIMEOUT", "30"))
+    GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
+    GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
+    AI_REQUEST_TIMEOUT: int = int(os.getenv("AI_REQUEST_TIMEOUT", "15"))
 
     # --- Auth ---------------------------------------------------------------
     SESSION_LIFETIME_DAYS: int = int(os.getenv("SESSION_LIFETIME_DAYS", "7"))

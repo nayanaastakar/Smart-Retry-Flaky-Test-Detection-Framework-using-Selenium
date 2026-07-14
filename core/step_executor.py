@@ -57,7 +57,9 @@ def execute_step(driver, step: dict) -> dict:
     locator_type = step.get("locator_type", "id")
     locator_value = (step.get("locator_value") or "").strip()
     input_value = (step.get("input_value") or "").strip()
-    timeout = int(step.get("timeout", 10))
+    # Cap element/assertion timeout at 3s max; open_url uses full page-load timeout
+    raw_timeout = int(step.get("timeout", 10))
+    timeout = raw_timeout if action == "open_url" else min(raw_timeout, 3)
 
     try:
         if action == "open_url":

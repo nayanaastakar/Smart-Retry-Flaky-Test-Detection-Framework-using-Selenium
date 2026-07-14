@@ -5,7 +5,7 @@ import json
 import logging
 import os
 import sys
-from datetime import timedelta
+from datetime import datetime, timedelta
 from pathlib import Path
 
 from flask import Flask, render_template
@@ -43,6 +43,16 @@ def create_app() -> Flask:
             return json.loads(value) if value else []
         except Exception:
             return []
+
+    @app.template_filter("localtime")
+    def localtime_filter(value):
+        if not value: return "-"
+        try:
+            dt = datetime.strptime(value[:19].replace("T", " "), "%Y-%m-%d %H:%M:%S")
+            dt = dt + timedelta(hours=5, minutes=30)
+            return dt.strftime("%Y-%m-%d %I:%M %p")
+        except Exception:
+            return value[:16]
 
     @app.template_filter("basename")
     def basename_filter(value):
