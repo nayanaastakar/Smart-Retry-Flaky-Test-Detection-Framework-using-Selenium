@@ -7,13 +7,11 @@
 <td>{{ tc.name }}</td><td class="text-muted">{{ tc.project_name or '-' }}</td>
 <td><span class="badge bg-secondary">{{ tc.module }}</span></td>
 <td>
-  {% if tc.flaky_score is not none %}
-    <span class="badge {% if tc.flaky_verdict == 'stable' %}badge-stable{% elif tc.flaky_verdict == 'flaky' %}badge-flaky{% else %}badge-fail{% endif %}" style="padding: 6px 12px; border-radius: 6px;">
-      {{ tc.flaky_verdict|upper }} ({{ tc.flaky_score }}%)
-    </span>
-  {% else %}
-    <span class="text-muted small">Not Calculated</span>
-  {% endif %}
+  {% set score = tc.flaky_score if tc.flaky_score is not none else 0.0 %}
+  {% set verdict = tc.flaky_verdict if tc.flaky_verdict is not none else 'stable' %}
+  <span class="badge {% if verdict == 'stable' %}badge-stable{% elif verdict == 'flaky' %}badge-flaky{% else %}badge-fail{% endif %}" style="padding: 6px 12px; border-radius: 6px;">
+    {{ verdict|upper }} ({{ score }}%)
+  </span>
 </td>
 <td>{% if tc.project_id %}<a href="{{ url_for('projects.edit_test', project_id=tc.project_id, tc_id=tc.id) }}" class="btn btn-sm btn-outline-info">Edit</a>{% endif %}</td>
 </tr>{% endfor %}</tbody></table>
