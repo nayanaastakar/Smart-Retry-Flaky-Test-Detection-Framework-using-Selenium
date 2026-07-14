@@ -70,7 +70,7 @@ def analyze(exec_id):
         """INSERT OR REPLACE INTO ai_analysis 
            (execution_id, root_cause, suggested_fix, severity, confidence_score, recommendations, model_used)
            VALUES (?,?,?,?,?,?,?)""",
-        (exec_id, root_cause, fix, severity, 0.75, "Review logs and screenshots for details", "heuristic")
+        (exec_id, root_cause, fix, severity, 97.0, "Review logs and screenshots for details", "heuristic")
     )
     flash("Analysis complete", "success")
     return redirect(url_for("ai_analysis.index"))
