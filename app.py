@@ -123,7 +123,7 @@ def create_app() -> Flask:
     app.register_blueprint(dashboard_bp)
     app.register_blueprint(history_bp)
     app.register_blueprint(settings_bp)
-    app.register_blueprint(api_bp, url_prefix="/api/v1")
+    app.register_blueprint(api_bp, url_prefix="/api")
     app.register_blueprint(profile_bp)
     app.register_blueprint(reports_bp)
     app.register_blueprint(run_bp)

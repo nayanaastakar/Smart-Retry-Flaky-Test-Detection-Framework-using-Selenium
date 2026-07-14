@@ -27,7 +27,7 @@
         <td>{% if e.status=='pass'%}<span class="badge badge-pass">PASS</span>{% elif e.status=='fail'%}<span class="badge badge-fail">FAIL</span>{% elif e.status=='flaky'%}<span class="badge badge-flaky">FLAKY</span>{% else %}<span class="badge bg-secondary">{{e.status}}</span>{% endif %}</td>
         <td>{{ e.retry_count or 0 }}</td>
         <td class="text-muted small" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ e.error_message or '-' }}</td>
-        <td class="text-muted small">{{ e.started_at[:16] if e.started_at else '-' }}</td>
+        <td class="text-muted small">{{ e.started_at|localtime }}</td>
         <td><a href="{{ url_for('history.detail', exec_id=e.id) }}" class="btn btn-sm btn-outline-info">View</a></td>
       </tr>
       {% endfor %}
