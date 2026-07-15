@@ -15,6 +15,20 @@ It solves one of the biggest problems in software testing — **flaky tests** �
 
 ---
 
+## SmartRetry vs. Existing Frameworks
+
+| Feature | Standard Test Runners (TestNG / PyTest / JUnit) | SmartRetry (Our Project) | Why it Matters |
+| :--- | :--- | :--- | :--- |
+| **Retry Execution** | **Naïve Rerun:** Re-runs the entire test suite or complete script from the beginning. | **Smart Session Reuse:** Keeps the active browser session alive and continues exactly from the failed step when possible. | **Time Savings:** Eliminates the overhead of launching, logging in, and navigating a new browser on every retry. |
+| **Failure Diagnosis** | **Raw Stack Traces:** Only logs raw code lines and terminal dump errors. | **Dynamic GenAI Diagnosis:** Uses Gemini AI to read the stack trace, explain the root cause in plain English, and suggest a fix. | **Zero Debugging Overhead:** Non-technical testers can read the exact reason a step failed instantly. |
+| **Confidence Scoring** | **None:** Binary pass/fail only. | **AI Confidence Rating:** Assigns a percentage score (e.g., $95\%$ assertion failure) to its diagnosis. | **Trustworthy Auditing:** Ensures developers know how reliable the AI's diagnostic reasoning is. |
+| **Flakiness Verdicts** | **None:** Test is simply marked as either `PASS` or `FAIL`. | **Categorized Stability Indices:** Evaluates history to label tests as **`STABLE`**, **`FLAKY`**, or **`CHRONIC`**. | **Prioritizes Refactoring:** Developers can easily identify and refactor unstable tests. |
+| **Evidence Capturing** | **Single Screenshot:** Captures a screenshot only at the final point of failure. | **Step-by-Step Retry Timeline:** Captures side-by-side screenshots for *every single retry attempt* of the failing step. | **Visual Proof:** Easily debug temporary rendering/timing mismatches by visually comparing attempt timelines. |
+| **Page Load Strategy** | **Blocking (Normal):** Waits for the entire DOM, stylesheets, and images to load before continuing. | **Non-Blocking (`none`):** Instantly queries the DOM via Javascript, enabling immediate element assertions. | **Blazing Fast Runs:** Accelerates test execution speeds by avoiding waiting on slow, third-party network assets. |
+
+---
+
+
 ## Technology Stack
 
 | Layer | Technology |
