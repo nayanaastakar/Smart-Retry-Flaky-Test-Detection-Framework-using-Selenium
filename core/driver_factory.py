@@ -5,8 +5,12 @@ from config import settings
 
 log = logging.getLogger(__name__)
 
+# Cache the chromedriver path globally so we don't query webdriver_manager on every retry
+_CACHED_CHROMEDRIVER_PATH = None
+
 
 def create_driver(browser: str | None = None, headless: bool | None = None):
+    global _CACHED_CHROMEDRIVER_PATH
     browser = (browser or settings.DEFAULT_BROWSER).lower()
     headless = settings.HEADLESS if headless is None else headless
 
@@ -27,39 +31,44 @@ def create_driver(browser: str | None = None, headless: bool | None = None):
                     pe_offset = struct.unpack("<I", f.read(4))[0]
                     f.seek(pe_offset + 4)
                     machine = struct.unpack("<H", f.read(2))[0]
-                    # 0x8664 = AMD64 (64-bit), 0x014c = i386 (32-bit)
                     return machine == 0x8664
             except Exception:
                 return False
 
         service = None
 
-        # 1. Check for our manually downloaded 64-bit chromedriver first
-        local_drivers = [
-            r"C:\Users\HP\Downloads\smartretry_screenshots_final\chromedriver_bin\chromedriver-win64\chromedriver.exe",
-        ]
-        for p in local_drivers:
-            if os.path.isfile(p) and _is_valid_exe(p):
-                log.info("Using local 64-bit chromedriver: %s", p)
-                service = Service(p)
-                break
+        # Re-use cached executable path if available
+        if _CACHED_CHROMEDRIVER_PATH and os.path.isfile(_CACHED_CHROMEDRIVER_PATH):
+            service = Service(_CACHED_CHROMEDRIVER_PATH)
+        else:
+            # 1. Check for our manually downloaded 64-bit chromedriver first
+            local_drivers = [
+                r"C:\Users\HP\Downloads\smartretry_screenshots_final\chromedriver_bin\chromedriver-win64\chromedriver.exe",
+            ]
+            for p in local_drivers:
+                if os.path.isfile(p) and _is_valid_exe(p):
+                    log.info("Using local 64-bit chromedriver: %s", p)
+                    _CACHED_CHROMEDRIVER_PATH = p
+                    service = Service(p)
+                    break
 
-        # 2. Fallback: try webdriver_manager but validate the binary
-        if service is None:
-            try:
-                from webdriver_manager.chrome import ChromeDriverManager
-                wdm_path = ChromeDriverManager().install()
-                if _is_valid_exe(wdm_path):
-                    log.info("Using wdm chromedriver: %s", wdm_path)
-                    service = Service(wdm_path)
-                else:
-                    log.warning("wdm returned a 32-bit binary at %s, skipping.", wdm_path)
-            except Exception as e:
-                log.warning("webdriver_manager failed: %s", e)
+            # 2. Fallback: try webdriver_manager but validate the binary
+            if service is None:
+                try:
+                    from webdriver_manager.chrome import ChromeDriverManager
+                    wdm_path = ChromeDriverManager().install()
+                    if _is_valid_exe(wdm_path):
+                        log.info("Using wdm chromedriver: %s", wdm_path)
+                        _CACHED_CHROMEDRIVER_PATH = wdm_path
+                        service = Service(wdm_path)
+                    else:
+                        log.warning("wdm returned a 32-bit binary at %s, skipping.", wdm_path)
+                except Exception as e:
+                    log.warning("webdriver_manager failed: %s", e)
 
-        # 3. Last resort: let Selenium find chromedriver on PATH
-        if service is None:
-            service = Service()
+            # 3. Last resort: let Selenium find chromedriver on PATH
+            if service is None:
+                service = Service()
 
         opts = Options()
         if headless:
@@ -81,7 +90,7 @@ def create_driver(browser: str | None = None, headless: bool | None = None):
         
         # Additional anti-bot evasion
         driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
-
+        return driver
 
     elif browser == "firefox":
         from selenium import webdriver
@@ -94,8 +103,9 @@ def create_driver(browser: str | None = None, headless: bool | None = None):
             service = Service()
         opts = Options()
         if headless:
-            opts.add_argument("--headless")
+            opts.add_argument("-headless")
         driver = webdriver.Firefox(service=service, options=opts)
+        return driver
 
     elif browser == "edge":
         from selenium import webdriver
@@ -108,14 +118,8 @@ def create_driver(browser: str | None = None, headless: bool | None = None):
             service = Service()
         opts = Options()
         if headless:
-            opts.add_argument("--headless=new")
-        opts.add_argument("--no-sandbox")
+            opts.add_argument("--headless")
         driver = webdriver.Edge(service=service, options=opts)
+        return driver
 
-    else:
-        raise ValueError(f"Unsupported browser: {browser}")
-
-    driver.implicitly_wait(settings.IMPLICIT_WAIT)
-    driver.set_page_load_timeout(settings.EXECUTION_TIMEOUT)
-    log.info("Driver created: %s headless=%s", browser, headless)
-    return driver
+    raise ValueError(f"Unsupported browser: {browser}")
