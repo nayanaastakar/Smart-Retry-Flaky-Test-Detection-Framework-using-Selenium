@@ -85,11 +85,14 @@ def create_app() -> Flask:
         msg = re.sub(r'\(Session info:.*?\)', '', msg).strip()
         msg_lower = msg.lower()
         
-        if "no such element" in msg_lower or "unable to locate element" in msg_lower:
+        if "no such element" in msg_lower or "unable to locate element" in msg_lower or "nosuchelement" in msg_lower:
             return "Element not found. (Reason: The locator is incorrect, or the element hasn't loaded yet)"
+        if "click intercepted" in msg_lower or "clickintercepted" in msg_lower or "is not clickable" in msg_lower:
+            return "Click Intercepted. (Reason: Another element (like a modal, popup, or overlay) is blocking it)"
         if "timeout" in msg_lower:
             return "Timeout. (Reason: The page or element took too long to load)"
         if "element not interactable" in msg_lower:
+
             return "Element not interactable. (Reason: The element exists but is hidden or covered by another element)"
         if "stale element" in msg_lower:
             return "Stale element. (Reason: The page refreshed or the DOM changed after finding the element)"

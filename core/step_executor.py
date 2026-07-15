@@ -202,4 +202,18 @@ def execute_step(driver, step: dict) -> dict:
             return {"success": False, "message": f"Unknown action: {action}"}
 
     except Exception as e:
-        return {"success": False, "message": str(e)}
+        err_type = type(e).__name__
+        err_msg = str(e).split("Stacktrace:")[0].replace("Message:", "").strip()
+        if not err_msg:
+            if "Timeout" in err_type:
+                err_msg = "The page or element took too long to load (Timeout)."
+            elif "NoSuchElement" in err_type:
+                err_msg = f"Could not find element with {locator_type}='{locator_value}'."
+            elif "ClickIntercepted" in err_type:
+                err_msg = "Another element is blocking the click (Click Intercepted)."
+            elif "NotInteractable" in err_type:
+                err_msg = "The element is not visible or cannot be clicked."
+            else:
+                err_msg = f"Selenium error occurred ({err_type})"
+        return {"success": False, "message": f"{err_type}: {err_msg}"}
+
