@@ -100,9 +100,16 @@ def create_app() -> Flask:
                 return "Login Failed. (Reason: Invalid username or password, or dashboard didn't load)"
             return f"Validation Failed. (Reason: {msg.replace('AssertionError:', '').strip()})"
         if "webdriverexception" in msg_lower or "fatal error" in msg_lower or "fatal" in msg_lower:
-            return "Fatal Error. (Reason: Browser crashed or WebDriver failed to initialize)"
+            # Check for actual driver/browser crash or initialization failure
+            if any(k in msg_lower for k in ["chrome not reachable", "session not created", "failed to start", "connection refused", "refused to connect"]):
+                return "Fatal Error. (Reason: Browser crashed or WebDriver failed to initialize)"
+            # Check for click interception
+            if "click intercepted" in msg_lower or "is not clickable" in msg_lower:
+                return "Click Intercepted. (Reason: Another element like a modal, popup, or overlay is covering it)"
+            return f"WebDriver Error. ({msg})"
             
         return msg[:150] + ("..." if len(msg) > 150 else "")
+
 
     # Blueprints
     from routes.auth_routes import auth_bp
